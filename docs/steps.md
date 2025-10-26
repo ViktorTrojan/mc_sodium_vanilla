@@ -16,3 +16,8 @@ packwiz refresh
 ```sh
 packwiz modrinth install <mod-name>
 ```
+
+```sh
+# creates `Sodium Vanilla-0.1.0.mrpack` file
+packwiz modrinth export
+```

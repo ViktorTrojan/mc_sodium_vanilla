@@ -1,0 +1,61 @@
+name: Release Modpack
+
+on:
+  workflow_dispatch:
+    inputs:
+      mc_version:
+        description: 'Minecraft version (e.g., 1.14, 1.20.1)'
+        required: true
+        type: string
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+
+      - name: Install packwiz
+        run: go install github.com/packwiz/packwiz@latest
+
+      - name: Add Go bin to PATH
+        run: echo "$HOME/go/bin" >> $GITHUB_PATH
+
+      - name: Install dependencies
+        run: cd modpack_creator && bun install
+
+      - name: Run modpack creation and upload
+        env:
+          MC_VERSION: ${{ inputs.mc_version }}
+          MODRINTH_PAT_TOKEN: ${{ secrets.MODRINTH_PAT_TOKEN }}
+          MODRINTH_PROJECT_ID: ${{ secrets.MODRINTH_PROJECT_ID }}
+          NODE_ENV: production
+        run: cd modpack_creator && bun run dev
+
+      - name: Create and push git tags
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag "${{ inputs.mc_version }}_safe" || true
+          git tag "${{ inputs.mc_version }}_full" || true
+          git push origin "${{ inputs.mc_version }}_safe" || true
+          git push origin "${{ inputs.mc_version }}_full" || true
+
+      - name: Commit updated README
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update README.md for Minecraft ${{ inputs.mc_version }}" || echo "No changes to commit"
+          git push || echo "No changes to push"

@@ -424,3 +424,7 @@ export function get_mod_list(): ModDefinition[] {
 }
 
 export const mod_list = get_mod_list()
+
+export function get_safe_mod_list(): ModDefinition[] {
+  return mod_list.filter(mod => mod.category !== "cheating")
+}

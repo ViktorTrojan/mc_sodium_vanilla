@@ -1,13 +1,13 @@
-import { get_full_mod_list_markdown } from "./write_mod_list"
+import { get_mod_list_markdown } from "./write_mod_list"
 import { mod_list } from "./mod_list"
 import { readFileSync, writeFileSync } from "fs"
 import { resolve } from "path"
 
-async function update_readme() {
+export async function update_readme(failed_to_install?: string[]) {
   const readme_path = resolve(__dirname, "../../README.md")
   const readme_content = readFileSync(readme_path, "utf-8")
 
-  const mod_list_markdown = await get_full_mod_list_markdown(mod_list)
+  const mod_list_markdown = await get_mod_list_markdown(mod_list, failed_to_install)
 
   // Find the "## Mod List" section and replace everything after it
   const mod_list_header = "## Mod List"
@@ -28,5 +28,3 @@ async function update_readme() {
 
   console.log("✅ README.md updated successfully!")
 }
-
-update_readme()

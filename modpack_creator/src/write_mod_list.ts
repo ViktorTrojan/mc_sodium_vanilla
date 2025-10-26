@@ -12,7 +12,12 @@ interface ModInfo {
   category: ModCategory
 }
 
-export async function get_full_mod_list_markdown(mod_list: ModDefinition[]): Promise<string> {
+export async function get_mod_list_markdown(
+  mod_list: ModDefinition[],
+  failed_to_install?: string[]
+): Promise<string> {
+  const failed_set = new Set(failed_to_install || [])
+
   const mod_info_promises = mod_list.map(async (mod) => {
     try {
       const response = await fetch(`https://api.modrinth.com/v2/project/${mod.identifier}`)
@@ -52,7 +57,8 @@ export async function get_full_mod_list_markdown(mod_list: ModDefinition[]): Pro
     markdown += `### ${category.charAt(0).toUpperCase() + category.slice(1)}\n\n`
     for (const mod of mods) {
       const url = `https://modrinth.com/${mod.project_type}/${mod.identifier}`
-      markdown += `- [${mod.title}](${url})\n`
+      const checkbox = failed_set.has(mod.identifier) ? '[ ]' : '[x]'
+      markdown += `- ${checkbox} [${mod.title}](${url})\n`
     }
     markdown += '\n'
   }

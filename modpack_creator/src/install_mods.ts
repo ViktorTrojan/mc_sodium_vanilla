@@ -42,7 +42,20 @@ export function install_packwiz_content(
     console.log("⚠️  Could not delete .mrpack files")
   }
 
-  console.log()
+  // refresh packwiz index file:
+  const refresh_result = spawnSync("packwiz", ["refresh"], {
+    encoding: "utf-8",
+    stdio: "pipe",
+    cwd: root_dir
+  })
+
+  if (refresh_result.error || refresh_result.status !== 0) {
+    console.error(`❌ Failed to packwiz refresh`)
+    if (refresh_result.stderr) {
+      console.error(refresh_result.stderr)
+    }
+    process.exit(1)
+  }
 
   // First migrate to the correct Minecraft version
   console.log(`Migrating to Minecraft version ${config.app.mc_version}...`)

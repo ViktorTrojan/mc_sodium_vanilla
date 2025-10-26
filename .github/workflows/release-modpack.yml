@@ -52,10 +52,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git tag "${{ inputs.mc_version }}_safe" || true
-          git tag "${{ inputs.mc_version }}_full" || true
-          git push origin "${{ inputs.mc_version }}_safe" || true
-          git push origin "${{ inputs.mc_version }}_full" || true
+          git tag "${{ inputs.mc_version }}" || true
+          git push origin "${{ inputs.mc_version }}" || true
 
       - name: Commit updated README
         run: |

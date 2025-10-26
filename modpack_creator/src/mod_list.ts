@@ -1,6 +1,6 @@
-import type { ModDefinition } from "./types";
+import type { ModDefinition } from "./types"
 
-export const mod_list: ModDefinition[] = [
+const mod_list_raw: ModDefinition[] = [
   {
     identifier: "fabric-api",
     category: "optimization",
@@ -394,3 +394,33 @@ export const mod_list: ModDefinition[] = [
     method: "modrinth",
   }
 ]
+
+export function get_mod_list(): ModDefinition[] {
+  const identifiers = new Set<string>()
+  const duplicates: string[] = []
+
+  for (const mod of mod_list_raw) {
+    if (identifiers.has(mod.identifier)) {
+      duplicates.push(mod.identifier)
+    }
+    identifiers.add(mod.identifier)
+
+    if (mod.alternatives) {
+      for (const alt of mod.alternatives) {
+        if (identifiers.has(alt.identifier)) {
+          duplicates.push(alt.identifier)
+        }
+        identifiers.add(alt.identifier)
+      }
+    }
+  }
+
+  if (duplicates.length > 0) {
+    console.error(`Duplicate identifiers found in mod_list: ${duplicates.join(", ")}`)
+    process.exit(1)
+  }
+
+  return mod_list_raw
+}
+
+export const mod_list = get_mod_list()

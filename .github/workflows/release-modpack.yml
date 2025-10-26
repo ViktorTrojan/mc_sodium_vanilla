@@ -40,6 +40,8 @@ jobs:
           MC_VERSION: ${{ inputs.mc_version }}
           MODRINTH_PAT_TOKEN: ${{ secrets.MODRINTH_PAT_TOKEN }}
           MODRINTH_PROJECT_ID: ${{ secrets.MODRINTH_PROJECT_ID }}
+          MODRINTH_CLIENT_ID: ${{ secrets.MODRINTH_CLIENT_ID }}
+          MODRINTH_CLIENT_SECRET: ${{ secrets.MODRINTH_CLIENT_SECRET }}
           NODE_ENV: production
         run: cd modpack_creator && bun run dev
 

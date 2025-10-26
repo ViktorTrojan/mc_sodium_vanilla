@@ -36,11 +36,6 @@ hash = "c26e234b5fc5e1400a09b24a72590e681f18bfe12cf553cfa7a92a0b92f80666"
 metafile = true
 
 [[files]]
-file = "mods/rightclickharvest.pw.toml"
-hash = "04d04ca1f3d714fbb84a9255f974c9eee8ebdc991900977fa63a6cd528c0946f"
-metafile = true
-
-[[files]]
 file = "mods/tweakeroo.pw.toml"
 hash = "bce0331452b65b12b87d5e906309458f6a53260d7323d55eace4f3922657c8d7"
 metafile = true
@@ -48,4 +43,19 @@ metafile = true
 [[files]]
 file = "mods/yosbr.pw.toml"
 hash = "649c259a4777ba1b544b69d04a79f2b1b0e1a3c520033cc86a3c14d5fa53564a"
+metafile = true
+
+[[files]]
+file = "resourcepacks/default-dark-mode.pw.toml"
+hash = "1f4c3d1f8100c227e7aab2c02502a53fe489329248d424ba90a95c96a8e5ecf1"
+metafile = true
+
+[[files]]
+file = "resourcepacks/low-on-fire.pw.toml"
+hash = "0279a4594892da6d237672f962fbc9977b92181389dc8a923e293cf98596d871"
+metafile = true
+
+[[files]]
+file = "resourcepacks/small-shield-totem.pw.toml"
+hash = "a355a61046b779bf05ac836149ebf9db7dafc43138024b82d5050a911baf97be"
 metafile = true

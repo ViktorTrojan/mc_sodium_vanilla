@@ -1,7 +1,8 @@
 import { config } from "./config"
 import { export_modpack } from "./export_modpack"
-import { install_mods_with_packwiz } from "./install_mods"
+import { install_packwiz_content } from "./install_mods"
 import { get_safe_mod_list, mod_list } from "./mod_list"
+import { resource_pack_list } from "./resource_pack_list"
 import { update_readme } from "./update_readme"
 import { upload_to_modrinth } from "./upload_to_modrinth"
 
@@ -11,7 +12,7 @@ async function main() {
   console.log("Installing FULL mod list (cheating version)...")
   console.log("=".repeat(60) + "\n")
 
-  const failed_mods_full = install_mods_with_packwiz(mod_list)
+  const failed_mods_full = install_packwiz_content(mod_list, resource_pack_list)
 
   if (failed_mods_full.length > 0) {
     console.log(`\n❌ ${failed_mods_full.length} mod(s) failed to install in full version`)
@@ -48,7 +49,7 @@ async function main() {
   console.log("=".repeat(60) + "\n")
 
   const safe_mod_list = get_safe_mod_list()
-  const failed_mods_safe = install_mods_with_packwiz(safe_mod_list)
+  const failed_mods_safe = install_packwiz_content(safe_mod_list, resource_pack_list)
 
   if (failed_mods_safe.length > 0) {
     console.log(`\n❌ ${failed_mods_safe.length} mod(s) failed to install in safe version`)

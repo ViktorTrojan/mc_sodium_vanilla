@@ -1,14 +1,12 @@
-import { install_mods_with_packwiz } from "./install_mods"
-import { get_mod_list_markdown } from "./write_mod_list"
+import { install_packwiz_content } from "./install_mods"
 import { mod_list } from "./mod_list"
-import { readFileSync, writeFileSync } from "fs"
-import { resolve } from "path"
+import { resource_pack_list } from "./resource_pack_list"
 import { update_readme } from "./update_readme"
 
 export async function install_and_update() {
-  console.log("Installing mods with packwiz...\n")
+  console.log("Installing mods and resource packs with packwiz...\n")
 
-  const failed_mods = install_mods_with_packwiz(mod_list)
+  const failed_mods = install_packwiz_content(mod_list, resource_pack_list)
 
   console.log("\n" + "=".repeat(50))
 

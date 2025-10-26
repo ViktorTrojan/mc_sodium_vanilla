@@ -2,3 +2,4 @@ docs/
 Dockerfile
 docker-compose.yml
 README.md
+modpack_creator

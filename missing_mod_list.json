@@ -82,10 +82,6 @@
     "category": "visual"
   },
   {
-    "identifier": "dynamic-fps",
-    "category": "optimization"
-  },
-  {
     "identifier": "jade",
     "category": "visual"
   },

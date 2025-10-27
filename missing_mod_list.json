@@ -1,11 +1,15 @@
 [
   {
+    "identifier": "modernfix",
+    "category": "optimization"
+  },
+  {
     "identifier": "cut-through",
     "category": "cheating"
   },
   {
-    "identifier": "particle-rain",
-    "category": "visual"
+    "identifier": "what-are-they-up-to",
+    "category": "cheating"
   },
   {
     "identifier": "sound",

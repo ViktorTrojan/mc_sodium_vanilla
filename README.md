@@ -11,6 +11,10 @@ Each Minecraft version has two modpacks: `_safe` and `_full`.
 * `_safe`: only includes mods safe for multiplayer servers.
 * `_full`: may cause issues on some servers — use with caution.
 
+## No Default Configuration
+
+This modpack does not include any preset configuration files.
+That means you can safely update your Minecraft instance without overwriting your current settings.
 
 ## Mod List
 

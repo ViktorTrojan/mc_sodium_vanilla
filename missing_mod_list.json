@@ -52,16 +52,12 @@
     }
   },
   {
-    "identifier": "modelfix",
-    "category": "visual"
+    "identifier": "krypton",
+    "category": "optimization"
   },
   {
     "identifier": "debugify",
     "category": "optimization"
-  },
-  {
-    "identifier": "presence-footsteps",
-    "category": "useful"
   },
   {
     "identifier": "ebe",
@@ -70,10 +66,6 @@
   {
     "identifier": "lazydfu",
     "category": "optimization"
-  },
-  {
-    "identifier": "better-mount-hud",
-    "category": "visual"
   },
   {
     "identifier": "better-third-person",

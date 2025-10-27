@@ -1,22 +1,6 @@
 [
   {
-    "identifier": "modernfix",
-    "category": "optimization"
-  },
-  {
-    "identifier": "rrls",
-    "category": "useful"
-  },
-  {
-    "identifier": "better-third-person",
-    "category": "visual"
-  },
-  {
     "identifier": "cut-through",
-    "category": "cheating"
-  },
-  {
-    "identifier": "what-are-they-up-to",
     "category": "cheating"
   },
   {
@@ -26,14 +10,6 @@
   {
     "identifier": "sound",
     "category": "useful"
-  },
-  {
-    "identifier": "highlight",
-    "category": "visual"
-  },
-  {
-    "identifier": "cave-dust",
-    "category": "visual"
   },
   {
     "identifier": "particular",

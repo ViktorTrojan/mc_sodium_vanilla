@@ -8,10 +8,6 @@
     "category": "optimization"
   },
   {
-    "identifier": "simple-voice-chat",
-    "category": "useful"
-  },
-  {
     "identifier": "xaeros-world-map",
     "category": "cheating"
   },
@@ -54,15 +50,11 @@
     "category": "useful"
   },
   {
-    "identifier": "modelfix",
-    "category": "visual"
-  },
-  {
-    "identifier": "krypton",
+    "identifier": "debugify",
     "category": "optimization"
   },
   {
-    "identifier": "debugify",
+    "identifier": "ebe",
     "category": "optimization"
   },
   {
@@ -76,6 +68,10 @@
   {
     "identifier": "badoptimizations",
     "category": "optimization"
+  },
+  {
+    "identifier": "capes",
+    "category": "visual"
   },
   {
     "identifier": "visual-workbench",
@@ -104,10 +100,6 @@
   {
     "identifier": "sound",
     "category": "useful"
-  },
-  {
-    "identifier": "show-me-your-skin",
-    "category": "visual"
   },
   {
     "identifier": "highlight",

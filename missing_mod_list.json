@@ -44,6 +44,18 @@
     "category": "useful"
   },
   {
+    "identifier": "tweakeroo",
+    "category": "useful"
+  },
+  {
+    "identifier": "minihud",
+    "category": "visual"
+  },
+  {
+    "identifier": "litematica",
+    "category": "useful"
+  },
+  {
     "identifier": "zoomify",
     "category": "visual"
   },
@@ -178,10 +190,6 @@
   {
     "identifier": "ebe",
     "category": "optimization"
-  },
-  {
-    "identifier": "inventory-profiles-next",
-    "category": "cheating"
   },
   {
     "identifier": "shulkerboxtooltip",

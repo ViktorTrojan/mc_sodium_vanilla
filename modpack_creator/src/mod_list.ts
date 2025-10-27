@@ -170,8 +170,25 @@ const mod_list_raw: ModDefinition[] = [
   },
   {
     identifier: "jei", // just enough items
-    category: "useful",
-    method: "modrinth"
+    category: "cheating",
+    method: "modrinth",
+    alternatives: [
+      {
+        identifier: "rei",
+        category: "cheating",
+        method: "modrinth"
+      },
+      {
+        identifier: "emi",
+        category: "cheating",
+        method: "modrinth"
+      },
+      {
+        identifier: "eiv",
+        category: "cheating",
+        method: "modrinth"
+      },
+    ]
   },
   {
     identifier: "sound-physics-remastered",

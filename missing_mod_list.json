@@ -4,27 +4,11 @@
     "category": "optimization"
   },
   {
-    "identifier": "appleskin",
-    "category": "visual"
-  },
-  {
     "identifier": "modernfix",
     "category": "optimization"
   },
   {
-    "identifier": "simple-voice-chat",
-    "category": "useful"
-  },
-  {
     "identifier": "zoomify",
-    "category": "visual"
-  },
-  {
-    "identifier": "continuity",
-    "category": "visual"
-  },
-  {
-    "identifier": "jade",
     "category": "visual"
   },
   {
@@ -34,10 +18,6 @@
   {
     "identifier": "moreculling",
     "category": "optimization"
-  },
-  {
-    "identifier": "carpet",
-    "category": "useful"
   },
   {
     "identifier": "jei",
@@ -66,23 +46,11 @@
     "category": "useful"
   },
   {
-    "identifier": "mouse-tweaks",
-    "category": "useful"
-  },
-  {
     "identifier": "modelfix",
     "category": "visual"
   },
   {
     "identifier": "debugify",
-    "category": "optimization"
-  },
-  {
-    "identifier": "shulkerboxtooltip",
-    "category": "cheating"
-  },
-  {
-    "identifier": "c2me-fabric",
     "category": "optimization"
   },
   {
@@ -110,6 +78,10 @@
     "category": "optimization"
   },
   {
+    "identifier": "better-third-person",
+    "category": "visual"
+  },
+  {
     "identifier": "durability-tooltip",
     "category": "visual"
   },
@@ -120,10 +92,6 @@
   {
     "identifier": "what-are-they-up-to",
     "category": "cheating"
-  },
-  {
-    "identifier": "tooltipfix",
-    "category": "visual"
   },
   {
     "identifier": "particle-rain",

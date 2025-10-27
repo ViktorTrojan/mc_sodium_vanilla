@@ -16,6 +16,10 @@
     "category": "optimization"
   },
   {
+    "identifier": "modmenu",
+    "category": "visual"
+  },
+  {
     "identifier": "lithium",
     "category": "optimization"
   },
@@ -26,6 +30,10 @@
   {
     "identifier": "sodium-extra",
     "category": "optimization"
+  },
+  {
+    "identifier": "appleskin",
+    "category": "visual"
   },
   {
     "identifier": "modernfix",
@@ -212,6 +220,10 @@
     "category": "visual"
   },
   {
+    "identifier": "replaymod",
+    "category": "useful"
+  },
+  {
     "identifier": "invmove",
     "category": "cheating"
   },
@@ -233,10 +245,6 @@
   },
   {
     "identifier": "tooltipfix",
-    "category": "visual"
-  },
-  {
-    "identifier": "blur-plus",
     "category": "visual"
   },
   {
@@ -262,6 +270,10 @@
   {
     "identifier": "notenoughcrashes",
     "category": "useful"
+  },
+  {
+    "identifier": "rightclickharvest",
+    "category": "cheating"
   },
   {
     "identifier": "particular",

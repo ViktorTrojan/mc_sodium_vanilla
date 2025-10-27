@@ -1,33 +1,8 @@
 hash-format = "sha256"
 
 [[files]]
-file = "mods/betterf3.pw.toml"
-hash = "2bd6d3ba4d51c4dbc3dab906491230f3f16531ad38087228946b1fd0700c4e30"
-metafile = true
-
-[[files]]
-file = "mods/blur-plus.pw.toml"
-hash = "9f19561ba22ad51af6f2a5222a5102a72d82297e821a2f67c45f45857ccf7c38"
-metafile = true
-
-[[files]]
-file = "mods/calcmod.pw.toml"
-hash = "e5bb0712538b22ba6a4d25a63f9d929bf5f5547084bdd086cdbf99d2e4032a0a"
-metafile = true
-
-[[files]]
-file = "mods/carpet.pw.toml"
-hash = "f8c58a91a18f507e2c6540101f213c5379640b1e60cfe53c30afecbe360d5a71"
-metafile = true
-
-[[files]]
-file = "mods/chat-heads.pw.toml"
-hash = "a8e968c09957adb73f325d5809d3d6fa92b78c0cc2319f72ebd88f3a7905e227"
-metafile = true
-
-[[files]]
 file = "mods/cloth-config.pw.toml"
-hash = "a26a0a294e686d0e557250ab6fbb9e9d82594d25f2064b5c9a29f0879babe308"
+hash = "fcd08b3423d12c0ef955c2154861247d53e40f378bed0545a4cd852ab5aa7e5d"
 metafile = true
 
 [[files]]
@@ -37,100 +12,10 @@ metafile = true
 
 [[files]]
 file = "mods/fabric-api.pw.toml"
-hash = "1dc5cd1b1181555ca4394ba1f46d333810b47794dd84be72c5688325e9ff4a28"
+hash = "753ea7aabc4ca5a8fecc63b7a4b3f338431e64d73434d93db2dbaad3639570f1"
 metafile = true
 
 [[files]]
-file = "mods/fabric-language-kotlin.pw.toml"
-hash = "d7c055f277c1751122d9abc5f09015e629699e04a9383cd0c666b33436293079"
-metafile = true
-
-[[files]]
-file = "mods/inventory-profiles-next.pw.toml"
-hash = "91932ae751b0c8f656bf088dc347e51328a00823556d923e22b8d17959152861"
-metafile = true
-
-[[files]]
-file = "mods/invmove.pw.toml"
-hash = "80817a1870338708f8c09374f579064ac8a02eeb74aeac746ef1d49f3ba8a48a"
-metafile = true
-
-[[files]]
-file = "mods/lazydfu.pw.toml"
-hash = "da1b3ee71d9ed1f17da4c85ca3da39af3e49fcc5bb032689613c4e00fc587a40"
-metafile = true
-
-[[files]]
-file = "mods/libipn.pw.toml"
-hash = "333663bc3dfcedd0bb207fabdd6dd4442c8549afee75326e1aaad0444aaabbec"
-metafile = true
-
-[[files]]
-file = "mods/litematica.pw.toml"
-hash = "46afee77950f1fd9a8890d9bc1f54953d1fd760b147a8d2f6eeb83d5db11a121"
-metafile = true
-
-[[files]]
-file = "mods/malilib.pw.toml"
-hash = "937035f607a58a2028a09f600b550e64adc87b6219c0f7be2504122ecbfdb8f8"
-metafile = true
-
-[[files]]
-file = "mods/memoryleakfix.pw.toml"
-hash = "29ab91e23d3b9045c0074fd3d15ae625ab054de8a911cd2f814a04fcc8b18f63"
-metafile = true
-
-[[files]]
-file = "mods/minihud.pw.toml"
-hash = "0ce1e3bccd68935d33c7f10956ef872fe511513c35db32f5ec5f36a01f770c84"
-metafile = true
-
-[[files]]
-file = "mods/modmenu.pw.toml"
-hash = "d4a459b51c020fc5ac208f5def78bc5271ee461e0e5ba6bfc2c3dcbf76908359"
-metafile = true
-
-[[files]]
-file = "mods/presence-footsteps.pw.toml"
-hash = "b145bdf997d0282f38103a1a797d0317e8d5827e5602333b109c0786488fbae9"
-metafile = true
-
-[[files]]
-file = "mods/rei.pw.toml"
-hash = "3caef38a38f7619f5b02fe6c73a6187b42989cc42b576a53b3dcd5a955bd6113"
-metafile = true
-
-[[files]]
-file = "mods/replaymod.pw.toml"
-hash = "5fb97e1de79cd3cf2c50206f0e191f979a1a3e7e806935fafee62098a07e3477"
-metafile = true
-
-[[files]]
-file = "mods/rightclickharvest.pw.toml"
-hash = "6d13fef2502085e230b859ddf8f139b9c0bc3d08fd8683d5c77bf28504a70b74"
-metafile = true
-
-[[files]]
-file = "mods/tweakeroo.pw.toml"
-hash = "06f3b6199e2b359aec99703bb5eead4886fed2ad3ea6a04cfecbef74bb9fa5a7"
-metafile = true
-
-[[files]]
-file = "mods/yosbr.pw.toml"
-hash = "649c259a4777ba1b544b69d04a79f2b1b0e1a3c520033cc86a3c14d5fa53564a"
-metafile = true
-
-[[files]]
-file = "resourcepacks/default-dark-mode.pw.toml"
-hash = "f1fc74dc4672502add577820fcca7b0556b3c5933618e3a0cfe2fd98fe4566b2"
-metafile = true
-
-[[files]]
-file = "resourcepacks/even-better-enchanted-books.pw.toml"
-hash = "606c864a4114ef6ec42a28b78d69d50c24e1b1428ec5d2c895e422cb8dd66861"
-metafile = true
-
-[[files]]
-file = "resourcepacks/small-shield-totem.pw.toml"
-hash = "a355a61046b779bf05ac836149ebf9db7dafc43138024b82d5050a911baf97be"
+file = "mods/lithium.pw.toml"
+hash = "2d900464b3ed58efb3001fe22115cfd04b90a3c699d7c3f6f1895ff3565cb23b"
 metafile = true

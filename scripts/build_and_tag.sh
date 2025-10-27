@@ -28,6 +28,12 @@ for MC_VERSION in "${MC_VERSIONS[@]}"; do
   echo
   echo "=== Building for Minecraft $MC_VERSION (tag: $TAG) ==="
 
+  # Skip if tag already exists
+  if git rev-parse "$TAG" >/dev/null 2>&1; then
+    echo "⚠️ Tag $TAG already exists. Skipping..."
+    continue
+  fi
+
   export MC_VERSION
 
   # Run the build

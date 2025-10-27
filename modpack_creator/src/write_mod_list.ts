@@ -7,6 +7,37 @@ interface ModrinthProject {
   project_type: string
 }
 
+async function fetch_with_retry(url: string, max_retries = 5, initial_delay_ms = 1000): Promise<Response> {
+  let last_error: Error | null = null
+
+  for (let attempt = 0; attempt <= max_retries; attempt++) {
+    try {
+      const response = await fetch(url)
+
+      // If we get a 429 (Too Many Requests), retry with exponential backoff
+      if (response.status === 429) {
+        if (attempt < max_retries) {
+          const delay = initial_delay_ms * 2 ** attempt
+          console.log(`Rate limited. Retrying in ${delay}ms... (attempt ${attempt + 1}/${max_retries})`)
+          await new Promise((resolve) => setTimeout(resolve, delay))
+          continue
+        }
+      }
+
+      return response
+    } catch (error) {
+      last_error = error as Error
+      if (attempt < max_retries) {
+        const delay = initial_delay_ms * 2 ** attempt
+        console.log(`Fetch error. Retrying in ${delay}ms... (attempt ${attempt + 1}/${max_retries})`)
+        await new Promise((resolve) => setTimeout(resolve, delay))
+      }
+    }
+  }
+
+  throw last_error || new Error("Max retries exceeded")
+}
+
 interface ModInfo {
   title: string
   project_type: string
@@ -19,7 +50,7 @@ export async function get_mod_list_markdown(mod_list: ModDefinition[], failed_to
 
   const mod_info_promises = mod_list.map(async (mod) => {
     try {
-      const response = await fetch(`https://api.modrinth.com/v2/project/${mod.identifier}`)
+      const response = await fetch_with_retry(`https://api.modrinth.com/v2/project/${mod.identifier}`, 20, 5000)
       if (!response.ok) {
         console.error(`Failed to fetch mod ${mod.identifier}: ${response.statusText}`)
         return null
@@ -84,7 +115,7 @@ export async function get_mod_list_markdown(mod_list: ModDefinition[], failed_to
           for (const alt of original_mod.alternatives) {
             // Fetch alternative mod info
             try {
-              const alt_response = await fetch(`https://api.modrinth.com/v2/project/${alt.identifier}`)
+              const alt_response = await fetch_with_retry(`https://api.modrinth.com/v2/project/${alt.identifier}`, 20, 5000)
               if (alt_response.ok) {
                 const alt_data = (await alt_response.json()) as ModrinthProject
                 const alt_url = `https://modrinth.com/${alt_data.project_type}/${alt.identifier}`

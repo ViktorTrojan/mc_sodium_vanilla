@@ -1,5 +1,23 @@
 [
   {
+    "identifier": "modernfix",
+    "category": "optimization"
+  },
+  {
+    "identifier": "chest-tracker",
+    "category": "cheating",
+    "alternatives": [
+      {
+        "identifier": "chest-search-bar",
+        "method": "modrinth"
+      }
+    ],
+    "installedAlternative": {
+      "identifier": "chest-search-bar",
+      "method": "modrinth"
+    }
+  },
+  {
     "identifier": "memoryleakfix",
     "category": "optimization"
   },
@@ -30,8 +48,16 @@
     }
   },
   {
+    "identifier": "ebe",
+    "category": "optimization"
+  },
+  {
     "identifier": "lazydfu",
     "category": "optimization"
+  },
+  {
+    "identifier": "what-are-they-up-to",
+    "category": "cheating"
   },
   {
     "identifier": "tooltipfix",
@@ -39,6 +65,10 @@
   },
   {
     "identifier": "show-me-your-skin",
+    "category": "visual"
+  },
+  {
+    "identifier": "particular",
     "category": "visual"
   }
 ]

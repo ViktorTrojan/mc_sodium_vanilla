@@ -4,26 +4,6 @@
     "category": "optimization"
   },
   {
-    "identifier": "xaeros-world-map",
-    "category": "cheating"
-  },
-  {
-    "identifier": "xaeros-minimap",
-    "category": "cheating"
-  },
-  {
-    "identifier": "jade",
-    "category": "visual"
-  },
-  {
-    "identifier": "chat-heads",
-    "category": "visual"
-  },
-  {
-    "identifier": "badoptimizations",
-    "category": "optimization"
-  },
-  {
     "identifier": "rrls",
     "category": "useful"
   },
@@ -38,6 +18,10 @@
   {
     "identifier": "what-are-they-up-to",
     "category": "cheating"
+  },
+  {
+    "identifier": "particle-rain",
+    "category": "visual"
   },
   {
     "identifier": "sound",

@@ -1,31 +1,7 @@
 [
   {
-    "identifier": "entityculling",
-    "category": "optimization"
-  },
-  {
-    "identifier": "ferrite-core",
-    "category": "optimization"
-  },
-  {
     "identifier": "modernfix",
     "category": "optimization"
-  },
-  {
-    "identifier": "xaeros-world-map",
-    "category": "cheating"
-  },
-  {
-    "identifier": "xaeros-minimap",
-    "category": "cheating"
-  },
-  {
-    "identifier": "distanthorizons",
-    "category": "visual"
-  },
-  {
-    "identifier": "continuity",
-    "category": "visual"
   },
   {
     "identifier": "memoryleakfix",
@@ -58,52 +34,8 @@
     }
   },
   {
-    "identifier": "sound-physics-remastered",
-    "category": "useful"
-  },
-  {
-    "identifier": "mouse-tweaks",
-    "category": "useful"
-  },
-  {
-    "identifier": "modelfix",
-    "category": "visual"
-  },
-  {
-    "identifier": "debugify",
-    "category": "optimization"
-  },
-  {
-    "identifier": "inventory-profiles-next",
-    "category": "cheating"
-  },
-  {
-    "identifier": "shulkerboxtooltip",
-    "category": "cheating"
-  },
-  {
-    "identifier": "ambientsounds",
-    "category": "useful"
-  },
-  {
-    "identifier": "visual-workbench",
-    "category": "visual"
-  },
-  {
     "identifier": "lazydfu",
     "category": "optimization"
-  },
-  {
-    "identifier": "better-mount-hud",
-    "category": "visual"
-  },
-  {
-    "identifier": "cut-through",
-    "category": "cheating"
-  },
-  {
-    "identifier": "what-are-they-up-to",
-    "category": "cheating"
   },
   {
     "identifier": "tooltipfix",
@@ -114,19 +46,7 @@
     "category": "visual"
   },
   {
-    "identifier": "highlight",
-    "category": "visual"
-  },
-  {
-    "identifier": "cave-dust",
-    "category": "visual"
-  },
-  {
     "identifier": "notenoughcrashes",
     "category": "useful"
-  },
-  {
-    "identifier": "particular",
-    "category": "visual"
   }
 ]

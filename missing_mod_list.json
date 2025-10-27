@@ -1,10 +1,108 @@
 [
   {
-    "identifier": "highlight",
+    "identifier": "tweakeroo",
+    "category": "useful"
+  },
+  {
+    "identifier": "litematica",
+    "category": "useful"
+  },
+  {
+    "identifier": "distanthorizons",
     "category": "visual"
   },
   {
-    "identifier": "cave-dust",
+    "identifier": "memoryleakfix",
+    "category": "optimization"
+  },
+  {
+    "identifier": "carpet-fixes",
+    "category": "useful"
+  },
+  {
+    "identifier": "jei",
+    "category": "cheating",
+    "alternatives": [
+      {
+        "identifier": "rei",
+        "method": "modrinth"
+      },
+      {
+        "identifier": "emi",
+        "method": "modrinth"
+      },
+      {
+        "identifier": "eiv",
+        "method": "modrinth"
+      }
+    ],
+    "installedAlternative": {
+      "identifier": "rei",
+      "method": "modrinth"
+    }
+  },
+  {
+    "identifier": "lambdynamiclights",
+    "category": "visual"
+  },
+  {
+    "identifier": "mouse-tweaks",
+    "category": "useful"
+  },
+  {
+    "identifier": "modelfix",
+    "category": "visual"
+  },
+  {
+    "identifier": "enchantment-descriptions",
+    "category": "visual"
+  },
+  {
+    "identifier": "inventory-profiles-next",
+    "category": "cheating"
+  },
+  {
+    "identifier": "shulkerboxtooltip",
+    "category": "cheating"
+  },
+  {
+    "identifier": "ambientsounds",
+    "category": "useful"
+  },
+  {
+    "identifier": "visual-workbench",
+    "category": "visual"
+  },
+  {
+    "identifier": "better-mount-hud",
+    "category": "visual"
+  },
+  {
+    "identifier": "better-third-person",
+    "category": "visual"
+  },
+  {
+    "identifier": "replaymod",
+    "category": "useful"
+  },
+  {
+    "identifier": "cut-through",
+    "category": "cheating"
+  },
+  {
+    "identifier": "what-are-they-up-to",
+    "category": "cheating"
+  },
+  {
+    "identifier": "notenoughcrashes",
+    "category": "useful"
+  },
+  {
+    "identifier": "rightclickharvest",
+    "category": "cheating"
+  },
+  {
+    "identifier": "particular",
     "category": "visual"
   }
 ]

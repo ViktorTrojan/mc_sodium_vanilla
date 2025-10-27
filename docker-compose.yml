@@ -5,8 +5,8 @@ services:
       - dev
     volumes:
       - .:/app
-      - ~/.ssh:/root/.ssh:ro   # mount your local SSH keys/config (read-only)
-    command: tail -f /dev/null
+      - ~/.ssh:/tmp/ssh:ro
+    command: sh -c "mkdir -p /root/.ssh && cp -r /tmp/ssh/* /root/.ssh && chmod 700 /root/.ssh && chmod 600 /root/.ssh/* && git config --global --add safe.directory /app && tail -f /dev/null"
     working_dir: /app
 
 # Usage:

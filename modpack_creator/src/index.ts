@@ -16,48 +16,6 @@ const skipUpload = args.includes("--no-upload")
 async function main() {
   let installation_result_full: ReturnType<typeof install_packwiz_content> | null = null
 
-  if (buildFull) {
-    // Install full mod list (cheating version)
-    console.log("=".repeat(60))
-    console.log("Installing FULL mod list (cheating version)...")
-    console.log(`${"=".repeat(60)}\n`)
-
-    installation_result_full = install_packwiz_content(mod_list, resource_pack_list)
-
-    if (installation_result_full.failed_mods.length > 0) {
-      console.log(`\n❌ ${installation_result_full.failed_mods.length} mod(s) failed to install in full version`)
-    } else {
-      console.log("\n✅ All mods installed successfully for full version!")
-    }
-
-    // Export full version
-    const full_export = export_modpack()
-    if (!full_export) {
-      console.error("❌ Failed to export full version")
-      process.exit(1)
-    }
-
-    if (!skipUpload) {
-      // Upload full version to Modrinth
-      const full_upload_success = await upload_to_modrinth({
-        file_path: full_export,
-        version_number: `${config.app.mc_version}_full`,
-        version_title: `Sodium Vanilla ${config.app.mc_version} (Full)`,
-        changelog: `Full version with all mods including possibly unsafe mods to use on servers for Minecraft ${config.app.mc_version}`,
-        project_id: config.app.modrinth_project_id,
-        game_versions: [config.app.mc_version],
-        loaders: ["fabric"]
-      })
-
-      if (!full_upload_success) {
-        console.error("❌ Failed to upload full version to Modrinth")
-        process.exit(1)
-      }
-    } else {
-      console.log("\n⏭️  Skipping upload to Modrinth for full version")
-    }
-  }
-
   if (buildSafe) {
     // Now install safe version (no cheating mods)
     console.log(`\n${"=".repeat(60)}`)
@@ -98,6 +56,48 @@ async function main() {
       }
     } else {
       console.log("\n⏭️  Skipping upload to Modrinth for safe version")
+    }
+  }
+
+  if (buildFull) {
+    // Install full mod list (cheating version)
+    console.log("=".repeat(60))
+    console.log("Installing FULL mod list (cheating version)...")
+    console.log(`${"=".repeat(60)}\n`)
+
+    installation_result_full = install_packwiz_content(mod_list, resource_pack_list)
+
+    if (installation_result_full.failed_mods.length > 0) {
+      console.log(`\n❌ ${installation_result_full.failed_mods.length} mod(s) failed to install in full version`)
+    } else {
+      console.log("\n✅ All mods installed successfully for full version!")
+    }
+
+    // Export full version
+    const full_export = export_modpack()
+    if (!full_export) {
+      console.error("❌ Failed to export full version")
+      process.exit(1)
+    }
+
+    if (!skipUpload) {
+      // Upload full version to Modrinth
+      const full_upload_success = await upload_to_modrinth({
+        file_path: full_export,
+        version_number: `${config.app.mc_version}_full`,
+        version_title: `Sodium Vanilla ${config.app.mc_version} (Full)`,
+        changelog: `Full version with all mods including possibly unsafe mods to use on servers for Minecraft ${config.app.mc_version}`,
+        project_id: config.app.modrinth_project_id,
+        game_versions: [config.app.mc_version],
+        loaders: ["fabric"]
+      })
+
+      if (!full_upload_success) {
+        console.error("❌ Failed to upload full version to Modrinth")
+        process.exit(1)
+      }
+    } else {
+      console.log("\n⏭️  Skipping upload to Modrinth for full version")
     }
   }
 

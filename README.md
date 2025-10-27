@@ -100,6 +100,8 @@ That means you can safely update your Minecraft instance without overwriting you
 - [x] [Xaero's Minimap](https://modrinth.com/mod/xaeros-minimap)
 - [x] [Freecam](https://modrinth.com/mod/freecam)
 - [ ] [Chest Tracker](https://modrinth.com/mod/chest-tracker)
+  - **Alternatives:**
+    - [ ] [Chest Search Bar](https://modrinth.com/mod/chest-search-bar)
 - [x] [Inventory Profiles Next](https://modrinth.com/mod/inventory-profiles-next)
 - [x] [Shulker Box Tooltip](https://modrinth.com/mod/shulkerboxtooltip)
 - [x] [InvMove](https://modrinth.com/mod/invmove)

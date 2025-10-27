@@ -16,6 +16,11 @@ hash = "1fc1e482945dff68e6aab34b22d61d054a6177869408ed4af3fef6117a33faab"
 metafile = true
 
 [[files]]
+file = "mods/architectury-api.pw.toml"
+hash = "659f7b849f370718cc5216c3de0fdc4863391f9889d00ebd4ccef8274ee7026d"
+metafile = true
+
+[[files]]
 file = "mods/badoptimizations.pw.toml"
 hash = "ff991657ef2511d8f02a9999d55ec367a37b20a3987eb1d75ff82ba720a96aa5"
 metafile = true
@@ -68,6 +73,11 @@ metafile = true
 [[files]]
 file = "mods/creativecore.pw.toml"
 hash = "d61eea65d903963fc412f1e6dc4ec5c9f89814358e324cb734e0ec6e40ece483"
+metafile = true
+
+[[files]]
+file = "mods/cut-through.pw.toml"
+hash = "a631c57fe299407992eded731b62bfe0ff8c9909337be88e52a50c4e68f0a42b"
 metafile = true
 
 [[files]]
@@ -126,8 +136,23 @@ hash = "9a8c273d0efcf679d04d77ab37521c05978caff642a6c2b867d2fa2cdc8b168e"
 metafile = true
 
 [[files]]
+file = "mods/freecam.pw.toml"
+hash = "9d12f51a932b25751b7595ca46439a30bee2c26bf6d9913ccc9a27ade1972f36"
+metafile = true
+
+[[files]]
 file = "mods/immediatelyfast.pw.toml"
 hash = "5f40e2db6037f733566c81e8f11ca3c425d738eb5a182658691f36d041b5df40"
+metafile = true
+
+[[files]]
+file = "mods/inventory-profiles-next.pw.toml"
+hash = "cf2220acf2150dd1bd105c354ce93eeac513fd358e05105826550d73a5425afc"
+metafile = true
+
+[[files]]
+file = "mods/invmove.pw.toml"
+hash = "f759ab182ded464342c31777352e65a28e5e492a270fb7c20dda71daff9873da"
 metafile = true
 
 [[files]]
@@ -141,8 +166,18 @@ hash = "a077e0482f50add9ef20e962a7939aa678583cb3f354fb6b6124219badafdd4d"
 metafile = true
 
 [[files]]
+file = "mods/jamlib.pw.toml"
+hash = "bdca3c9a098de3c08f996b214cf10ece27351f5f7871c30ff826a2f404daba33"
+metafile = true
+
+[[files]]
 file = "mods/lambdynamiclights.pw.toml"
 hash = "471c02eac5adf025ed2246c2d3efd8267c67574f1bc7329b49caa1ada17fbc9e"
+metafile = true
+
+[[files]]
+file = "mods/libipn.pw.toml"
+hash = "3ded8f0e2b2408286789398b6a82ed97e55dd0bdec5585937c293187f133c342"
 metafile = true
 
 [[files]]
@@ -241,6 +276,11 @@ hash = "89837eaa44abe7bb598faf2012531f5a3335b1c413624c6eff44031e8ec48238"
 metafile = true
 
 [[files]]
+file = "mods/rightclickharvest.pw.toml"
+hash = "42a73228a2e7ddd0a2ebba1e2a03dec5dbf4605854ec89c05f7e1374baffeae5"
+metafile = true
+
+[[files]]
 file = "mods/rrls.pw.toml"
 hash = "8e0dd3e606968ee0aea0d95b42a472ea921d5f1e754eec4bef2fc005f2e7f663"
 metafile = true
@@ -248,6 +288,11 @@ metafile = true
 [[files]]
 file = "mods/rsls.pw.toml"
 hash = "17f1f78051aab0bb1b9855f9756ca41fe14aaefcedd8a3b772d8a9619d675794"
+metafile = true
+
+[[files]]
+file = "mods/shulkerboxtooltip.pw.toml"
+hash = "bd7760e94351d6e7c19eb1f155c7a5a7fd281340b7bd556da2765e931f6c9ab5"
 metafile = true
 
 [[files]]
@@ -293,6 +338,16 @@ metafile = true
 [[files]]
 file = "mods/visuality.pw.toml"
 hash = "61d853a4f2d353ac126a8196414efc82d0ca0402da2a8e492383dd539bfe4976"
+metafile = true
+
+[[files]]
+file = "mods/xaeros-minimap.pw.toml"
+hash = "993390d4661a77aa83c8416f75addfccaf7cee0a7a7311a21742b2036700b5ac"
+metafile = true
+
+[[files]]
+file = "mods/xaeros-world-map.pw.toml"
+hash = "53c8bc02c9b10610c43fc29127039036217e33a95ab2ea2d6ac291987266ef89"
 metafile = true
 
 [[files]]

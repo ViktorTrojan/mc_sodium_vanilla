@@ -1,0 +1,13 @@
+name = "Even Better Enchanted Books – Unique Enchant"
+filename = "Even Better Enchanted Books 1.13-1.20.4 CIT.zip"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/GTf4s4Fw/versions/MswpPx2m/Even%20Better%20Enchanted%20Books%201.13-1.20.4%20CIT.zip"
+hash-format = "sha512"
+hash = "3f1e30805b3f5ca6c13d38d315933f361dade2ad0485b1a5bfc37dd68923d93ddddb4860dda9b758e36bce282f4a613e691c3b457bb60e17f3aa0ff3fb58d856"
+
+[update]
+[update.modrinth]
+mod-id = "GTf4s4Fw"
+version = "MswpPx2m"

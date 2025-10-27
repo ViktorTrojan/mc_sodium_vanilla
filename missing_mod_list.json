@@ -12,10 +12,6 @@
     "category": "optimization"
   },
   {
-    "identifier": "modmenu",
-    "category": "visual"
-  },
-  {
     "identifier": "lithium",
     "category": "optimization"
   },
@@ -152,10 +148,6 @@
     "category": "optimization"
   },
   {
-    "identifier": "presence-footsteps",
-    "category": "useful"
-  },
-  {
     "identifier": "ebe",
     "category": "optimization"
   },
@@ -165,6 +157,10 @@
   },
   {
     "identifier": "visuality",
+    "category": "visual"
+  },
+  {
+    "identifier": "fallingleaves",
     "category": "visual"
   },
   {
@@ -206,10 +202,6 @@
   {
     "identifier": "better-third-person",
     "category": "visual"
-  },
-  {
-    "identifier": "replaymod",
-    "category": "useful"
   },
   {
     "identifier": "make_bubbles_pop",

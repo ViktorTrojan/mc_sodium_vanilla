@@ -46,7 +46,7 @@ That means you can safely update your Minecraft instance without overwriting you
 - [ ] [Iris Shaders](https://modrinth.com/mod/iris)
 - [ ] [Mod Menu](https://modrinth.com/mod/modmenu)
 - [ ] [AppleSkin](https://modrinth.com/mod/appleskin)
-- [ ] [MiniHUD](https://modrinth.com/mod/minihud)
+- [x] [MiniHUD](https://modrinth.com/mod/minihud)
 - [ ] [Zoomify](https://modrinth.com/mod/zoomify)
 - [ ] [Distant Horizons](https://modrinth.com/mod/distanthorizons)
 - [ ] [Not Enough Animations](https://modrinth.com/mod/not-enough-animations)
@@ -77,8 +77,8 @@ That means you can safely update your Minecraft instance without overwriting you
 ### Useful
 
 - [ ] [Simple Voice Chat](https://modrinth.com/mod/simple-voice-chat)
-- [ ] [Tweakeroo](https://modrinth.com/mod/tweakeroo)
-- [ ] [Litematica](https://modrinth.com/mod/litematica)
+- [x] [Tweakeroo](https://modrinth.com/mod/tweakeroo)
+- [x] [Litematica](https://modrinth.com/mod/litematica)
 - [x] [CalcMod](https://modrinth.com/mod/calcmod)
 - [ ] [No Chat Reports](https://modrinth.com/mod/no-chat-reports)
 - [ ] [Carpet](https://modrinth.com/mod/carpet)

@@ -5,6 +5,7 @@ services:
       - dev
     volumes:
       - .:/app
+      - ~/.ssh:/root/.ssh:ro   # mount your local SSH keys/config (read-only)
     command: tail -f /dev/null
     working_dir: /app
 

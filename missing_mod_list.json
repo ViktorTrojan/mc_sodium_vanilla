@@ -1,9 +1,5 @@
 [
   {
-    "identifier": "modernfix",
-    "category": "optimization"
-  },
-  {
     "identifier": "memoryleakfix",
     "category": "optimization"
   },
@@ -44,9 +40,5 @@
   {
     "identifier": "show-me-your-skin",
     "category": "visual"
-  },
-  {
-    "identifier": "notenoughcrashes",
-    "category": "useful"
   }
 ]

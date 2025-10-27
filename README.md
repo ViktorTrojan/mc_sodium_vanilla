@@ -28,7 +28,7 @@ That means you can safely update your Minecraft instance without overwriting you
 - [x] [Lithium](https://modrinth.com/mod/lithium)
 - [x] [ImmediatelyFast](https://modrinth.com/mod/immediatelyfast)
 - [x] [Sodium Extra](https://modrinth.com/mod/sodium-extra)
-- [ ] [ModernFix](https://modrinth.com/mod/modernfix)
+- [x] [ModernFix](https://modrinth.com/mod/modernfix)
 - [x] [Dynamic FPS](https://modrinth.com/mod/dynamic-fps)
 - [x] [More Culling](https://modrinth.com/mod/moreculling)
 - [ ] [Memory Leak Fix](https://modrinth.com/mod/memoryleakfix)
@@ -91,7 +91,7 @@ That means you can safely update your Minecraft instance without overwriting you
 - [x] [Remove Reloading Screen](https://modrinth.com/mod/rrls)
 - [x] [ReplayMod](https://modrinth.com/mod/replaymod)
 - [x] [Sounds](https://modrinth.com/mod/sound)
-- [ ] [Not Enough Crashes](https://modrinth.com/mod/notenoughcrashes)
+- [x] [Not Enough Crashes](https://modrinth.com/mod/notenoughcrashes)
 
 ### Cheating
 

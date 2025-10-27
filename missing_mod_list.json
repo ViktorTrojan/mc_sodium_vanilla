@@ -8,19 +8,7 @@
     "category": "optimization"
   },
   {
-    "identifier": "modmenu",
-    "category": "visual"
-  },
-  {
     "identifier": "immediatelyfast",
-    "category": "optimization"
-  },
-  {
-    "identifier": "appleskin",
-    "category": "visual"
-  },
-  {
-    "identifier": "modernfix",
     "category": "optimization"
   },
   {
@@ -90,10 +78,6 @@
     "category": "visual"
   },
   {
-    "identifier": "enchantment-descriptions",
-    "category": "visual"
-  },
-  {
     "identifier": "debugify",
     "category": "optimization"
   },
@@ -144,10 +128,6 @@
   {
     "identifier": "lmd",
     "category": "optimization"
-  },
-  {
-    "identifier": "better-third-person",
-    "category": "visual"
   },
   {
     "identifier": "make_bubbles_pop",

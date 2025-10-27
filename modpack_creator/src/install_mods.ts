@@ -1,14 +1,12 @@
-import type { ModDefinition, ResourcePackDefinition } from "./types"
-import { spawnSync } from "child_process"
-import { resolve } from "path"
+import { spawnSync } from "node:child_process"
+import { readdirSync, rmSync } from "node:fs"
+import { resolve } from "node:path"
 import { config } from "./config"
-import { rmSync, readdirSync } from "fs"
+import type { InstallationResult, InstalledAlternative, ModDefinition, ResourcePackDefinition } from "./types"
 
-export function install_packwiz_content(
-  mod_list: ModDefinition[],
-  resource_pack_list: ResourcePackDefinition[]
-): string[] {
+export function install_packwiz_content(mod_list: ModDefinition[], resource_pack_list: ResourcePackDefinition[]): InstallationResult {
   const failed_mods: string[] = []
+  const mod_installation_details = new Map<string, InstalledAlternative | null>()
   const root_dir = resolve(__dirname, "../..")
 
   // Clean up old files
@@ -18,7 +16,7 @@ export function install_packwiz_content(
   try {
     rmSync(resolve(root_dir, "mods"), { recursive: true, force: true })
     console.log("✅ Cleared mods/ directory")
-  } catch (error) {
+  } catch (_error) {
     console.log("⚠️  mods/ directory does not exist or could not be deleted")
   }
 
@@ -26,19 +24,19 @@ export function install_packwiz_content(
   try {
     rmSync(resolve(root_dir, "resourcepacks"), { recursive: true, force: true })
     console.log("✅ Cleared resourcepacks/ directory")
-  } catch (error) {
+  } catch (_error) {
     console.log("⚠️  resourcepacks/ directory does not exist or could not be deleted")
   }
 
   // Remove all .mrpack files
   try {
     const files = readdirSync(root_dir)
-    const mrpack_files = files.filter(file => file.endsWith(".mrpack"))
+    const mrpack_files = files.filter((file) => file.endsWith(".mrpack"))
     for (const file of mrpack_files) {
       rmSync(resolve(root_dir, file), { force: true })
       console.log(`✅ Deleted ${file}`)
     }
-  } catch (error) {
+  } catch (_error) {
     console.log("⚠️  Could not delete .mrpack files")
   }
 
@@ -50,7 +48,7 @@ export function install_packwiz_content(
   })
 
   if (refresh_result.error || refresh_result.status !== 0) {
-    console.error(`❌ Failed to packwiz refresh`)
+    console.error("❌ Failed to packwiz refresh")
     if (refresh_result.stderr) {
       console.error(refresh_result.stderr)
     }
@@ -92,6 +90,7 @@ export function install_packwiz_content(
 
       // Try alternatives if they exist
       let alternative_succeeded = false
+      let installed_alternative: InstalledAlternative | null = null
 
       if (mod.alternatives) {
         for (const alt of mod.alternatives) {
@@ -111,6 +110,10 @@ export function install_packwiz_content(
           } else {
             console.log(`✅ Successfully installed alternative ${alt.identifier}`)
             alternative_succeeded = true
+            installed_alternative = {
+              identifier: alt.identifier,
+              category: alt.category
+            }
             break
           }
         }
@@ -119,6 +122,9 @@ export function install_packwiz_content(
       // Only mark as failed if no alternative succeeded
       if (!alternative_succeeded) {
         failed_mods.push(mod.identifier)
+        mod_installation_details.set(mod.identifier, null)
+      } else {
+        mod_installation_details.set(mod.identifier, installed_alternative)
       }
     } else {
       console.log(`✅ Successfully installed ${mod.identifier}`)
@@ -126,9 +132,9 @@ export function install_packwiz_content(
   }
 
   // Install resource packs
-  console.log("\n" + "=".repeat(60))
+  console.log(`\n${"=".repeat(60)}`)
   console.log("Installing resource packs...")
-  console.log("=".repeat(60) + "\n")
+  console.log(`${"=".repeat(60)}\n`)
 
   for (const pack of resource_pack_list) {
     console.log(`Installing resource pack ${pack.identifier}...`)
@@ -149,5 +155,8 @@ export function install_packwiz_content(
     }
   }
 
-  return failed_mods
+  return {
+    failed_mods,
+    mod_installation_details
+  }
 }

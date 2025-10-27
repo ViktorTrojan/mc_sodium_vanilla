@@ -1,5 +1,5 @@
-import { spawnSync } from "child_process"
-import { resolve } from "path"
+import { spawnSync } from "node:child_process"
+import { resolve } from "node:path"
 
 export function export_modpack(): string | null {
   const root_dir = resolve(__dirname, "../..")
@@ -25,7 +25,7 @@ export function export_modpack(): string | null {
   // Extract the filename from "Modpack exported to <filename>"
   const match = result.stdout.match(/to\s+(.+\.mrpack)/i)
 
-  if (match && match[1]) {
+  if (match?.[1]) {
     const filename = match[1].trim()
     console.log(`✅ Successfully exported: ${filename}`)
     return filename

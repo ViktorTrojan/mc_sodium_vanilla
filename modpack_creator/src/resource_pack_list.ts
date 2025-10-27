@@ -1,31 +1,30 @@
 import type { ResourcePackDefinition } from "./types"
 
-
 const resource_pack_list_raw: ResourcePackDefinition[] = [
   {
     identifier: "fancy-crops",
-    method: "modrinth",
+    method: "modrinth"
   },
   {
     identifier: "default-dark-mode",
-    method: "modrinth",
+    method: "modrinth"
   },
   {
     identifier: "low-on-fire",
-    method: "modrinth",
+    method: "modrinth"
   },
   {
     identifier: "small-shield-totem",
-    method: "modrinth",
+    method: "modrinth"
   },
   {
     identifier: "even-better-enchants",
-    method: "modrinth",
+    method: "modrinth"
   },
   {
     identifier: "new-glowing-ores",
-    method: "modrinth",
-  },
+    method: "modrinth"
+  }
 ]
 
 export function get_resource_pack_list(): ResourcePackDefinition[] {

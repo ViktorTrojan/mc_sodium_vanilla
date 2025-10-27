@@ -5,17 +5,18 @@ import { get_safe_mod_list, mod_list } from "./mod_list"
 import { resource_pack_list } from "./resource_pack_list"
 import { update_readme } from "./update_readme"
 import { upload_to_modrinth } from "./upload_to_modrinth"
+import { save_missing_mod_list_json } from "./write_mod_list"
 
 async function main() {
   // Install full mod list (cheating version)
   console.log("=".repeat(60))
   console.log("Installing FULL mod list (cheating version)...")
-  console.log("=".repeat(60) + "\n")
+  console.log(`${"=".repeat(60)}\n`)
 
-  const failed_mods_full = install_packwiz_content(mod_list, resource_pack_list)
+  const installation_result_full = install_packwiz_content(mod_list, resource_pack_list)
 
-  if (failed_mods_full.length > 0) {
-    console.log(`\n❌ ${failed_mods_full.length} mod(s) failed to install in full version`)
+  if (installation_result_full.failed_mods.length > 0) {
+    console.log(`\n❌ ${installation_result_full.failed_mods.length} mod(s) failed to install in full version`)
   } else {
     console.log("\n✅ All mods installed successfully for full version!")
   }
@@ -44,15 +45,15 @@ async function main() {
   }
 
   // Now install safe version (no cheating mods)
-  console.log("\n" + "=".repeat(60))
+  console.log(`\n${"=".repeat(60)}`)
   console.log("Installing SAFE mod list (no cheating)...")
-  console.log("=".repeat(60) + "\n")
+  console.log(`${"=".repeat(60)}\n`)
 
   const safe_mod_list = get_safe_mod_list()
-  const failed_mods_safe = install_packwiz_content(safe_mod_list, resource_pack_list)
+  const installation_result_safe = install_packwiz_content(safe_mod_list, resource_pack_list)
 
-  if (failed_mods_safe.length > 0) {
-    console.log(`\n❌ ${failed_mods_safe.length} mod(s) failed to install in safe version`)
+  if (installation_result_safe.failed_mods.length > 0) {
+    console.log(`\n❌ ${installation_result_safe.failed_mods.length} mod(s) failed to install in safe version`)
   } else {
     console.log("\n✅ All mods installed successfully for safe version!")
   }
@@ -81,14 +82,20 @@ async function main() {
   }
 
   // Update README with full mod list
-  console.log("\n" + "=".repeat(60))
+  console.log(`\n${"=".repeat(60)}`)
   console.log("Updating README.md...")
-  console.log("=".repeat(60) + "\n")
+  console.log(`${"=".repeat(60)}\n`)
+
+  // Save missing mod list JSON
+  if (installation_result_full.mod_installation_details.size > 0) {
+    console.log("\nSaving missing mod list JSON...\n")
+    save_missing_mod_list_json(mod_list, installation_result_full.mod_installation_details)
+  }
 
   console.log("\nUpdating README.md with mod list...\n")
-  await update_readme(failed_mods_full)
+  await update_readme(installation_result_full.failed_mods, installation_result_full.mod_installation_details)
 
-  console.log("\n" + "=".repeat(60))
+  console.log(`\n${"=".repeat(60)}`)
   console.log("✅ ALL DONE!")
   console.log("=".repeat(60))
 }

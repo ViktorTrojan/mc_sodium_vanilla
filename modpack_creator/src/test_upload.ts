@@ -1,5 +1,5 @@
-import { config } from "./config";
-import { upload_to_modrinth } from "./upload_to_modrinth";
+import { config } from "./config"
+import { upload_to_modrinth } from "./upload_to_modrinth"
 
 const result = await upload_to_modrinth({
   file_path: "/app/Sodium Vanilla-0.1.0.mrpack",

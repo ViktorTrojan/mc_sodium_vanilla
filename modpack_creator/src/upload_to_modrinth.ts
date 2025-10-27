@@ -1,5 +1,5 @@
-import { readFileSync } from "fs"
-import { resolve } from "path"
+import { readFileSync } from "node:fs"
+import { resolve } from "node:path"
 import { config } from "./config"
 
 interface ModrinthUploadOptions {
@@ -24,7 +24,7 @@ export async function upload_to_modrinth(options: ModrinthUploadOptions): Promis
     const form_data = new FormData()
 
     // Add version metadata as JSON first
-    const filename = options.file_path.split('/').pop() || options.file_path
+    const filename = options.file_path.split("/").pop() || options.file_path
     const version_data = {
       name: options.version_title,
       version_number: options.version_number,
@@ -47,7 +47,7 @@ export async function upload_to_modrinth(options: ModrinthUploadOptions): Promis
     const response = await fetch("https://api.modrinth.com/v2/version", {
       method: "POST",
       headers: {
-        "Authorization": config.app.modrinth_pat_token
+        Authorization: config.app.modrinth_pat_token
       },
       body: form_data
     })
@@ -59,10 +59,9 @@ export async function upload_to_modrinth(options: ModrinthUploadOptions): Promis
       return false
     }
 
-    const result = await response.json() as any
+    const result = (await response.json()) as any
     console.log(`✅ Successfully uploaded to Modrinth: ${result.id}`)
     return true
-
   } catch (error) {
     console.error("❌ Error uploading to Modrinth:", error)
     return false

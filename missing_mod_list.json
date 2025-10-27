@@ -8,16 +8,28 @@
     "category": "optimization"
   },
   {
-    "identifier": "zoomify",
+    "identifier": "simple-voice-chat",
+    "category": "useful"
+  },
+  {
+    "identifier": "xaeros-world-map",
+    "category": "cheating"
+  },
+  {
+    "identifier": "xaeros-minimap",
+    "category": "cheating"
+  },
+  {
+    "identifier": "freecam",
+    "category": "cheating"
+  },
+  {
+    "identifier": "jade",
     "category": "visual"
   },
   {
     "identifier": "no-chat-reports",
     "category": "useful"
-  },
-  {
-    "identifier": "moreculling",
-    "category": "optimization"
   },
   {
     "identifier": "jei",
@@ -35,11 +47,7 @@
         "identifier": "eiv",
         "method": "modrinth"
       }
-    ],
-    "installedAlternative": {
-      "identifier": "rei",
-      "method": "modrinth"
-    }
+    ]
   },
   {
     "identifier": "sound-physics-remastered",
@@ -50,8 +58,16 @@
     "category": "visual"
   },
   {
+    "identifier": "krypton",
+    "category": "optimization"
+  },
+  {
     "identifier": "debugify",
     "category": "optimization"
+  },
+  {
+    "identifier": "shulkerboxtooltip",
+    "category": "cheating"
   },
   {
     "identifier": "ambientsounds",
@@ -66,23 +82,11 @@
     "category": "visual"
   },
   {
-    "identifier": "dynamiccrosshair",
-    "category": "visual"
-  },
-  {
     "identifier": "rrls",
     "category": "useful"
   },
   {
-    "identifier": "lmd",
-    "category": "optimization"
-  },
-  {
     "identifier": "better-third-person",
-    "category": "visual"
-  },
-  {
-    "identifier": "durability-tooltip",
     "category": "visual"
   },
   {

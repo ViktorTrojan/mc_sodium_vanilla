@@ -16,10 +16,6 @@
     "category": "optimization"
   },
   {
-    "identifier": "modmenu",
-    "category": "visual"
-  },
-  {
     "identifier": "lithium",
     "category": "optimization"
   },
@@ -30,10 +26,6 @@
   {
     "identifier": "sodium-extra",
     "category": "optimization"
-  },
-  {
-    "identifier": "appleskin",
-    "category": "visual"
   },
   {
     "identifier": "modernfix",
@@ -92,14 +84,6 @@
   {
     "identifier": "moreculling",
     "category": "optimization"
-  },
-  {
-    "identifier": "memoryleakfix",
-    "category": "optimization"
-  },
-  {
-    "identifier": "carpet",
-    "category": "useful"
   },
   {
     "identifier": "carpet-fixes",
@@ -226,10 +210,6 @@
   {
     "identifier": "better-third-person",
     "category": "visual"
-  },
-  {
-    "identifier": "replaymod",
-    "category": "useful"
   },
   {
     "identifier": "invmove",

@@ -118,7 +118,6 @@ const mod_list_raw: ModDefinition[] = [
     alternatives: [
       {
         identifier: "chest-search-bar",
-        category: "cheating",
         method: "modrinth"
       }
     ]
@@ -175,19 +174,16 @@ const mod_list_raw: ModDefinition[] = [
     alternatives: [
       {
         identifier: "rei",
-        category: "cheating",
         method: "modrinth"
       },
       {
         identifier: "emi",
-        category: "cheating",
         method: "modrinth"
       },
       {
         identifier: "eiv",
-        category: "cheating",
         method: "modrinth"
-      },
+      }
     ]
   },
   {

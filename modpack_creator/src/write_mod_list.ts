@@ -1,6 +1,6 @@
 import { writeFileSync } from "node:fs"
 import { resolve } from "node:path"
-import type { InstalledAlternative, MissingModEntry, ModCategory, ModDefinition } from "./types"
+import type { MissingModEntry, ModCategory, ModDefinition, ModDefinitionSimple } from "./types"
 
 interface ModrinthProject {
   title: string
@@ -14,7 +14,7 @@ interface ModInfo {
   category: ModCategory
 }
 
-export async function get_mod_list_markdown(mod_list: ModDefinition[], failed_to_install?: string[], mod_installation_details?: Map<string, InstalledAlternative | null>): Promise<string> {
+export async function get_mod_list_markdown(mod_list: ModDefinition[], failed_to_install?: string[], mod_installation_details?: Map<string, ModDefinitionSimple | null>): Promise<string> {
   const failed_set = new Set(failed_to_install || [])
 
   const mod_info_promises = mod_list.map(async (mod) => {
@@ -96,7 +96,7 @@ export async function get_mod_list_markdown(mod_list: ModDefinition[], failed_to
   return markdown
 }
 
-export function save_missing_mod_list_json(mod_list: ModDefinition[], mod_installation_details: Map<string, InstalledAlternative | null>): void {
+export function save_missing_mod_list_json(mod_list: ModDefinition[], mod_installation_details: Map<string, ModDefinitionSimple | null>): void {
   const missing_mods: MissingModEntry[] = []
 
   for (const mod of mod_list) {

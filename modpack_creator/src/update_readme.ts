@@ -1,10 +1,10 @@
 import { readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 import { mod_list } from "./mod_list"
-import type { InstalledAlternative } from "./types"
+import type { ModDefinitionSimple } from "./types"
 import { get_mod_list_markdown } from "./write_mod_list"
 
-export async function update_readme(failed_to_install?: string[], mod_installation_details?: Map<string, InstalledAlternative | null>) {
+export async function update_readme(failed_to_install?: string[], mod_installation_details?: Map<string, ModDefinitionSimple | null>) {
   const readme_path = resolve(__dirname, "../../README.md")
   const readme_content = readFileSync(readme_path, "utf-8")
 

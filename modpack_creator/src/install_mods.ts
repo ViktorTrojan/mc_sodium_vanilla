@@ -2,11 +2,11 @@ import { spawnSync } from "node:child_process"
 import { readdirSync, rmSync } from "node:fs"
 import { resolve } from "node:path"
 import { config } from "./config"
-import type { InstallationResult, InstalledAlternative, ModDefinition, ResourcePackDefinition } from "./types"
+import type { InstallationResult, ModDefinition, ModDefinitionSimple, ResourcePackDefinition } from "./types"
 
 export function install_packwiz_content(mod_list: ModDefinition[], resource_pack_list: ResourcePackDefinition[]): InstallationResult {
   const failed_mods: string[] = []
-  const mod_installation_details = new Map<string, InstalledAlternative | null>()
+  const mod_installation_details = new Map<string, ModDefinitionSimple | null>()
   const root_dir = resolve(__dirname, "../..")
 
   // Clean up old files
@@ -90,7 +90,7 @@ export function install_packwiz_content(mod_list: ModDefinition[], resource_pack
 
       // Try alternatives if they exist
       let alternative_succeeded = false
-      let installed_alternative: InstalledAlternative | null = null
+      let installed_alternative: ModDefinitionSimple | null = null
 
       if (mod.alternatives) {
         for (const alt of mod.alternatives) {
@@ -112,7 +112,7 @@ export function install_packwiz_content(mod_list: ModDefinition[], resource_pack
             alternative_succeeded = true
             installed_alternative = {
               identifier: alt.identifier,
-              category: alt.category
+              method: alt.method
             }
             break
           }

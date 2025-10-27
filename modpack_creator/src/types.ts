@@ -1,10 +1,13 @@
 export type ModCategory = "optimization" | "cheating" | "useful" | "visual"
 
-export interface ModDefinition {
+export interface ModDefinitionSimple {
   method: "modrinth"
   identifier: string
+}
+
+export interface ModDefinition extends ModDefinitionSimple {
   category: ModCategory
-  alternatives?: ModDefinition[]
+  alternatives?: ModDefinitionSimple[]
 }
 
 export interface ResourcePackDefinition {
@@ -13,19 +16,14 @@ export interface ResourcePackDefinition {
   alternatives?: ResourcePackDefinition[]
 }
 
-export interface InstalledAlternative {
-  identifier: string
-  category: ModCategory
-}
-
 export interface MissingModEntry {
   identifier: string
   category: ModCategory
-  alternatives?: ModDefinition[]
-  installedAlternative?: InstalledAlternative
+  alternatives?: ModDefinitionSimple[]
+  installedAlternative?: ModDefinitionSimple
 }
 
 export interface InstallationResult {
   failed_mods: string[]
-  mod_installation_details: Map<string, InstalledAlternative | null>
+  mod_installation_details: Map<string, ModDefinitionSimple | null>
 }

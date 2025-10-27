@@ -4,6 +4,18 @@
     "category": "optimization"
   },
   {
+    "identifier": "appleskin",
+    "category": "visual"
+  },
+  {
+    "identifier": "modernfix",
+    "category": "optimization"
+  },
+  {
+    "identifier": "simple-voice-chat",
+    "category": "useful"
+  },
+  {
     "identifier": "zoomify",
     "category": "visual"
   },
@@ -24,7 +36,7 @@
     "category": "optimization"
   },
   {
-    "identifier": "carpet-fixes",
+    "identifier": "carpet",
     "category": "useful"
   },
   {
@@ -54,6 +66,10 @@
     "category": "useful"
   },
   {
+    "identifier": "mouse-tweaks",
+    "category": "useful"
+  },
+  {
     "identifier": "modelfix",
     "category": "visual"
   },
@@ -62,12 +78,8 @@
     "category": "optimization"
   },
   {
-    "identifier": "clumps",
-    "category": "optimization"
-  },
-  {
-    "identifier": "visuality",
-    "category": "visual"
+    "identifier": "shulkerboxtooltip",
+    "category": "cheating"
   },
   {
     "identifier": "c2me-fabric",
@@ -82,10 +94,6 @@
     "category": "optimization"
   },
   {
-    "identifier": "capes",
-    "category": "visual"
-  },
-  {
     "identifier": "visual-workbench",
     "category": "visual"
   },
@@ -94,12 +102,12 @@
     "category": "visual"
   },
   {
-    "identifier": "better-mount-hud",
-    "category": "visual"
+    "identifier": "rrls",
+    "category": "useful"
   },
   {
-    "identifier": "make_bubbles_pop",
-    "category": "visual"
+    "identifier": "lmd",
+    "category": "optimization"
   },
   {
     "identifier": "durability-tooltip",
@@ -107,6 +115,10 @@
   },
   {
     "identifier": "cut-through",
+    "category": "cheating"
+  },
+  {
+    "identifier": "what-are-they-up-to",
     "category": "cheating"
   },
   {

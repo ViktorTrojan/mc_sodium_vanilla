@@ -1,14 +1,26 @@
 [
   {
+    "identifier": "tweakeroo",
+    "category": "useful"
+  },
+  {
+    "identifier": "minihud",
+    "category": "visual"
+  },
+  {
+    "identifier": "litematica",
+    "category": "useful"
+  },
+  {
+    "identifier": "badoptimizations",
+    "category": "optimization"
+  },
+  {
     "identifier": "cut-through",
     "category": "cheating"
   },
   {
-    "identifier": "sound",
-    "category": "useful"
-  },
-  {
-    "identifier": "particular",
-    "category": "visual"
+    "identifier": "what-are-they-up-to",
+    "category": "cheating"
   }
 ]

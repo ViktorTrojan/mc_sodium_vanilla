@@ -1,31 +1,43 @@
 [
   {
-    "identifier": "no-chat-reports",
-    "category": "useful"
+    "identifier": "modernfix",
+    "category": "optimization"
   },
   {
-    "identifier": "sound-physics-remastered",
-    "category": "useful"
+    "identifier": "xaeros-world-map",
+    "category": "cheating"
+  },
+  {
+    "identifier": "xaeros-minimap",
+    "category": "cheating"
+  },
+  {
+    "identifier": "jade",
+    "category": "visual"
+  },
+  {
+    "identifier": "chat-heads",
+    "category": "visual"
   },
   {
     "identifier": "badoptimizations",
     "category": "optimization"
   },
   {
-    "identifier": "visual-workbench",
-    "category": "visual"
+    "identifier": "rrls",
+    "category": "useful"
   },
   {
     "identifier": "better-third-person",
     "category": "visual"
   },
   {
-    "identifier": "what-are-they-up-to",
+    "identifier": "cut-through",
     "category": "cheating"
   },
   {
-    "identifier": "particle-rain",
-    "category": "visual"
+    "identifier": "what-are-they-up-to",
+    "category": "cheating"
   },
   {
     "identifier": "sound",
@@ -33,6 +45,10 @@
   },
   {
     "identifier": "highlight",
+    "category": "visual"
+  },
+  {
+    "identifier": "cave-dust",
     "category": "visual"
   },
   {

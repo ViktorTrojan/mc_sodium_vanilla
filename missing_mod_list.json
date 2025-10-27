@@ -1,9 +1,5 @@
 [
   {
-    "identifier": "sodium",
-    "category": "optimization"
-  },
-  {
     "identifier": "iris",
     "category": "visual"
   },
@@ -33,10 +29,6 @@
   },
   {
     "identifier": "zoomify",
-    "category": "visual"
-  },
-  {
-    "identifier": "distanthorizons",
     "category": "visual"
   },
   {

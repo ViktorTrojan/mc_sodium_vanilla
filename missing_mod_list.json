@@ -12,15 +12,11 @@
     "category": "optimization"
   },
   {
-    "identifier": "lithium",
-    "category": "optimization"
+    "identifier": "modmenu",
+    "category": "visual"
   },
   {
     "identifier": "immediatelyfast",
-    "category": "optimization"
-  },
-  {
-    "identifier": "sodium-extra",
     "category": "optimization"
   },
   {
@@ -40,30 +36,8 @@
     "category": "visual"
   },
   {
-    "identifier": "xaeros-world-map",
-    "category": "cheating"
-  },
-  {
-    "identifier": "xaeros-minimap",
-    "category": "cheating"
-  },
-  {
-    "identifier": "freecam",
-    "category": "cheating"
-  },
-  {
     "identifier": "distanthorizons",
     "category": "visual"
-  },
-  {
-    "identifier": "chest-tracker",
-    "category": "cheating",
-    "alternatives": [
-      {
-        "identifier": "chest-search-bar",
-        "method": "modrinth"
-      }
-    ]
   },
   {
     "identifier": "not-enough-animations",
@@ -72,10 +46,6 @@
   {
     "identifier": "continuity",
     "category": "visual"
-  },
-  {
-    "identifier": "dynamic-fps",
-    "category": "optimization"
   },
   {
     "identifier": "jade",
@@ -120,20 +90,12 @@
     "category": "useful"
   },
   {
-    "identifier": "lambdynamiclights",
-    "category": "visual"
-  },
-  {
     "identifier": "mouse-tweaks",
     "category": "useful"
   },
   {
     "identifier": "modelfix",
     "category": "visual"
-  },
-  {
-    "identifier": "krypton",
-    "category": "optimization"
   },
   {
     "identifier": "enchantment-descriptions",
@@ -148,19 +110,11 @@
     "category": "optimization"
   },
   {
-    "identifier": "ebe",
-    "category": "optimization"
-  },
-  {
     "identifier": "shulkerboxtooltip",
     "category": "cheating"
   },
   {
     "identifier": "visuality",
-    "category": "visual"
-  },
-  {
-    "identifier": "fallingleaves",
     "category": "visual"
   },
   {

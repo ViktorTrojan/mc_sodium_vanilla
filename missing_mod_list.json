@@ -8,8 +8,16 @@
     "category": "visual"
   },
   {
+    "identifier": "entityculling",
+    "category": "optimization"
+  },
+  {
     "identifier": "ferrite-core",
     "category": "optimization"
+  },
+  {
+    "identifier": "modmenu",
+    "category": "visual"
   },
   {
     "identifier": "lithium",
@@ -90,6 +98,14 @@
     "category": "optimization"
   },
   {
+    "identifier": "memoryleakfix",
+    "category": "optimization"
+  },
+  {
+    "identifier": "carpet",
+    "category": "useful"
+  },
+  {
     "identifier": "carpet-fixes",
     "category": "useful"
   },
@@ -128,6 +144,10 @@
     "category": "useful"
   },
   {
+    "identifier": "chat-heads",
+    "category": "visual"
+  },
+  {
     "identifier": "modelfix",
     "category": "visual"
   },
@@ -148,8 +168,20 @@
     "category": "optimization"
   },
   {
+    "identifier": "presence-footsteps",
+    "category": "useful"
+  },
+  {
+    "identifier": "betterf3",
+    "category": "visual"
+  },
+  {
     "identifier": "ebe",
     "category": "optimization"
+  },
+  {
+    "identifier": "inventory-profiles-next",
+    "category": "cheating"
   },
   {
     "identifier": "shulkerboxtooltip",
@@ -204,6 +236,14 @@
     "category": "visual"
   },
   {
+    "identifier": "replaymod",
+    "category": "useful"
+  },
+  {
+    "identifier": "invmove",
+    "category": "cheating"
+  },
+  {
     "identifier": "make_bubbles_pop",
     "category": "visual"
   },
@@ -221,6 +261,10 @@
   },
   {
     "identifier": "tooltipfix",
+    "category": "visual"
+  },
+  {
+    "identifier": "blur-plus",
     "category": "visual"
   },
   {

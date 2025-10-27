@@ -1,21 +1,71 @@
 hash-format = "sha256"
 
 [[files]]
-file = "mods/cloth-config.pw.toml"
-hash = "fcd08b3423d12c0ef955c2154861247d53e40f378bed0545a4cd852ab5aa7e5d"
+file = "mods/calcmod.pw.toml"
+hash = "23d5f6d399f07babeb4bed1f31756a0a0b70a78433362a30e2fbad67114952d9"
 metafile = true
 
 [[files]]
-file = "mods/entityculling.pw.toml"
-hash = "3d1a4ebd412895288db82d9ba70a82ffbdd4f811710c6590e90f8be46d674325"
+file = "mods/cloth-config.pw.toml"
+hash = "3d55a97429013c0384c818808c5b92bed4f7ecde300a2682d2471275b72c450d"
 metafile = true
 
 [[files]]
 file = "mods/fabric-api.pw.toml"
-hash = "753ea7aabc4ca5a8fecc63b7a4b3f338431e64d73434d93db2dbaad3639570f1"
+hash = "829ca896439416c218b13b7044c7697126f2b2ddad0e6216b9d9d7f65be66a52"
 metafile = true
 
 [[files]]
-file = "mods/lithium.pw.toml"
-hash = "2d900464b3ed58efb3001fe22115cfd04b90a3c699d7c3f6f1895ff3565cb23b"
+file = "mods/lazydfu.pw.toml"
+hash = "da1b3ee71d9ed1f17da4c85ca3da39af3e49fcc5bb032689613c4e00fc587a40"
+metafile = true
+
+[[files]]
+file = "mods/litematica.pw.toml"
+hash = "768d436000ebf9f0de1bfa42571dc26fe786ae66509b1949c2d7d7bdc233fbaa"
+metafile = true
+
+[[files]]
+file = "mods/malilib.pw.toml"
+hash = "2e9e3ad8c27bcccf8beb6cb96c19ff409549d1b603d5edbe9a6fb51ef82b8763"
+metafile = true
+
+[[files]]
+file = "mods/minihud.pw.toml"
+hash = "c26e234b5fc5e1400a09b24a72590e681f18bfe12cf553cfa7a92a0b92f80666"
+metafile = true
+
+[[files]]
+file = "mods/rei.pw.toml"
+hash = "c92359c405808fd391e4f8ea93ebdae01911b98d2c5baec2c41bb897b748a6fc"
+metafile = true
+
+[[files]]
+file = "mods/rightclickharvest.pw.toml"
+hash = "04d04ca1f3d714fbb84a9255f974c9eee8ebdc991900977fa63a6cd528c0946f"
+metafile = true
+
+[[files]]
+file = "mods/tweakeroo.pw.toml"
+hash = "bce0331452b65b12b87d5e906309458f6a53260d7323d55eace4f3922657c8d7"
+metafile = true
+
+[[files]]
+file = "mods/yosbr.pw.toml"
+hash = "649c259a4777ba1b544b69d04a79f2b1b0e1a3c520033cc86a3c14d5fa53564a"
+metafile = true
+
+[[files]]
+file = "resourcepacks/default-dark-mode.pw.toml"
+hash = "1f4c3d1f8100c227e7aab2c02502a53fe489329248d424ba90a95c96a8e5ecf1"
+metafile = true
+
+[[files]]
+file = "resourcepacks/low-on-fire.pw.toml"
+hash = "0279a4594892da6d237672f962fbc9977b92181389dc8a923e293cf98596d871"
+metafile = true
+
+[[files]]
+file = "resourcepacks/small-shield-totem.pw.toml"
+hash = "a355a61046b779bf05ac836149ebf9db7dafc43138024b82d5050a911baf97be"
 metafile = true

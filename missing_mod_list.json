@@ -1,7 +1,67 @@
 [
   {
+    "identifier": "sodium",
+    "category": "optimization"
+  },
+  {
+    "identifier": "iris",
+    "category": "visual"
+  },
+  {
+    "identifier": "entityculling",
+    "category": "optimization"
+  },
+  {
+    "identifier": "ferrite-core",
+    "category": "optimization"
+  },
+  {
+    "identifier": "modmenu",
+    "category": "visual"
+  },
+  {
+    "identifier": "lithium",
+    "category": "optimization"
+  },
+  {
+    "identifier": "immediatelyfast",
+    "category": "optimization"
+  },
+  {
+    "identifier": "sodium-extra",
+    "category": "optimization"
+  },
+  {
+    "identifier": "appleskin",
+    "category": "visual"
+  },
+  {
     "identifier": "modernfix",
     "category": "optimization"
+  },
+  {
+    "identifier": "simple-voice-chat",
+    "category": "useful"
+  },
+  {
+    "identifier": "zoomify",
+    "category": "visual"
+  },
+  {
+    "identifier": "xaeros-world-map",
+    "category": "cheating"
+  },
+  {
+    "identifier": "xaeros-minimap",
+    "category": "cheating"
+  },
+  {
+    "identifier": "freecam",
+    "category": "cheating"
+  },
+  {
+    "identifier": "distanthorizons",
+    "category": "visual"
   },
   {
     "identifier": "chest-tracker",
@@ -9,14 +69,33 @@
     "alternatives": [
       {
         "identifier": "chest-search-bar",
-        "category": "cheating",
         "method": "modrinth"
       }
     ]
   },
   {
+    "identifier": "not-enough-animations",
+    "category": "visual"
+  },
+  {
     "identifier": "continuity",
     "category": "visual"
+  },
+  {
+    "identifier": "dynamic-fps",
+    "category": "optimization"
+  },
+  {
+    "identifier": "jade",
+    "category": "visual"
+  },
+  {
+    "identifier": "no-chat-reports",
+    "category": "useful"
+  },
+  {
+    "identifier": "moreculling",
+    "category": "optimization"
   },
   {
     "identifier": "memoryleakfix",
@@ -32,27 +111,149 @@
   },
   {
     "identifier": "jei",
+    "category": "cheating",
+    "alternatives": [
+      {
+        "identifier": "rei",
+        "method": "modrinth"
+      },
+      {
+        "identifier": "emi",
+        "method": "modrinth"
+      },
+      {
+        "identifier": "eiv",
+        "method": "modrinth"
+      }
+    ],
+    "installedAlternative": {
+      "identifier": "rei",
+      "method": "modrinth"
+    }
+  },
+  {
+    "identifier": "sound-physics-remastered",
     "category": "useful"
+  },
+  {
+    "identifier": "lambdynamiclights",
+    "category": "visual"
+  },
+  {
+    "identifier": "mouse-tweaks",
+    "category": "useful"
+  },
+  {
+    "identifier": "chat-heads",
+    "category": "visual"
+  },
+  {
+    "identifier": "modelfix",
+    "category": "visual"
   },
   {
     "identifier": "krypton",
     "category": "optimization"
   },
   {
+    "identifier": "enchantment-descriptions",
+    "category": "visual"
+  },
+  {
     "identifier": "debugify",
     "category": "optimization"
+  },
+  {
+    "identifier": "clumps",
+    "category": "optimization"
+  },
+  {
+    "identifier": "presence-footsteps",
+    "category": "useful"
+  },
+  {
+    "identifier": "betterf3",
+    "category": "visual"
   },
   {
     "identifier": "ebe",
     "category": "optimization"
   },
   {
-    "identifier": "lazydfu",
+    "identifier": "inventory-profiles-next",
+    "category": "cheating"
+  },
+  {
+    "identifier": "shulkerboxtooltip",
+    "category": "cheating"
+  },
+  {
+    "identifier": "visuality",
+    "category": "visual"
+  },
+  {
+    "identifier": "fallingleaves",
+    "category": "visual"
+  },
+  {
+    "identifier": "c2me-fabric",
+    "category": "optimization"
+  },
+  {
+    "identifier": "ambientsounds",
+    "category": "useful"
+  },
+  {
+    "identifier": "badoptimizations",
+    "category": "optimization"
+  },
+  {
+    "identifier": "capes",
+    "category": "visual"
+  },
+  {
+    "identifier": "visual-workbench",
+    "category": "visual"
+  },
+  {
+    "identifier": "dynamiccrosshair",
+    "category": "visual"
+  },
+  {
+    "identifier": "rrls",
+    "category": "useful"
+  },
+  {
+    "identifier": "better-mount-hud",
+    "category": "visual"
+  },
+  {
+    "identifier": "lmd",
     "category": "optimization"
   },
   {
     "identifier": "better-third-person",
     "category": "visual"
+  },
+  {
+    "identifier": "replaymod",
+    "category": "useful"
+  },
+  {
+    "identifier": "invmove",
+    "category": "cheating"
+  },
+  {
+    "identifier": "make_bubbles_pop",
+    "category": "visual"
+  },
+  {
+    "identifier": "durability-tooltip",
+    "category": "visual"
+  },
+  {
+    "identifier": "cut-through",
+    "category": "cheating"
   },
   {
     "identifier": "what-are-they-up-to",
@@ -61,6 +262,18 @@
   {
     "identifier": "tooltipfix",
     "category": "visual"
+  },
+  {
+    "identifier": "blur-plus",
+    "category": "visual"
+  },
+  {
+    "identifier": "particle-rain",
+    "category": "visual"
+  },
+  {
+    "identifier": "sound",
+    "category": "useful"
   },
   {
     "identifier": "show-me-your-skin",

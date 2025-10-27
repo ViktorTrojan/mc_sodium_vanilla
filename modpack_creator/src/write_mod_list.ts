@@ -56,16 +56,28 @@ export async function get_mod_list_markdown(mod_list: ModDefinition[], failed_to
     markdown += `### ${category.charAt(0).toUpperCase() + category.slice(1)}\n\n`
     for (const mod of mods) {
       const url = `https://modrinth.com/${mod.project_type}/${mod.identifier}`
-      const checkbox = failed_set.has(mod.identifier) ? "[ ]" : "[x]"
-      markdown += `- ${checkbox} [${mod.title}](${url})\n`
 
-      // Check if this mod failed and has alternatives with installation details
-      if (mod_installation_details && failed_set.has(mod.identifier)) {
-        const installation_detail = mod_installation_details.get(mod.identifier)
+      // Check if an alternative was installed instead
+      const installation_detail = mod_installation_details?.get(mod.identifier)
+      const alternative_installed = installation_detail !== undefined && installation_detail !== null && installation_detail.identifier !== mod.identifier
 
-        // Find the original mod definition to get alternatives
-        const original_mod = mod_list.find((m) => m.identifier === mod.identifier)
+      // Determine the marker for the main mod
+      let marker: string
+      if (alternative_installed) {
+        marker = "[ ]" // nothing for main package if alternative was installed
+      } else if (failed_set.has(mod.identifier)) {
+        marker = "[ ]" // failed and no alternatives
+      } else {
+        marker = "[x]" // checkbox if main package was successfully installed
+      }
 
+      markdown += `- ${marker} [${mod.title}](${url})\n`
+
+      // Find the original mod definition to get alternatives
+      const original_mod = mod_list.find((m) => m.identifier === mod.identifier)
+
+      // Show alternatives if the main mod failed or if an alternative was installed
+      if (mod_installation_details && (failed_set.has(mod.identifier) || alternative_installed)) {
         if (original_mod?.alternatives && original_mod.alternatives.length > 0) {
           markdown += "  - **Alternatives:**\n"
 
@@ -79,9 +91,9 @@ export async function get_mod_list_markdown(mod_list: ModDefinition[], failed_to
 
                 // Check if this alternative was successfully installed
                 const is_installed = installation_detail && installation_detail.identifier === alt.identifier
-                const alt_checkbox = is_installed ? "[x]" : "[ ]"
+                const alt_marker = is_installed ? "[x]" : "[ ]" // no symbol for alternatives
 
-                markdown += `    - ${alt_checkbox} [${alt_data.title}](${alt_url})\n`
+                markdown += `    - ${alt_marker} [${alt_data.title}](${alt_url})\n`
               }
             } catch (error) {
               console.error(`Error fetching alternative mod ${alt.identifier}:`, error)

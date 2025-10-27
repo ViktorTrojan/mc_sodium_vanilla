@@ -55,7 +55,7 @@ That means you can safely update your Minecraft instance without overwriting you
 - [x] [LambDynamicLights - Dynamic Lights](https://modrinth.com/mod/lambdynamiclights)
 - [x] [Chat Heads](https://modrinth.com/mod/chat-heads)
 - [x] [Model Gap Fix](https://modrinth.com/mod/modelfix)
-- [ ] [Enchantment Descriptions](https://modrinth.com/mod/enchantment-descriptions)
+- [x] [Enchantment Descriptions](https://modrinth.com/mod/enchantment-descriptions)
 - [x] [BetterF3](https://modrinth.com/mod/betterf3)
 - [x] [Visuality](https://modrinth.com/mod/visuality)
 - [x] [Falling Leaves](https://modrinth.com/mod/fallingleaves)
@@ -70,7 +70,7 @@ That means you can safely update your Minecraft instance without overwriting you
 - [x] [Blur+](https://modrinth.com/mod/blur-plus)
 - [x] [Particle Rain](https://modrinth.com/mod/particle-rain)
 - [x] [Show Me Your Skin!](https://modrinth.com/mod/show-me-your-skin)
-- [x] [Highlight](https://modrinth.com/mod/highlight)
+- [ ] [Highlight](https://modrinth.com/mod/highlight)
 - [x] [Cave Dust](https://modrinth.com/mod/cave-dust)
 - [x] [Particular ✨](https://modrinth.com/mod/particular)
 

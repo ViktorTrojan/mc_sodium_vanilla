@@ -8,11 +8,11 @@
     "category": "useful"
   },
   {
-    "identifier": "enchantment-descriptions",
-    "category": "visual"
-  },
-  {
     "identifier": "lazydfu",
     "category": "optimization"
+  },
+  {
+    "identifier": "highlight",
+    "category": "visual"
   }
 ]

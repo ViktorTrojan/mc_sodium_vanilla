@@ -1,19 +1,15 @@
 [
   {
-    "identifier": "tweakeroo",
+    "identifier": "carpet-fixes",
     "category": "useful"
   },
   {
-    "identifier": "minihud",
+    "identifier": "modelfix",
     "category": "visual"
   },
   {
-    "identifier": "litematica",
-    "category": "useful"
-  },
-  {
-    "identifier": "badoptimizations",
-    "category": "optimization"
+    "identifier": "visual-workbench",
+    "category": "visual"
   },
   {
     "identifier": "cut-through",

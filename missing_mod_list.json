@@ -11,11 +11,11 @@
         "identifier": "chest-search-bar",
         "method": "modrinth"
       }
-    ],
-    "installedAlternative": {
-      "identifier": "chest-search-bar",
-      "method": "modrinth"
-    }
+    ]
+  },
+  {
+    "identifier": "continuity",
+    "category": "visual"
   },
   {
     "identifier": "memoryleakfix",
@@ -47,9 +47,21 @@
       }
     ],
     "installedAlternative": {
-      "identifier": "rei",
+      "identifier": "eiv",
       "method": "modrinth"
     }
+  },
+  {
+    "identifier": "modelfix",
+    "category": "visual"
+  },
+  {
+    "identifier": "debugify",
+    "category": "optimization"
+  },
+  {
+    "identifier": "presence-footsteps",
+    "category": "useful"
   },
   {
     "identifier": "ebe",
@@ -60,12 +72,36 @@
     "category": "optimization"
   },
   {
+    "identifier": "better-mount-hud",
+    "category": "visual"
+  },
+  {
+    "identifier": "better-third-person",
+    "category": "visual"
+  },
+  {
     "identifier": "what-are-they-up-to",
     "category": "cheating"
   },
   {
     "identifier": "tooltipfix",
     "category": "visual"
+  },
+  {
+    "identifier": "show-me-your-skin",
+    "category": "visual"
+  },
+  {
+    "identifier": "highlight",
+    "category": "visual"
+  },
+  {
+    "identifier": "cave-dust",
+    "category": "visual"
+  },
+  {
+    "identifier": "notenoughcrashes",
+    "category": "useful"
   },
   {
     "identifier": "particular",

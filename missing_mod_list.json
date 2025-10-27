@@ -8,35 +8,11 @@
     "category": "useful"
   },
   {
-    "identifier": "lambdynamiclights",
-    "category": "visual"
-  },
-  {
-    "identifier": "modelfix",
-    "category": "visual"
-  },
-  {
     "identifier": "enchantment-descriptions",
     "category": "visual"
   },
   {
-    "identifier": "visual-workbench",
-    "category": "visual"
-  },
-  {
-    "identifier": "better-third-person",
-    "category": "visual"
-  },
-  {
-    "identifier": "cut-through",
-    "category": "cheating"
-  },
-  {
-    "identifier": "highlight",
-    "category": "visual"
-  },
-  {
-    "identifier": "particular",
-    "category": "visual"
+    "identifier": "lazydfu",
+    "category": "optimization"
   }
 ]

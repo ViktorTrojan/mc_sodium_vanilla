@@ -1,26 +1,10 @@
 [
   {
-    "identifier": "iris",
-    "category": "visual"
-  },
-  {
-    "identifier": "ferrite-core",
-    "category": "optimization"
-  },
-  {
     "identifier": "immediatelyfast",
     "category": "optimization"
   },
   {
-    "identifier": "simple-voice-chat",
-    "category": "useful"
-  },
-  {
     "identifier": "zoomify",
-    "category": "visual"
-  },
-  {
-    "identifier": "not-enough-animations",
     "category": "visual"
   },
   {
@@ -70,10 +54,6 @@
     "category": "useful"
   },
   {
-    "identifier": "mouse-tweaks",
-    "category": "useful"
-  },
-  {
     "identifier": "modelfix",
     "category": "visual"
   },
@@ -84,10 +64,6 @@
   {
     "identifier": "clumps",
     "category": "optimization"
-  },
-  {
-    "identifier": "shulkerboxtooltip",
-    "category": "cheating"
   },
   {
     "identifier": "visuality",
@@ -118,16 +94,8 @@
     "category": "visual"
   },
   {
-    "identifier": "rrls",
-    "category": "useful"
-  },
-  {
     "identifier": "better-mount-hud",
     "category": "visual"
-  },
-  {
-    "identifier": "lmd",
-    "category": "optimization"
   },
   {
     "identifier": "make_bubbles_pop",
@@ -139,10 +107,6 @@
   },
   {
     "identifier": "cut-through",
-    "category": "cheating"
-  },
-  {
-    "identifier": "what-are-they-up-to",
     "category": "cheating"
   },
   {
@@ -168,10 +132,6 @@
   {
     "identifier": "cave-dust",
     "category": "visual"
-  },
-  {
-    "identifier": "notenoughcrashes",
-    "category": "useful"
   },
   {
     "identifier": "particular",

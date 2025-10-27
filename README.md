@@ -46,7 +46,7 @@ That means you can safely update your Minecraft instance without overwriting you
 - [ ] [Iris Shaders](https://modrinth.com/mod/iris)
 - [ ] [Mod Menu](https://modrinth.com/mod/modmenu)
 - [ ] [AppleSkin](https://modrinth.com/mod/appleskin)
-- [x] [MiniHUD](https://modrinth.com/mod/minihud)
+- [ ] [MiniHUD](https://modrinth.com/mod/minihud)
 - [ ] [Zoomify](https://modrinth.com/mod/zoomify)
 - [ ] [Distant Horizons](https://modrinth.com/mod/distanthorizons)
 - [ ] [Not Enough Animations](https://modrinth.com/mod/not-enough-animations)
@@ -77,8 +77,8 @@ That means you can safely update your Minecraft instance without overwriting you
 ### Useful
 
 - [ ] [Simple Voice Chat](https://modrinth.com/mod/simple-voice-chat)
-- [x] [Tweakeroo](https://modrinth.com/mod/tweakeroo)
-- [x] [Litematica](https://modrinth.com/mod/litematica)
+- [ ] [Tweakeroo](https://modrinth.com/mod/tweakeroo)
+- [ ] [Litematica](https://modrinth.com/mod/litematica)
 - [x] [CalcMod](https://modrinth.com/mod/calcmod)
 - [ ] [No Chat Reports](https://modrinth.com/mod/no-chat-reports)
 - [ ] [Carpet](https://modrinth.com/mod/carpet)
@@ -100,7 +100,7 @@ That means you can safely update your Minecraft instance without overwriting you
 - [ ] [Xaero's Minimap](https://modrinth.com/mod/xaeros-minimap)
 - [ ] [Freecam](https://modrinth.com/mod/freecam)
 - [ ] [Chest Tracker](https://modrinth.com/mod/chest-tracker)
-- [ ] [Inventory Profiles Next](https://modrinth.com/mod/inventory-profiles-next)
+- [x] [Inventory Profiles Next](https://modrinth.com/mod/inventory-profiles-next)
 - [ ] [Shulker Box Tooltip](https://modrinth.com/mod/shulkerboxtooltip)
 - [ ] [InvMove](https://modrinth.com/mod/invmove)
 - [ ] [Cut Through](https://modrinth.com/mod/cut-through)

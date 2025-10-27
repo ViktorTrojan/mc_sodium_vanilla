@@ -1,48 +1,18 @@
 hash-format = "sha256"
 
 [[files]]
-file = "mods/betterf3.pw.toml"
-hash = "2bd6d3ba4d51c4dbc3dab906491230f3f16531ad38087228946b1fd0700c4e30"
-metafile = true
-
-[[files]]
-file = "mods/blur-plus.pw.toml"
-hash = "9f19561ba22ad51af6f2a5222a5102a72d82297e821a2f67c45f45857ccf7c38"
-metafile = true
-
-[[files]]
 file = "mods/calcmod.pw.toml"
-hash = "e5bb0712538b22ba6a4d25a63f9d929bf5f5547084bdd086cdbf99d2e4032a0a"
-metafile = true
-
-[[files]]
-file = "mods/carpet.pw.toml"
-hash = "f8c58a91a18f507e2c6540101f213c5379640b1e60cfe53c30afecbe360d5a71"
-metafile = true
-
-[[files]]
-file = "mods/chat-heads.pw.toml"
-hash = "a8e968c09957adb73f325d5809d3d6fa92b78c0cc2319f72ebd88f3a7905e227"
+hash = "23d5f6d399f07babeb4bed1f31756a0a0b70a78433362a30e2fbad67114952d9"
 metafile = true
 
 [[files]]
 file = "mods/cloth-config.pw.toml"
-hash = "a26a0a294e686d0e557250ab6fbb9e9d82594d25f2064b5c9a29f0879babe308"
-metafile = true
-
-[[files]]
-file = "mods/entityculling.pw.toml"
-hash = "3d1a4ebd412895288db82d9ba70a82ffbdd4f811710c6590e90f8be46d674325"
+hash = "3d55a97429013c0384c818808c5b92bed4f7ecde300a2682d2471275b72c450d"
 metafile = true
 
 [[files]]
 file = "mods/fabric-api.pw.toml"
-hash = "7549205820740909b6e9a8bf8bc2d1b13e0181432b78d65fc0ef878e1ebbc457"
-metafile = true
-
-[[files]]
-file = "mods/fallingleaves.pw.toml"
-hash = "d824964b146b2e2c6c2baa2145344b98c7e04941020824b61e1558e406bbd4f2"
+hash = "829ca896439416c218b13b7044c7697126f2b2ddad0e6216b9d9d7f65be66a52"
 metafile = true
 
 [[files]]
@@ -52,27 +22,22 @@ metafile = true
 
 [[files]]
 file = "mods/litematica.pw.toml"
-hash = "a34dbc66d99d1b70b424ca71abd5f280f302ff9895ed538ef3db8f9a148f924b"
+hash = "768d436000ebf9f0de1bfa42571dc26fe786ae66509b1949c2d7d7bdc233fbaa"
 metafile = true
 
 [[files]]
 file = "mods/malilib.pw.toml"
-hash = "5a8a05b8a8eed4c1ec375f1ad3d619dac74516f16ab0c5374fc62236b7746698"
-metafile = true
-
-[[files]]
-file = "mods/memoryleakfix.pw.toml"
-hash = "29ab91e23d3b9045c0074fd3d15ae625ab054de8a911cd2f814a04fcc8b18f63"
+hash = "2e9e3ad8c27bcccf8beb6cb96c19ff409549d1b603d5edbe9a6fb51ef82b8763"
 metafile = true
 
 [[files]]
 file = "mods/minihud.pw.toml"
-hash = "b275c235eb1bccca009af3f22c3a00425a03f8b43a1da4e34f5d3aeee9c9c4ae"
+hash = "c26e234b5fc5e1400a09b24a72590e681f18bfe12cf553cfa7a92a0b92f80666"
 metafile = true
 
 [[files]]
 file = "mods/tweakeroo.pw.toml"
-hash = "8cebb92de829f30139acf78923985da63aea1faf222d2c1688838e98322f2fd6"
+hash = "bce0331452b65b12b87d5e906309458f6a53260d7323d55eace4f3922657c8d7"
 metafile = true
 
 [[files]]
@@ -82,12 +47,12 @@ metafile = true
 
 [[files]]
 file = "resourcepacks/default-dark-mode.pw.toml"
-hash = "f1fc74dc4672502add577820fcca7b0556b3c5933618e3a0cfe2fd98fe4566b2"
+hash = "1f4c3d1f8100c227e7aab2c02502a53fe489329248d424ba90a95c96a8e5ecf1"
 metafile = true
 
 [[files]]
-file = "resourcepacks/fancy-crops.pw.toml"
-hash = "1bfa78ec5d898176438a8e83bf100e58848d6edbe7bf883487f4ff339b35d64c"
+file = "resourcepacks/low-on-fire.pw.toml"
+hash = "0279a4594892da6d237672f962fbc9977b92181389dc8a923e293cf98596d871"
 metafile = true
 
 [[files]]

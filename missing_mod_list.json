@@ -1,68 +1,10 @@
 [
   {
-    "identifier": "immediatelyfast",
-    "category": "optimization"
-  },
-  {
-    "identifier": "modernfix",
-    "category": "optimization"
-  },
-  {
-    "identifier": "xaeros-world-map",
-    "category": "cheating"
-  },
-  {
-    "identifier": "xaeros-minimap",
-    "category": "cheating"
-  },
-  {
-    "identifier": "freecam",
-    "category": "cheating"
-  },
-  {
-    "identifier": "jade",
-    "category": "visual"
-  },
-  {
     "identifier": "no-chat-reports",
     "category": "useful"
   },
   {
-    "identifier": "jei",
-    "category": "cheating",
-    "alternatives": [
-      {
-        "identifier": "rei",
-        "method": "modrinth"
-      },
-      {
-        "identifier": "emi",
-        "method": "modrinth"
-      },
-      {
-        "identifier": "eiv",
-        "method": "modrinth"
-      }
-    ]
-  },
-  {
     "identifier": "sound-physics-remastered",
-    "category": "useful"
-  },
-  {
-    "identifier": "debugify",
-    "category": "optimization"
-  },
-  {
-    "identifier": "ebe",
-    "category": "optimization"
-  },
-  {
-    "identifier": "shulkerboxtooltip",
-    "category": "cheating"
-  },
-  {
-    "identifier": "ambientsounds",
     "category": "useful"
   },
   {
@@ -70,24 +12,12 @@
     "category": "optimization"
   },
   {
-    "identifier": "capes",
-    "category": "visual"
-  },
-  {
     "identifier": "visual-workbench",
     "category": "visual"
   },
   {
-    "identifier": "rrls",
-    "category": "useful"
-  },
-  {
     "identifier": "better-third-person",
     "category": "visual"
-  },
-  {
-    "identifier": "cut-through",
-    "category": "cheating"
   },
   {
     "identifier": "what-are-they-up-to",
@@ -103,10 +33,6 @@
   },
   {
     "identifier": "highlight",
-    "category": "visual"
-  },
-  {
-    "identifier": "cave-dust",
     "category": "visual"
   },
   {

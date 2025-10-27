@@ -8,12 +8,12 @@
     "category": "visual"
   },
   {
-    "identifier": "entityculling",
+    "identifier": "ferrite-core",
     "category": "optimization"
   },
   {
-    "identifier": "ferrite-core",
-    "category": "optimization"
+    "identifier": "modmenu",
+    "category": "visual"
   },
   {
     "identifier": "lithium",
@@ -26,6 +26,10 @@
   {
     "identifier": "sodium-extra",
     "category": "optimization"
+  },
+  {
+    "identifier": "appleskin",
+    "category": "visual"
   },
   {
     "identifier": "modernfix",
@@ -72,6 +76,10 @@
   {
     "identifier": "continuity",
     "category": "visual"
+  },
+  {
+    "identifier": "dynamic-fps",
+    "category": "optimization"
   },
   {
     "identifier": "jade",
@@ -124,10 +132,6 @@
     "category": "useful"
   },
   {
-    "identifier": "chat-heads",
-    "category": "visual"
-  },
-  {
     "identifier": "modelfix",
     "category": "visual"
   },
@@ -152,10 +156,6 @@
     "category": "useful"
   },
   {
-    "identifier": "betterf3",
-    "category": "visual"
-  },
-  {
     "identifier": "ebe",
     "category": "optimization"
   },
@@ -165,10 +165,6 @@
   },
   {
     "identifier": "visuality",
-    "category": "visual"
-  },
-  {
-    "identifier": "fallingleaves",
     "category": "visual"
   },
   {
@@ -212,8 +208,8 @@
     "category": "visual"
   },
   {
-    "identifier": "invmove",
-    "category": "cheating"
+    "identifier": "replaymod",
+    "category": "useful"
   },
   {
     "identifier": "make_bubbles_pop",
@@ -258,10 +254,6 @@
   {
     "identifier": "notenoughcrashes",
     "category": "useful"
-  },
-  {
-    "identifier": "rightclickharvest",
-    "category": "cheating"
   },
   {
     "identifier": "particular",

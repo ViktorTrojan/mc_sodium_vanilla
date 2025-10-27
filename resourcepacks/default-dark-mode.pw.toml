@@ -1,13 +1,13 @@
 name = "Default Dark Mode"
-filename = "Default-Dark-Mode-1.15-2023.7.0.zip"
+filename = "Default-Dark-Mode-1.17-2023.7.0.zip"
 side = "client"
 
 [download]
-url = "https://cdn.modrinth.com/data/6SLU7tS5/versions/ae3K3UTr/Default-Dark-Mode-1.15-2023.7.0.zip"
+url = "https://cdn.modrinth.com/data/6SLU7tS5/versions/e1aVbPcn/Default-Dark-Mode-1.17-2023.7.0.zip"
 hash-format = "sha512"
-hash = "c4fd49d3d8bada8d08c35986eaf244eeeda1a7898aa2f3c3e9c485df3987d4bfa4e38ec7ad77da4ff4a0ab96818802d9ff13da12b257421cc9e7b57fef6356d8"
+hash = "bc0aca2c20b49435e599822fc4287adc8749060126f898caef15633240596298fda04c8ff6dd24027f5ea14a0c32eacd76178aea52add7421c2d7ba57f15f9ee"
 
 [update]
 [update.modrinth]
 mod-id = "6SLU7tS5"
-version = "ae3K3UTr"
+version = "e1aVbPcn"

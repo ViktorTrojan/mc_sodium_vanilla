@@ -1,84 +1,10 @@
 [
   {
-    "identifier": "entityculling",
-    "category": "optimization"
-  },
-  {
-    "identifier": "ferrite-core",
-    "category": "optimization"
-  },
-  {
-    "identifier": "freecam",
-    "category": "cheating"
-  },
-  {
-    "identifier": "distanthorizons",
-    "category": "visual"
-  },
-  {
-    "identifier": "not-enough-animations",
-    "category": "visual"
-  },
-  {
-    "identifier": "jei",
-    "category": "cheating",
-    "alternatives": [
-      {
-        "identifier": "rei",
-        "method": "modrinth"
-      },
-      {
-        "identifier": "emi",
-        "method": "modrinth"
-      },
-      {
-        "identifier": "eiv",
-        "method": "modrinth"
-      }
-    ],
-    "installedAlternative": {
-      "identifier": "rei",
-      "method": "modrinth"
-    }
-  },
-  {
-    "identifier": "sound-physics-remastered",
-    "category": "useful"
-  },
-  {
-    "identifier": "shulkerboxtooltip",
-    "category": "cheating"
-  },
-  {
-    "identifier": "ambientsounds",
-    "category": "useful"
-  },
-  {
-    "identifier": "visual-workbench",
-    "category": "visual"
-  },
-  {
-    "identifier": "cut-through",
-    "category": "cheating"
-  },
-  {
-    "identifier": "what-are-they-up-to",
-    "category": "cheating"
-  },
-  {
     "identifier": "highlight",
     "category": "visual"
   },
   {
     "identifier": "cave-dust",
     "category": "visual"
-  },
-  {
-    "identifier": "notenoughcrashes",
-    "category": "useful"
-  },
-  {
-    "identifier": "rightclickharvest",
-    "category": "cheating"
   }
 ]

@@ -1,8 +1,8 @@
-docs/
-Dockerfile
-docker-compose.yml
-README.md
-modpack_creator
 .github/
-mod_installation_state.json
+docs/
+modpack_creator/
 scripts/
+docker-compose.yml
+Dockerfile
+README.md
+mod_installation_state.json

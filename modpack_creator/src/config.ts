@@ -1,3 +1,5 @@
+import { get_pack_version } from "./pack_toml"
+
 const is_production = process.env.NODE_ENV === "production"
 
 function get_env_variable(name: string): string {
@@ -13,6 +15,7 @@ export const config = {
     env: process.env.NODE_ENV ?? "development",
     is_development: !is_production,
     is_production: is_production,
+    pack_version: get_pack_version(),
     mc_version: get_env_variable("MC_VERSION"),
     modrinth_project_id: get_env_variable("MODRINTH_PROJECT_ID"),
     modrinth_client_id: get_env_variable("MODRINTH_CLIENT_ID"),

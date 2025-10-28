@@ -1,13 +1,19 @@
 #!/usr/bin/env bash
 set -e
 
-# Read the modpack version from VERSION file
-if [[ ! -f VERSION ]]; then
-  echo "VERSION file not found!"
+# Read the modpack version from pack.toml
+if [[ ! -f pack.toml ]]; then
+  echo "pack.toml file not found!"
   exit 1
 fi
 
-VERSION=$(cat VERSION | tr -d '[:space:]')
+# Extract version from pack.toml (format: version = "0.1.0")
+VERSION=$(grep '^version = ' pack.toml | sed 's/version = "\(.*\)"/\1/')
+if [[ -z "$VERSION" ]]; then
+  echo "Failed to extract version from pack.toml!"
+  exit 1
+fi
+
 echo "Detected modpack version: $VERSION"
 
 # List of Minecraft versions to build for

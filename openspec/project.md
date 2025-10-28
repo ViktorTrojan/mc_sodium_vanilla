@@ -92,7 +92,7 @@ Sodium Vanilla is an automated Minecraft client-side modpack builder that provid
 - Build script generates automated commits per Minecraft version
 
 **Release Process:**
-1. Update `VERSION` file with semantic version
+1. Update `version` field in `pack.toml` with semantic version
 2. Run batch build script for multiple MC versions
 3. Script automatically: installs deps → builds → commits → tags → pushes
 4. GitHub Actions workflow triggers for Modrinth upload

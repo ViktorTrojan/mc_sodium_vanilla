@@ -1,6 +1,19 @@
 #!/usr/bin/env bash
 set -e
 
+# ============================================================================
+# DEPRECATED: This script is now superseded by the automated TypeScript
+# build system (modpack_creator/src/auto_update.ts).
+#
+# The new system automatically:
+# - Discovers Minecraft versions from the Modrinth API
+# - Detects changes and only uploads when needed
+# - Runs daily via GitHub Actions (.github/workflows/auto-update-modpacks.yml)
+#
+# This script is kept for emergency manual builds only.
+# To use the new system: cd modpack_creator && bun run auto-update
+# ============================================================================
+
 # Read the modpack version from pack.toml
 if [[ ! -f pack.toml ]]; then
   echo "pack.toml file not found!"

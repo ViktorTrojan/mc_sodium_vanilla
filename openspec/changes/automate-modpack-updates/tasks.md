@@ -10,7 +10,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ## Phase 1: Foundation (Fetch Utility)
 
-### Task 1.1: Create fetch utility module
+- [x] Task 1.1: Create fetch utility module
 - Create `modpack_creator/src/utils/` directory
 - Create `modpack_creator/src/utils/fetch_with_retry.ts`
 - Extract `fetch_with_retry` function from `write_mod_list.ts`
@@ -23,7 +23,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 1.2: Update write_mod_list.ts to use new utility
+- [x] Task 1.2: Update write_mod_list.ts to use new utility
 - Import `fetch_with_retry` from `utils/fetch_with_retry`
 - Remove the local `fetch_with_retry` function definition
 - Verify all existing call sites work
@@ -34,7 +34,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 1.3: Add tests for fetch utility
+- [x] Task 1.3: Add tests for fetch utility
 - Create `modpack_creator/src/utils/fetch_with_retry.test.ts`
 - Test successful request (no retries)
 - Test retry on network error with exponential backoff
@@ -50,7 +50,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ## Phase 2: Version Discovery
 
-### Task 2.1: Implement version discovery module
+- [x] Task 2.1: Implement version discovery module
 - Create `modpack_creator/src/version_discovery.ts`
 - Define `GameVersion` interface matching Modrinth API response
 - Implement `fetch_minecraft_versions()` function
@@ -68,7 +68,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 2.2: Add version parsing and comparison
+- [x] Task 2.2: Add version parsing and comparison
 - Implement `parse_version(version: string)` helper
   - Return `{ major: number, minor: number, patch: number } | null`
   - Handle versions like "1.14", "1.21.10", "2.0.0"
@@ -85,7 +85,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 2.3: Add tests for version discovery
+- [x] Task 2.3: Add tests for version discovery
 - Create `modpack_creator/src/version_discovery.test.ts`
 - Test version parsing (valid and invalid formats)
 - Test version comparison logic
@@ -102,7 +102,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ## Phase 3: Git Tag Management
 
-### Task 3.1: Implement tag listing and parsing
+- [x] Task 3.1: Implement tag listing and parsing
 - Create `modpack_creator/src/git_tag_manager.ts`
 - Implement `list_tags_for_version(mc_version: string)` using `Bun.$`
   - Run `git tag -l "${mc_version}_*"`
@@ -117,7 +117,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 3.2: Implement tag operations
+- [x] Task 3.2: Implement tag operations
 - Implement `find_latest_tag(mc_version: string)`
   - List tags for version
   - Parse and sort by modpack version
@@ -137,7 +137,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 3.3: Implement tag checkout for file access
+- [x] Task 3.3: Implement tag checkout for file access
 - Implement `checkout_tag(tag_name: string)`
   - Run `git checkout ${tag_name}`
 - Implement `checkout_branch(branch: string)`
@@ -154,7 +154,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 3.4: Add tests for git tag manager
+- [x] Task 3.4: Add tests for git tag manager
 - Create `modpack_creator/src/git_tag_manager.test.ts`
 - Test tag parsing (valid and invalid formats)
 - Test version increment logic
@@ -170,7 +170,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ## Phase 4: Update Detection
 
-### Task 4.1: Implement state loading from tag
+- [x] Task 4.1: Implement state loading from tag
 - Create `modpack_creator/src/update_detector.ts`
 - Implement `load_state_from_tag(tag_name: string)`
   - Use `read_file_from_tag()` from git_tag_manager
@@ -184,7 +184,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 4.2: Implement state comparison
+- [x] Task 4.2: Implement state comparison
 - Implement `compare_states(old_state: ModInstallationState, new_state: ModInstallationState)`
   - Deep compare `successful` arrays (identifier + category)
   - Deep compare `failed` arrays
@@ -198,7 +198,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 4.3: Implement main update detection function
+- [x] Task 4.3: Implement main update detection function
 - Implement `needs_update(mc_version: string, new_state: ModInstallationState)`
   - Find latest tag for mc_version
   - If no tag: return true (new version)
@@ -212,7 +212,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 4.4: Add tests for update detector
+- [x] Task 4.4: Add tests for update detector
 - Create `modpack_creator/src/update_detector.test.ts`
 - Test state comparison with identical states
 - Test state comparison with different successful mods
@@ -229,7 +229,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ## Phase 5: Automated Build Pipeline
 
-### Task 5.1: Create auto-update script structure
+- [x] Task 5.1: Create auto-update script structure
 - Create `modpack_creator/src/auto_update.ts`
 - Import all dependencies (version_discovery, git_tag_manager, update_detector, etc.)
 - Define `main()` async function
@@ -242,7 +242,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 5.2: Implement version iteration logic
+- [x] Task 5.2: Implement version iteration logic
 - In `main()`, call `get_current_minecraft_versions()`
 - Loop through each version with index
 - Log progress: `[N/Total] Minecraft {version}`
@@ -255,7 +255,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 5.3: Implement per-version build logic
+- [x] Task 5.3: Implement per-version build logic
 - For each version:
   - Set `process.env.MC_VERSION = mc_version`
   - Find latest tag or determine this is first build
@@ -274,7 +274,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 5.4: Implement change detection and upload logic
+- [x] Task 5.4: Implement change detection and upload logic
 - After build, call `needs_update(mc_version, new_state)`
 - If no update needed:
   - Log "NO CHANGES" and skip upload
@@ -289,7 +289,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 5.5: Implement git commit and tag logic
+- [x] Task 5.5: Implement git commit and tag logic
 - After successful upload:
   - Commit all changes (mods, installation state, README)
     - `git add -A`
@@ -304,7 +304,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 5.6: Add error reporting and summary
+- [x] Task 5.6: Add error reporting and summary
 - After processing all versions:
   - Log summary: total processed, uploaded, skipped, failed
   - If any errors occurred:
@@ -319,7 +319,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 5.7: Add auto-update script to package.json
+- [x] Task 5.7: Add auto-update script to package.json
 - Edit `modpack_creator/package.json`
 - Add `"auto-update": "bun src/auto_update.ts"` to scripts section
 
@@ -331,7 +331,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ## Phase 6: CI Integration
 
-### Task 6.1: Create GitHub Actions workflow file
+- [x] Task 6.1: Create GitHub Actions workflow file
 - Create `.github/workflows/auto-update-modpacks.yml`
 - Set workflow name: "Auto Update Modpacks"
 - Add triggers:
@@ -345,7 +345,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 6.2: Add checkout and setup steps
+- [x] Task 6.2: Add checkout and setup steps
 - Add step: Checkout repository
   - Use `actions/checkout@v4`
   - Set `fetch-depth: 0` (full history for tags)
@@ -367,7 +367,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 6.3: Add git configuration step
+- [x] Task 6.3: Add git configuration step
 - Add step: Configure git
   - Run `git config user.name "github-actions[bot]"`
   - Run `git config user.email "github-actions[bot]@users.noreply.github.com"`
@@ -378,7 +378,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 6.4: Add auto-update execution step
+- [x] Task 6.4: Add auto-update execution step
 - Add step: Run auto-update
   - Set environment variables from secrets:
     - `MODRINTH_PAT_TOKEN`
@@ -393,7 +393,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 6.5: Test workflow manually
+- [x] Task 6.5: Test workflow manually
 - Commit workflow file to repository
 - Trigger workflow manually via GitHub Actions UI
 - Monitor execution logs
@@ -410,7 +410,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 6.6: Enable daily schedule
+- [x] Task 6.6: Enable daily schedule
 - Verify workflow file has `schedule` trigger
 - Confirm workflow is enabled in repository settings
 - Monitor first scheduled run
@@ -423,7 +423,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ## Phase 7: Documentation and Cleanup
 
-### Task 7.1: Update README or docs
+- [x] Task 7.1: Update README or docs
 - Document the new auto-update system
 - Explain how to trigger manual updates
 - Explain how to disable auto-updates if needed
@@ -437,7 +437,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 7.2: Deprecate old build script
+- [x] Task 7.2: Deprecate old build script
 - Add comment to `scripts/build_and_tag.sh` indicating it's deprecated
 - Reference new auto-update system
 - Keep file for emergency manual builds
@@ -450,7 +450,7 @@ Tasks are ordered to deliver incremental value while maintaining dependencies. C
 
 ---
 
-### Task 7.3: Final validation
+- [x] Task 7.3: Final validation
 - Run `bun run check_and_test` to ensure all tests pass
 - Run `openspec validate automate-modpack-updates --strict`
 - Verify no lint or type errors

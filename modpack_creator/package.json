@@ -6,6 +6,7 @@
     "dev": "bun src/index.ts",
     "dev_full": "bun src/index.ts --full --no-upload",
     "dev_safe": "bun src/index.ts --safe --no-upload",
+    "auto-update": "bun src/auto_update.ts",
     "clean": "rimraf node_modules ./dist",
     "build": "bun build --target=bun --production --outdir ./dist ./src/index.ts",
     "test": "bun test",

@@ -1,40 +1,10 @@
 import { resolve } from "node:path"
+import { fetch_with_retry } from "./fetch_with_retry"
 import type { ModCategory, ModDefinitionWithAlternatives, ModInstallationState } from "./types"
 
 interface ModrinthProject {
   title: string
   project_type: string
-}
-
-async function fetch_with_retry(url: string, max_retries = 5, initial_delay_ms = 1000): Promise<Response> {
-  let last_error: Error | null = null
-
-  for (let attempt = 0; attempt <= max_retries; attempt++) {
-    try {
-      const response = await fetch(url)
-
-      // If we get a 429 (Too Many Requests), retry with exponential backoff
-      if (response.status === 429) {
-        if (attempt < max_retries) {
-          const delay = initial_delay_ms * 2 ** attempt
-          console.log(`Rate limited. Retrying in ${delay}ms... (attempt ${attempt + 1}/${max_retries})`)
-          await new Promise((resolve) => setTimeout(resolve, delay))
-          continue
-        }
-      }
-
-      return response
-    } catch (error) {
-      last_error = error as Error
-      if (attempt < max_retries) {
-        const delay = initial_delay_ms * 2 ** attempt
-        console.log(`Fetch error. Retrying in ${delay}ms... (attempt ${attempt + 1}/${max_retries})`)
-        await new Promise((resolve) => setTimeout(resolve, delay))
-      }
-    }
-  }
-
-  throw last_error || new Error("Max retries exceeded")
 }
 
 interface ModInfo {

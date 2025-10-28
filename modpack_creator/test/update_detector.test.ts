@@ -66,7 +66,7 @@ describe("compare_states", () => {
 
     const new_state: ModInstallationState = {
       successful: [{ method: "modrinth", identifier: "sodium", category: "optimization" }],
-      failed: [{ method: "modrinth", identifier: "broken-mod", category: "optimization" }],
+      failed: [{ method: "modrinth", identifier: "broken-mod", category: "optimization", alternatives: [] }],
       alternative_installed: []
     }
 
@@ -83,7 +83,7 @@ describe("compare_states", () => {
     const new_state: ModInstallationState = {
       successful: [{ method: "modrinth", identifier: "sodium", category: "optimization" }],
       failed: [],
-      alternative_installed: [{ method: "modrinth", identifier: "alt-mod", category: "optimization" }]
+      alternative_installed: [{ method: "modrinth", identifier: "alt-mod", category: "optimization", alternatives: [{ method: "modrinth", identifier: "actual-alt" }] }]
     }
 
     expect(compare_states(old_state, new_state)).toBe(true)
@@ -111,8 +111,8 @@ describe("compare_states", () => {
         { method: "modrinth", identifier: "sodium", category: "optimization" },
         { method: "modrinth", identifier: "lithium", category: "optimization" }
       ],
-      failed: [{ method: "modrinth", identifier: "broken-mod", category: "useful" }],
-      alternative_installed: [{ method: "modrinth", identifier: "alt-mod", category: "visual" }]
+      failed: [{ method: "modrinth", identifier: "broken-mod", category: "useful", alternatives: [] }],
+      alternative_installed: [{ method: "modrinth", identifier: "alt-mod", category: "visual", alternatives: [{ method: "modrinth", identifier: "installed-alt" }] }]
     }
 
     const state2: ModInstallationState = {
@@ -120,8 +120,8 @@ describe("compare_states", () => {
         { method: "modrinth", identifier: "lithium", category: "optimization" },
         { method: "modrinth", identifier: "sodium", category: "optimization" }
       ],
-      failed: [{ method: "modrinth", identifier: "broken-mod", category: "useful" }],
-      alternative_installed: [{ method: "modrinth", identifier: "alt-mod", category: "visual" }]
+      failed: [{ method: "modrinth", identifier: "broken-mod", category: "useful", alternatives: [] }],
+      alternative_installed: [{ method: "modrinth", identifier: "alt-mod", category: "visual", alternatives: [{ method: "modrinth", identifier: "installed-alt" }] }]
     }
 
     expect(compare_states(state1, state2)).toBe(false)

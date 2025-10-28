@@ -2,12 +2,12 @@ import { spawnSync } from "node:child_process"
 import { readdirSync, rmSync } from "node:fs"
 import { resolve } from "node:path"
 import { config } from "./config"
-import type { ModDefinition, ModDefinitionWithAlternatives, ModInstallationState, ResourcePackDefinitionWithAlternatives } from "./types"
+import type { ModDefinition, ModDefinitionSimple, ModDefinitionWithAlternatives, ModInstallationState, ModWithFailedAlternatives, ModWithInstalledAlternative, ResourcePackDefinitionWithAlternatives } from "./types"
 
 export function install_packwiz_content(mod_list: ModDefinitionWithAlternatives[], resource_pack_list: ResourcePackDefinitionWithAlternatives[]): ModInstallationState {
   const successful: ModDefinition[] = []
-  const failed: ModDefinitionWithAlternatives[] = []
-  const alternativeInstalled: ModDefinitionWithAlternatives[] = []
+  const failed: ModWithFailedAlternatives[] = []
+  const alternativeInstalled: ModWithInstalledAlternative[] = []
   const root_dir = resolve(__dirname, "../..")
 
   // Clean up old files
@@ -90,7 +90,8 @@ export function install_packwiz_content(mod_list: ModDefinitionWithAlternatives[
       }
 
       // Try alternatives if they exist
-      let alternative_succeeded = false
+      let installed_alternative: ModDefinitionSimple | null = null
+      const failed_alternatives: ModDefinitionSimple[] = []
 
       if (mod.alternatives) {
         for (const alt of mod.alternatives) {
@@ -107,18 +108,42 @@ export function install_packwiz_content(mod_list: ModDefinitionWithAlternatives[
             if (alt_result.stderr) {
               console.error(alt_result.stderr)
             }
+            failed_alternatives.push(alt)
           } else {
             console.log(`✅ Successfully installed alternative ${alt.identifier}`)
-            alternative_succeeded = true
-            alternativeInstalled.push(mod)
+            installed_alternative = alt
+            // Mark remaining alternatives as skipped (they go into failed_alternatives)
+            const remaining_alternatives = mod.alternatives.slice(mod.alternatives.indexOf(alt) + 1)
+            failed_alternatives.push(...remaining_alternatives)
             break
           }
         }
       }
 
-      // Only mark as failed if no alternative succeeded
-      if (!alternative_succeeded) {
-        failed.push(mod)
+      // If an alternative was installed successfully
+      if (installed_alternative) {
+        alternativeInstalled.push({
+          identifier: mod.identifier,
+          category: mod.category,
+          method: mod.method,
+          alternatives: [installed_alternative]
+        })
+
+        // Also add to failed list with all the alternatives that failed/were skipped
+        failed.push({
+          identifier: mod.identifier,
+          category: mod.category,
+          method: mod.method,
+          alternatives: failed_alternatives
+        })
+      } else {
+        // No alternative succeeded - add to failed with all failed alternatives
+        failed.push({
+          identifier: mod.identifier,
+          category: mod.category,
+          method: mod.method,
+          alternatives: failed_alternatives
+        })
       }
     } else {
       console.log(`✅ Successfully installed ${mod.identifier}`)

@@ -21,8 +21,22 @@ export interface ResourcePackDefinitionWithAlternatives extends ResourceDefiniti
   alternatives?: ResourceDefinition[]
 }
 
+export interface ModWithInstalledAlternative {
+  identifier: string
+  category: ModCategory
+  method: "modrinth"
+  alternatives: [ModDefinitionSimple] // Only contains the ONE alternative that was successfully installed
+}
+
+export interface ModWithFailedAlternatives {
+  identifier: string
+  category: ModCategory
+  method: "modrinth"
+  alternatives: ModDefinitionSimple[] // Contains all failed alternatives (including skipped ones)
+}
+
 export interface ModInstallationState {
   successful: Array<ModDefinition> // successfully installed main mods, alternatives are excluded from this one
-  failed: Array<ModDefinitionWithAlternatives> // the mods that failed to install, includes failed to install alternative mods
-  alternative_installed: Array<ModDefinitionWithAlternatives> // successfully installed alternative mods, contains information to the parent identifier
+  failed: Array<ModWithFailedAlternatives> // the main mod and all alternatives that failed to install (or were skipped)
+  alternative_installed: Array<ModWithInstalledAlternative> // the main mod with the ONE alternative that was successfully installed
 }

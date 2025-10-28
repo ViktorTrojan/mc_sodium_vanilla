@@ -104,8 +104,8 @@ That means you can safely update your Minecraft instance without overwriting you
 - [ ] [Just Enough Items](https://modrinth.com/mod/jei)
   - **Alternatives:**
     - [x] [Roughly Enough Items (REI)](https://modrinth.com/mod/rei)
-    - [x] [EMI](https://modrinth.com/mod/emi)
-    - [x] [Extended ItemView (EIV)](https://modrinth.com/mod/eiv)
+    - [ ] [EMI](https://modrinth.com/mod/emi)
+    - [ ] [Extended ItemView (EIV)](https://modrinth.com/mod/eiv)
 - [ ] [Inventory Profiles Next](https://modrinth.com/mod/inventory-profiles-next)
 - [ ] [Shulker Box Tooltip](https://modrinth.com/mod/shulkerboxtooltip)
 - [ ] [InvMove](https://modrinth.com/mod/invmove)

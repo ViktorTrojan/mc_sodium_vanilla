@@ -18,6 +18,21 @@ export async function get_mod_list_markdown(mod_list: ModDefinitionWithAlternati
   const failed_set = new Set(installation_state?.failed.map((m) => m.identifier) || [])
   const alternative_installed_set = new Set(installation_state?.alternative_installed.map((m) => m.identifier) || [])
 
+  // Create a map of main mod identifier -> successfully installed alternative identifier
+  const installed_alternative_map = new Map<string, string>()
+  for (const alt_mod of installation_state?.alternative_installed || []) {
+    if (alt_mod.alternatives.length > 0) {
+      installed_alternative_map.set(alt_mod.identifier, alt_mod.alternatives[0].identifier)
+    }
+  }
+
+  // Create a map of main mod identifier -> set of failed/skipped alternative identifiers
+  const failed_alternatives_map = new Map<string, Set<string>>()
+  for (const failed_mod of installation_state?.failed || []) {
+    const failed_alt_identifiers = new Set(failed_mod.alternatives.map((a) => a.identifier))
+    failed_alternatives_map.set(failed_mod.identifier, failed_alt_identifiers)
+  }
+
   const mod_info_promises = mod_list.map(async (mod) => {
     try {
       const response = await fetch_with_retry(`https://api.modrinth.com/v2/project/${mod.identifier}`, 20, 5000)
@@ -81,6 +96,9 @@ export async function get_mod_list_markdown(mod_list: ModDefinitionWithAlternati
         if (original_mod?.alternatives && original_mod.alternatives.length > 0) {
           markdown += "  - **Alternatives:**\n"
 
+          const installed_alt_id = installed_alternative_map.get(mod.identifier)
+          const failed_alt_ids = failed_alternatives_map.get(mod.identifier)
+
           for (const alt of original_mod.alternatives) {
             // Fetch alternative mod info
             try {
@@ -89,9 +107,13 @@ export async function get_mod_list_markdown(mod_list: ModDefinitionWithAlternati
                 const alt_data = (await alt_response.json()) as ModrinthProject
                 const alt_url = `https://modrinth.com/${alt_data.project_type}/${alt.identifier}`
 
-                // Check if this alternative was successfully installed by checking if parent mod is in alternativeInstalled
-                const is_installed = alternative_installed
-                const alt_marker = is_installed ? "[x]" : "[ ]" // no symbol for alternatives
+                // Check if this specific alternative was successfully installed
+                const is_installed = installed_alt_id === alt.identifier
+                // Check if this alternative failed or was skipped
+                const is_failed = failed_alt_ids?.has(alt.identifier)
+
+                // Determine marker: [x] if installed, [ ] if failed/skipped
+                const alt_marker = is_installed ? "[x]" : is_failed ? "[ ]" : "[ ]"
 
                 markdown += `    - ${alt_marker} [${alt_data.title}](${alt_url})\n`
               }

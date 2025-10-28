@@ -1,6 +1,6 @@
-import type { ModDefinition } from "./types"
+import type { ModDefinitionWithAlternatives } from "./types"
 
-const mod_list_raw: ModDefinition[] = [
+const mod_list_raw: ModDefinitionWithAlternatives[] = [
   {
     identifier: "fabric-api",
     category: "optimization",
@@ -408,7 +408,7 @@ const mod_list_raw: ModDefinition[] = [
   }
 ]
 
-export function get_mod_list(): ModDefinition[] {
+export function get_mod_list(): ModDefinitionWithAlternatives[] {
   const identifiers = new Set<string>()
   const duplicates: string[] = []
 
@@ -438,6 +438,6 @@ export function get_mod_list(): ModDefinition[] {
 
 export const mod_list = get_mod_list()
 
-export function get_safe_mod_list(): ModDefinition[] {
+export function get_safe_mod_list(): ModDefinitionWithAlternatives[] {
   return mod_list.filter((mod) => mod.category !== "cheating")
 }

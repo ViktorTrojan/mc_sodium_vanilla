@@ -5,25 +5,24 @@ export interface ModDefinitionSimple {
   identifier: string
 }
 
-export interface ModDefinition extends ModDefinitionSimple {
-  category: ModCategory
-  alternatives?: ModDefinitionSimple[]
-}
-
-export interface ResourcePackDefinition {
+export interface ModDefinition {
   method: "modrinth"
   identifier: string
-  alternatives?: ResourcePackDefinition[]
-}
-
-export interface MissingModEntry {
-  identifier: string
   category: ModCategory
-  alternatives?: ModDefinitionSimple[]
-  installedAlternative?: ModDefinitionSimple
 }
 
-export interface InstallationResult {
-  failed_mods: string[]
-  mod_installation_details: Map<string, ModDefinitionSimple | null>
+export interface ModDefinitionWithAlternatives extends ModDefinition {
+  alternatives?: ModDefinitionSimple[]
+}
+
+// uses same structure as normal mod definitions
+export type ResourceDefinition = ModDefinitionSimple
+export interface ResourcePackDefinitionWithAlternatives extends ResourceDefinition {
+  alternatives?: ResourceDefinition[]
+}
+
+export interface ModInstallationState {
+  successful: Array<ModDefinition> // successfully installed main mods, alternatives are excluded from this one
+  failed: Array<ModDefinitionWithAlternatives> // the mods that failed to install, includes failed to install alternative mods
+  alternative_installed: Array<ModDefinitionWithAlternatives> // successfully installed alternative mods, contains information to the parent identifier
 }

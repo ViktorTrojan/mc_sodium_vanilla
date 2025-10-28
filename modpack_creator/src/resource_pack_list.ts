@@ -1,6 +1,6 @@
-import type { ResourcePackDefinition } from "./types"
+import type { ResourcePackDefinitionWithAlternatives } from "./types"
 
-const resource_pack_list_raw: ResourcePackDefinition[] = [
+const resource_pack_list_raw: ResourcePackDefinitionWithAlternatives[] = [
   {
     identifier: "fancy-crops",
     method: "modrinth"
@@ -27,7 +27,7 @@ const resource_pack_list_raw: ResourcePackDefinition[] = [
   }
 ]
 
-export function get_resource_pack_list(): ResourcePackDefinition[] {
+export function get_resource_pack_list(): ResourcePackDefinitionWithAlternatives[] {
   const identifiers = new Set<string>()
   const duplicates: string[] = []
 

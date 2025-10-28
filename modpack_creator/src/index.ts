@@ -5,7 +5,7 @@ import { get_safe_mod_list, mod_list } from "./mod_list"
 import { resource_pack_list } from "./resource_pack_list"
 import { update_readme } from "./update_readme"
 import { upload_to_modrinth } from "./upload_to_modrinth"
-import { save_missing_mod_list_json } from "./write_mod_list"
+import { save_installation_state } from "./write_mod_list"
 
 // Parse command line arguments
 const args = process.argv.slice(2)
@@ -25,8 +25,8 @@ async function main() {
     const safe_mod_list = get_safe_mod_list()
     const installation_result_safe = install_packwiz_content(safe_mod_list, resource_pack_list)
 
-    if (installation_result_safe.failed_mods.length > 0) {
-      console.log(`\n❌ ${installation_result_safe.failed_mods.length} mod(s) failed to install in safe version`)
+    if (installation_result_safe.failed.length > 0) {
+      console.log(`\n❌ ${installation_result_safe.failed.length} mod(s) failed to install in safe version`)
     } else {
       console.log("\n✅ All mods installed successfully for safe version!")
     }
@@ -67,8 +67,8 @@ async function main() {
 
     installation_result_full = install_packwiz_content(mod_list, resource_pack_list)
 
-    if (installation_result_full.failed_mods.length > 0) {
-      console.log(`\n❌ ${installation_result_full.failed_mods.length} mod(s) failed to install in full version`)
+    if (installation_result_full.failed.length > 0) {
+      console.log(`\n❌ ${installation_result_full.failed.length} mod(s) failed to install in full version`)
     } else {
       console.log("\n✅ All mods installed successfully for full version!")
     }
@@ -107,14 +107,12 @@ async function main() {
     console.log("Updating README.md...")
     console.log(`${"=".repeat(60)}\n`)
 
-    // Save missing mod list JSON
-    if (installation_result_full.mod_installation_details.size > 0) {
-      console.log("\nSaving missing mod list JSON...\n")
-      save_missing_mod_list_json(mod_list, installation_result_full.mod_installation_details)
-    }
+    // Save installation state JSON
+    console.log("\nSaving mod installation state JSON...\n")
+    await save_installation_state(installation_result_full)
 
     console.log("\nUpdating README.md with mod list...\n")
-    await update_readme(installation_result_full.failed_mods, installation_result_full.mod_installation_details)
+    await update_readme(installation_result_full)
   }
 
   console.log(`\n${"=".repeat(60)}`)

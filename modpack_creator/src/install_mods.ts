@@ -2,11 +2,12 @@ import { spawnSync } from "node:child_process"
 import { readdirSync, rmSync } from "node:fs"
 import { resolve } from "node:path"
 import { config } from "./config"
-import type { InstallationResult, ModDefinition, ModDefinitionSimple, ResourcePackDefinition } from "./types"
+import type { ModDefinition, ModDefinitionWithAlternatives, ModInstallationState, ResourcePackDefinitionWithAlternatives } from "./types"
 
-export function install_packwiz_content(mod_list: ModDefinition[], resource_pack_list: ResourcePackDefinition[]): InstallationResult {
-  const failed_mods: string[] = []
-  const mod_installation_details = new Map<string, ModDefinitionSimple | null>()
+export function install_packwiz_content(mod_list: ModDefinitionWithAlternatives[], resource_pack_list: ResourcePackDefinitionWithAlternatives[]): ModInstallationState {
+  const successful: ModDefinition[] = []
+  const failed: ModDefinitionWithAlternatives[] = []
+  const alternativeInstalled: ModDefinitionWithAlternatives[] = []
   const root_dir = resolve(__dirname, "../..")
 
   // Clean up old files
@@ -90,7 +91,6 @@ export function install_packwiz_content(mod_list: ModDefinition[], resource_pack
 
       // Try alternatives if they exist
       let alternative_succeeded = false
-      let installed_alternative: ModDefinitionSimple | null = null
 
       if (mod.alternatives) {
         for (const alt of mod.alternatives) {
@@ -110,10 +110,7 @@ export function install_packwiz_content(mod_list: ModDefinition[], resource_pack
           } else {
             console.log(`✅ Successfully installed alternative ${alt.identifier}`)
             alternative_succeeded = true
-            installed_alternative = {
-              identifier: alt.identifier,
-              method: alt.method
-            }
+            alternativeInstalled.push(mod)
             break
           }
         }
@@ -121,13 +118,11 @@ export function install_packwiz_content(mod_list: ModDefinition[], resource_pack
 
       // Only mark as failed if no alternative succeeded
       if (!alternative_succeeded) {
-        failed_mods.push(mod.identifier)
-        mod_installation_details.set(mod.identifier, null)
-      } else {
-        mod_installation_details.set(mod.identifier, installed_alternative)
+        failed.push(mod)
       }
     } else {
       console.log(`✅ Successfully installed ${mod.identifier}`)
+      successful.push(mod)
     }
   }
 
@@ -156,7 +151,8 @@ export function install_packwiz_content(mod_list: ModDefinition[], resource_pack
   }
 
   return {
-    failed_mods,
-    mod_installation_details
+    successful,
+    failed,
+    alternative_installed: alternativeInstalled
   }
 }

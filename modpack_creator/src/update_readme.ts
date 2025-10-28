@@ -1,14 +1,14 @@
 import { readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 import { mod_list } from "./mod_list"
-import type { ModDefinitionSimple } from "./types"
+import type { ModInstallationState } from "./types"
 import { get_mod_list_markdown } from "./write_mod_list"
 
-export async function update_readme(failed_to_install?: string[], mod_installation_details?: Map<string, ModDefinitionSimple | null>) {
+export async function update_readme(installation_state?: ModInstallationState) {
   const readme_path = resolve(__dirname, "../../README.md")
   const readme_content = readFileSync(readme_path, "utf-8")
 
-  const mod_list_markdown = await get_mod_list_markdown(mod_list, failed_to_install, mod_installation_details)
+  const mod_list_markdown = await get_mod_list_markdown(mod_list, installation_state)
 
   // Find the "## Mod List" section and replace everything after it
   const mod_list_header = "## Mod List"

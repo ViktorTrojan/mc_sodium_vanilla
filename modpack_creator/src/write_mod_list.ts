@@ -1,6 +1,5 @@
-import { writeFileSync } from "node:fs"
 import { resolve } from "node:path"
-import type { MissingModEntry, ModCategory, ModDefinition, ModDefinitionSimple } from "./types"
+import type { ModCategory, ModDefinitionWithAlternatives, ModInstallationState } from "./types"
 
 interface ModrinthProject {
   title: string
@@ -45,8 +44,9 @@ interface ModInfo {
   category: ModCategory
 }
 
-export async function get_mod_list_markdown(mod_list: ModDefinition[], failed_to_install?: string[], mod_installation_details?: Map<string, ModDefinitionSimple | null>): Promise<string> {
-  const failed_set = new Set(failed_to_install || [])
+export async function get_mod_list_markdown(mod_list: ModDefinitionWithAlternatives[], installation_state?: ModInstallationState): Promise<string> {
+  const failed_set = new Set(installation_state?.failed.map((m) => m.identifier) || [])
+  const alternative_installed_set = new Set(installation_state?.alternative_installed.map((m) => m.identifier) || [])
 
   const mod_info_promises = mod_list.map(async (mod) => {
     try {
@@ -89,8 +89,7 @@ export async function get_mod_list_markdown(mod_list: ModDefinition[], failed_to
       const url = `https://modrinth.com/${mod.project_type}/${mod.identifier}`
 
       // Check if an alternative was installed instead
-      const installation_detail = mod_installation_details?.get(mod.identifier)
-      const alternative_installed = installation_detail !== undefined && installation_detail !== null && installation_detail.identifier !== mod.identifier
+      const alternative_installed = alternative_installed_set.has(mod.identifier)
 
       // Determine the marker for the main mod
       let marker: string
@@ -108,7 +107,7 @@ export async function get_mod_list_markdown(mod_list: ModDefinition[], failed_to
       const original_mod = mod_list.find((m) => m.identifier === mod.identifier)
 
       // Show alternatives if the main mod failed or if an alternative was installed
-      if (mod_installation_details && (failed_set.has(mod.identifier) || alternative_installed)) {
+      if (installation_state && (failed_set.has(mod.identifier) || alternative_installed)) {
         if (original_mod?.alternatives && original_mod.alternatives.length > 0) {
           markdown += "  - **Alternatives:**\n"
 
@@ -120,8 +119,8 @@ export async function get_mod_list_markdown(mod_list: ModDefinition[], failed_to
                 const alt_data = (await alt_response.json()) as ModrinthProject
                 const alt_url = `https://modrinth.com/${alt_data.project_type}/${alt.identifier}`
 
-                // Check if this alternative was successfully installed
-                const is_installed = installation_detail && installation_detail.identifier === alt.identifier
+                // Check if this alternative was successfully installed by checking if parent mod is in alternativeInstalled
+                const is_installed = alternative_installed
                 const alt_marker = is_installed ? "[x]" : "[ ]" // no symbol for alternatives
 
                 markdown += `    - ${alt_marker} [${alt_data.title}](${alt_url})\n`
@@ -139,26 +138,17 @@ export async function get_mod_list_markdown(mod_list: ModDefinition[], failed_to
   return markdown
 }
 
-export function save_missing_mod_list_json(mod_list: ModDefinition[], mod_installation_details: Map<string, ModDefinitionSimple | null>): void {
-  const missing_mods: MissingModEntry[] = []
-
-  for (const mod of mod_list) {
-    const installation_detail = mod_installation_details.get(mod.identifier)
-
-    // Only include mods that had installation issues (either failed or used alternative)
-    if (installation_detail !== undefined) {
-      missing_mods.push({
-        identifier: mod.identifier,
-        category: mod.category,
-        alternatives: mod.alternatives,
-        installedAlternative: installation_detail || undefined
-      })
-    }
-  }
+export async function save_installation_state(installation_state: ModInstallationState): Promise<void> {
+  const state = installation_state
 
   const root_dir = resolve(__dirname, "../..")
-  const output_path = resolve(root_dir, "missing_mod_list.json")
+  const output_path = resolve(root_dir, "mod_installation_state.json")
 
-  writeFileSync(output_path, JSON.stringify(missing_mods, null, 2), "utf-8")
-  console.log(`✅ Saved missing mod list to ${output_path}`)
+  try {
+    await Bun.write(output_path, JSON.stringify(state, null, 2))
+    console.log(`✅ Saved mod installation state to ${output_path}`)
+  } catch (error) {
+    console.error(`❌ Failed to write mod installation state: ${error}`)
+    // Don't crash the build process if we can't write the file
+  }
 }

@@ -26,6 +26,7 @@ This file contains frequently-needed project rules embedded for quick reference.
 - `project_commands.md` - Common project commands
 - `naming_conventions_rules.md` - Naming standards
 - `typescript_testing_style.md` - Testing conventions and patterns
+- `bun_runtime_rules.md` - Bun runtime configuration and usage
 - `project_state_management.md` - Rules for keeping project documentation current
 
 ---
@@ -78,6 +79,14 @@ EOF
 
 ---
 
+## 📄 Source: `.ai/project/rules/bun_runtime_rules.md`
+
+EOF
+  cat .ai/project/rules/bun_runtime_rules.md
+  cat << 'EOF'
+
+---
+
 ## 📄 Source: `.ai/global/rules/project_state_management.md`
 
 EOF
@@ -95,7 +104,8 @@ The following rule files must be embedded in this exact order:
 4. `.ai/project/rules/project_commands.md` - Common project commands
 5. `.ai/project/rules/naming_conventions_rules.md` - Naming standards
 6. `.ai/project/rules/typescript_testing_style.md` - Testing conventions and patterns
-7. `.ai/global/rules/project_state_management.md` - Rules for keeping project documentation current
+7. `.ai/project/rules/bun_runtime_rules.md` - Bun runtime configuration and usage
+8. `.ai/global/rules/project_state_management.md` - Rules for keeping project documentation current
 
 ### 3. Format Requirements
 
@@ -119,11 +129,11 @@ Each embedded rule section MUST follow this exact format:
 ### 4. Verification
 
 After generating `CLAUDE.md`, verify that:
-- All 7 rule files are embedded
+- All 8 rule files are embedded
 - Each section has proper formatting with `---` separator and `## 📄 Source:` heading
 - File contents are complete and verbatim (no truncation or modification)
 - The file list in the header matches the embedded files
 
 ## Expected Outcome
 
-A complete `CLAUDE.md` file at the project root containing all 7 embedded rule files, generated efficiently in a single bash command.
+A complete `CLAUDE.md` file at the project root containing all 8 embedded rule files, generated efficiently in a single bash command.

@@ -9,6 +9,7 @@ This file contains frequently-needed project rules embedded for quick reference.
 - `project_commands.md` - Common project commands
 - `naming_conventions_rules.md` - Naming standards
 - `typescript_testing_style.md` - Testing conventions and patterns
+- `bun_runtime_rules.md` - Bun runtime configuration and usage
 - `project_state_management.md` - Rules for keeping project documentation current
 
 ---
@@ -512,6 +513,28 @@ describe("compare_states", () => {
 - Test pure functions with clear inputs and outputs
 - Avoid testing implementation details
 - Group related tests in describe blocks
+
+---
+
+## 📄 Source: `.ai/project/rules/bun_runtime_rules.md`
+
+# Bun Runtime Rules
+
+This project uses Bun as the runtime for the TypeScript tooling in `modpack_creator/`. Prefer Bun's built-in APIs over third-party packages when possible.
+
+## Built-in APIs
+
+- `Bun.serve()` - HTTP server with WebSocket support. Don't use `express`.
+- `bun:sqlite` - SQLite database. Don't use `better-sqlite3`.
+- `Bun.sql` - Postgres client. Don't use `pg` or `postgres.js`.
+- `Bun.redis` - Redis client. Don't use `ioredis`.
+- `WebSocket` - Built-in WebSocket. Don't use `ws` package.
+- `Bun.file()` and `Bun.write()` - File I/O. Prefer over `node:fs` readFile/writeFile.
+- `Bun.$` - Shell commands. Don't use `execa`.
+
+## Environment Variables
+
+Bun automatically loads `.env` files. **NEVER** use the `dotenv` package.
 
 ---
 

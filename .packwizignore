@@ -4,5 +4,5 @@ docker-compose.yml
 README.md
 modpack_creator
 .github/
-missing_mod_list.json
+mod_installation_state.json
 scripts/

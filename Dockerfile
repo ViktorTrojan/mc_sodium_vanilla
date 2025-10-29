@@ -19,7 +19,7 @@ ENV PATH=$PATH:/usr/local/go/bin:/root/go/bin
 ENV GOPATH=/root/go
 
 # Install packwiz
-RUN go install github.com/packwiz/packwiz@latest
+RUN go install github.com/packwiz/packwiz@adfe66935c410cdeebabbce702abe65fb1b90ddb
 
 # Install bun
 RUN curl -fsSL https://bun.sh/install | bash

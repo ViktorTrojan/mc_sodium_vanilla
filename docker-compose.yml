@@ -15,7 +15,7 @@ services:
 #    docker compose --profile dev up -d
 #
 #  Attach to the running container
-#    docker compose exec dev /bin/sh
+#    docker compose exec dev bash
 #
 #  When done, stop the container
 #    docker compose --profile dev down

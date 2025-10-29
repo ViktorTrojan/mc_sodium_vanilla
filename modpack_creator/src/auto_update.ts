@@ -1,5 +1,6 @@
 import { $ } from "bun"
 import { export_modpack } from "./export_modpack"
+import { fetch_with_retry } from "./fetch_with_retry"
 import { create_tag, find_latest_tag, increment_version, parse_tag, push_tag } from "./git_tag_manager"
 import { install_packwiz_content } from "./install_mods"
 import { get_safe_mod_list, mod_list } from "./mod_list"
@@ -14,6 +15,30 @@ interface VersionResult {
   mc_version: string
   status: "uploaded" | "skipped" | "error"
   error?: string
+}
+
+/**
+ * Check if Mojang services are reachable before proceeding with updates.
+ *
+ * @throws Error if Mojang services are not reachable
+ */
+async function check_mojang_service_availability(): Promise<void> {
+  const MOJANG_VERSION_MANIFEST_URL = "https://launchermeta.mojang.com/mc/game/version_manifest.json"
+
+  try {
+    console.log("Checking Mojang service availability...")
+    const response = await fetch_with_retry(MOJANG_VERSION_MANIFEST_URL, 1)
+
+    if (!response.ok) {
+      throw new Error(`Mojang services returned status ${response.status}`)
+    }
+
+    console.log("✓ Mojang services are reachable\n")
+  } catch (error) {
+    console.error("❌ Failed to reach Mojang services")
+    console.error("This might indicate a service outage. Please try again later.")
+    throw new Error(`Mojang service check failed: ${error}`)
+  }
 }
 
 /**
@@ -169,9 +194,13 @@ async function main() {
   console.log("=".repeat(80))
   console.log("AUTOMATED MODPACK UPDATE SYSTEM")
   console.log("=".repeat(80))
+  console.log()
+
+  // Check if Mojang services are reachable
+  await check_mojang_service_availability()
 
   // Fetch current Minecraft versions
-  console.log("\nFetching Minecraft versions from Modrinth API...")
+  console.log("Fetching Minecraft versions from Modrinth API...")
   const versions = await get_current_minecraft_versions()
   console.log(`✓ Found ${versions.length} valid Minecraft versions (>= 1.14)`)
 

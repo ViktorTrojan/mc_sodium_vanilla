@@ -3,10 +3,11 @@ services:
     build: .
     profiles:
       - dev
+    user: "1000:1000"
     volumes:
       - .:/app
-      - ~/.ssh:/tmp/ssh:ro
-    command: sh -c "mkdir -p /root/.ssh && cp -r /tmp/ssh/* /root/.ssh && chmod 700 /root/.ssh && chmod 600 /root/.ssh/* && git config --global --add safe.directory /app && tail -f /dev/null"
+      - ~/.ssh:/home/ubuntu/.ssh:ro
+    command: sh -c "git config --global --add safe.directory /app && tail -f /dev/null"
     working_dir: /app
 
 # Usage:

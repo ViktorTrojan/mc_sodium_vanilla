@@ -200,6 +200,53 @@ export async function checkout_branch(branch: string): Promise<void> {
 }
 
 /**
+ * Gets the commit hash that a git tag points to.
+ *
+ * @param tag_name - Tag name like "1.21.10_0.1.0"
+ * @returns Promise resolving to the commit hash (full SHA)
+ * @throws Error if tag doesn't exist or cannot be resolved
+ *
+ * @example
+ * ```typescript
+ * const commit_hash = await get_tag_commit_hash("1.21.10_0.1.0")
+ * // "abc123def456..."
+ * ```
+ */
+export async function get_tag_commit_hash(tag_name: string): Promise<string> {
+  try {
+    const output = await $`git rev-list -n 1 ${tag_name}`.text()
+    return output.trim()
+  } catch (error) {
+    throw new Error(`Failed to get commit hash for tag ${tag_name}: ${error}`)
+  }
+}
+
+/**
+ * Creates an annotated git tag pointing to a specific commit.
+ *
+ * @param tag_name - Tag name like "1.21.10_0.1.0"
+ * @param message - Tag message
+ * @param commit_hash - Optional commit hash to tag (defaults to HEAD)
+ * @throws Error if tag creation fails
+ *
+ * @example
+ * ```typescript
+ * await create_tag_at_commit("1.21.10_0.1.1", "Release modpack", "abc123def456")
+ * ```
+ */
+export async function create_tag_at_commit(tag_name: string, message: string, commit_hash?: string): Promise<void> {
+  try {
+    if (commit_hash) {
+      await $`git tag -a ${tag_name} ${commit_hash} -m ${message}`.quiet()
+    } else {
+      await $`git tag -a ${tag_name} -m ${message}`.quiet()
+    }
+  } catch (error) {
+    throw new Error(`Failed to create tag ${tag_name}: ${error}`)
+  }
+}
+
+/**
  * Reads a file from a specific git tag.
  * Checks out the tag, reads the file, then returns to the original branch.
  *

@@ -4,5 +4,5 @@ modpack_creator/
 scripts/
 docker-compose.yml
 Dockerfile
-README.md
 mod_installation_state.json
+README.md

@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 jobs:
-  auto-update:
+  auto_update:
     runs-on: ubuntu-latest
 
     steps:
@@ -45,11 +45,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Run auto-update
+      - name: Run auto_update
         env:
           MODRINTH_PAT_TOKEN: ${{ secrets.MODRINTH_PAT_TOKEN }}
           MODRINTH_PROJECT_ID: ${{ secrets.MODRINTH_PROJECT_ID }}
           MODRINTH_CLIENT_ID: ${{ secrets.MODRINTH_CLIENT_ID }}
           MODRINTH_CLIENT_SECRET: ${{ secrets.MODRINTH_CLIENT_SECRET }}
           NODE_ENV: production
-        run: cd modpack_creator && bun run auto-update
+        run: cd modpack_creator && bun run auto_update

@@ -37,7 +37,7 @@ The tooling directory follows this structure:
 modpack_creator/
 ├── src/                  # Source code
 │   ├── index.ts          # Main entry point
-│   ├── auto_update.ts    # Auto-update script
+│   ├── auto_update.ts    # auto_update script
 │   ├── mod_list.ts       # Mod list management
 │   ├── install_mods.ts   # Mod installation logic
 │   ├── git_tag_manager.ts # Git tag management

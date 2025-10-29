@@ -8,10 +8,10 @@ set -e
 # The new system automatically:
 # - Discovers Minecraft versions from the Modrinth API
 # - Detects changes and only uploads when needed
-# - Runs daily via GitHub Actions (.github/workflows/auto-update-modpacks.yml)
+# - Runs daily via GitHub Actions (.github/workflows/auto_update_modpacks.yml)
 #
 # This script is kept for emergency manual builds only.
-# To use the new system: cd modpack_creator && bun run auto-update
+# To use the new system: cd modpack_creator && bun run auto_update
 # ============================================================================
 
 # Read the modpack version from pack.toml

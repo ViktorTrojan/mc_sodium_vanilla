@@ -10,7 +10,7 @@ The following `bun run` scripts are available in `modpack_creator/package.json`:
 - `bun run dev`: Runs the modpack creator tool (processes and installs mods)
 - `bun run dev_full`: Runs the tool with `--full` flag (creates full modpack) and `--no-upload`
 - `bun run dev_safe`: Runs the tool with `--safe` flag (creates safe modpack) and `--no-upload`
-- `bun run auto-update`: Runs the auto-update script to check for mod updates
+- `bun run auto_update`: Runs the auto_update script to check for mod updates
 
 ### Building
 - `bun run build`: Builds the project for production with Bun bundler

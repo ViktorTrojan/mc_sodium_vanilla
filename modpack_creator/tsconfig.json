@@ -26,6 +26,6 @@
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false
   },
-  "include": ["src", "test/git_tag_manager.test.ts", "test/update_detector.test.ts", "test/version_discovery.test.ts"],
+  "include": ["src", "test"],
   "exclude": ["node_modules", "dist"]
 }

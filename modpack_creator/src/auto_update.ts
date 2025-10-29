@@ -10,6 +10,7 @@ import { update_readme } from "./update_readme"
 import { upload_to_modrinth } from "./upload_to_modrinth"
 import { get_current_minecraft_versions } from "./version_discovery"
 import { save_installation_state } from "./write_mod_list"
+import { config } from "./config"
 
 interface VersionResult {
   mc_version: string
@@ -52,6 +53,7 @@ async function process_version(mc_version: string, index: number, total: number)
   try {
     // Set MC_VERSION environment variable for config
     process.env.MC_VERSION = mc_version
+    config.app.mc_version = mc_version
 
     // Force reload config with new MC_VERSION
     delete require.cache[require.resolve("./config")]

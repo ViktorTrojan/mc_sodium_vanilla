@@ -134,7 +134,7 @@ async function check_version(mc_version: string, index: number, total: number): 
       }
     }
 
-    console.log("  ✓ Changes detected - creating git tag and pushing...")
+    console.log("  ✓ Changes detected - preparing to commit and tag...")
 
     // Check if there are actually uncommitted changes
     const status_output = await $`git status --porcelain`.text()
@@ -143,7 +143,7 @@ async function check_version(mc_version: string, index: number, total: number): 
     let commit_hash: string
 
     if (has_uncommitted_changes) {
-      // Commit changes
+      // Stage and commit changes
       await $`git add -A`.quiet()
       const commit_message = `Update modpack for Minecraft ${mc_version}`
       await $`git commit -m ${commit_message}`.quiet()
@@ -153,22 +153,32 @@ async function check_version(mc_version: string, index: number, total: number): 
       const new_commit_hash = await $`git rev-parse HEAD`.text()
       commit_hash = new_commit_hash.trim()
 
-      // Push the commit to the remote branch
-      await $`git push`.quiet()
+      // Push the commit to the remote branch BEFORE creating tag
+      await $`git push`
       console.log("  ✓ Pushed commit to remote")
     } else {
-      // No uncommitted changes, use current HEAD
-      console.log("  ℹ  No uncommitted changes - using current HEAD")
-      const current_head = await $`git rev-parse HEAD`.text()
-      commit_hash = current_head.trim()
+      // No uncommitted changes - check if current HEAD is pushed
+      console.log("  ℹ  No uncommitted changes detected")
+
+      // Check if HEAD is already on remote
+      const local_head = (await $`git rev-parse HEAD`.text()).trim()
+      const remote_head = (await $`git rev-parse origin/main`.text()).trim()
+
+      if (local_head !== remote_head) {
+        console.log("  ⚠  Current HEAD not on remote, pushing...")
+        await $`git push`
+        console.log("  ✓ Pushed HEAD to remote")
+      }
+
+      commit_hash = local_head
     }
 
-    // Create the tag
+    // Create the tag pointing to the now-pushed commit
     const new_tag = `${mc_version}_${new_modpack_version}`
     await create_tag_at_commit(new_tag, `Release modpack v${new_modpack_version} for Minecraft ${mc_version}`, commit_hash)
     console.log(`  ✓ Created tag ${new_tag}`)
 
-    // Push the tag immediately
+    // Push the tag
     await $`git push origin ${new_tag}`.quiet()
     console.log(`  ✓ Pushed tag ${new_tag}`)
 

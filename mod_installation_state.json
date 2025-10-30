@@ -46,21 +46,6 @@
       "method": "modrinth"
     },
     {
-      "identifier": "appleskin",
-      "category": "visual",
-      "method": "modrinth"
-    },
-    {
-      "identifier": "modernfix",
-      "category": "optimization",
-      "method": "modrinth"
-    },
-    {
-      "identifier": "simple-voice-chat",
-      "category": "useful",
-      "method": "modrinth"
-    },
-    {
       "identifier": "tweakeroo",
       "category": "useful",
       "method": "modrinth"
@@ -127,18 +112,13 @@
       "method": "modrinth"
     },
     {
-      "identifier": "carpet",
+      "identifier": "carpet-fixes",
       "category": "useful",
       "method": "modrinth"
     },
     {
       "identifier": "lambdynamiclights",
       "category": "visual",
-      "method": "modrinth"
-    },
-    {
-      "identifier": "mouse-tweaks",
-      "category": "useful",
       "method": "modrinth"
     },
     {
@@ -154,6 +134,11 @@
     {
       "identifier": "enchantment-descriptions",
       "category": "visual",
+      "method": "modrinth"
+    },
+    {
+      "identifier": "clumps",
+      "category": "optimization",
       "method": "modrinth"
     },
     {
@@ -177,8 +162,8 @@
       "method": "modrinth"
     },
     {
-      "identifier": "shulkerboxtooltip",
-      "category": "cheating",
+      "identifier": "visuality",
+      "category": "visual",
       "method": "modrinth"
     },
     {
@@ -192,18 +177,18 @@
       "method": "modrinth"
     },
     {
+      "identifier": "capes",
+      "category": "visual",
+      "method": "modrinth"
+    },
+    {
       "identifier": "lazydfu",
       "category": "optimization",
       "method": "modrinth"
     },
     {
-      "identifier": "rrls",
-      "category": "useful",
-      "method": "modrinth"
-    },
-    {
-      "identifier": "lmd",
-      "category": "optimization",
+      "identifier": "better-mount-hud",
+      "category": "visual",
       "method": "modrinth"
     },
     {
@@ -222,8 +207,8 @@
       "method": "modrinth"
     },
     {
-      "identifier": "what-are-they-up-to",
-      "category": "cheating",
+      "identifier": "make_bubbles_pop",
+      "category": "visual",
       "method": "modrinth"
     },
     {
@@ -246,6 +231,24 @@
     {
       "identifier": "immediatelyfast",
       "category": "optimization",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
+      "identifier": "appleskin",
+      "category": "visual",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
+      "identifier": "modernfix",
+      "category": "optimization",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
+      "identifier": "simple-voice-chat",
+      "category": "useful",
       "method": "modrinth",
       "alternatives": []
     },
@@ -280,7 +283,7 @@
       "alternatives": []
     },
     {
-      "identifier": "carpet-fixes",
+      "identifier": "carpet",
       "category": "useful",
       "method": "modrinth",
       "alternatives": []
@@ -307,6 +310,12 @@
       "alternatives": []
     },
     {
+      "identifier": "mouse-tweaks",
+      "category": "useful",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
       "identifier": "modelfix",
       "category": "visual",
       "method": "modrinth",
@@ -319,14 +328,8 @@
       "alternatives": []
     },
     {
-      "identifier": "clumps",
-      "category": "optimization",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "visuality",
-      "category": "visual",
+      "identifier": "shulkerboxtooltip",
+      "category": "cheating",
       "method": "modrinth",
       "alternatives": []
     },
@@ -349,12 +352,6 @@
       "alternatives": []
     },
     {
-      "identifier": "capes",
-      "category": "visual",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
       "identifier": "visual-workbench",
       "category": "visual",
       "method": "modrinth",
@@ -367,14 +364,14 @@
       "alternatives": []
     },
     {
-      "identifier": "better-mount-hud",
-      "category": "visual",
+      "identifier": "rrls",
+      "category": "useful",
       "method": "modrinth",
       "alternatives": []
     },
     {
-      "identifier": "make_bubbles_pop",
-      "category": "visual",
+      "identifier": "lmd",
+      "category": "optimization",
       "method": "modrinth",
       "alternatives": []
     },
@@ -386,6 +383,12 @@
     },
     {
       "identifier": "cut-through",
+      "category": "cheating",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
+      "identifier": "what-are-they-up-to",
       "category": "cheating",
       "method": "modrinth",
       "alternatives": []

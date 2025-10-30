@@ -162,11 +162,6 @@
       "method": "modrinth"
     },
     {
-      "identifier": "carpet-fixes",
-      "category": "useful",
-      "method": "modrinth"
-    },
-    {
       "identifier": "jei",
       "category": "cheating",
       "method": "modrinth",
@@ -202,11 +197,6 @@
     },
     {
       "identifier": "chat-heads",
-      "category": "visual",
-      "method": "modrinth"
-    },
-    {
-      "identifier": "modelfix",
       "category": "visual",
       "method": "modrinth"
     },
@@ -291,11 +281,6 @@
       "method": "modrinth"
     },
     {
-      "identifier": "visual-workbench",
-      "category": "visual",
-      "method": "modrinth"
-    },
-    {
       "identifier": "dynamiccrosshair",
       "category": "visual",
       "method": "modrinth"
@@ -343,16 +328,6 @@
     {
       "identifier": "durability-tooltip",
       "category": "visual",
-      "method": "modrinth"
-    },
-    {
-      "identifier": "cut-through",
-      "category": "cheating",
-      "method": "modrinth"
-    },
-    {
-      "identifier": "what-are-they-up-to",
-      "category": "cheating",
       "method": "modrinth"
     },
     {
@@ -416,6 +391,37 @@
       "method": "modrinth"
     }
   ],
-  "failed": [],
+  "failed": [
+    {
+      "identifier": "carpet-fixes",
+      "category": "useful",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
+      "identifier": "modelfix",
+      "category": "visual",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
+      "identifier": "visual-workbench",
+      "category": "visual",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
+      "identifier": "cut-through",
+      "category": "cheating",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
+      "identifier": "what-are-they-up-to",
+      "category": "cheating",
+      "method": "modrinth",
+      "alternatives": []
+    }
+  ],
   "alternative_installed": []
 }

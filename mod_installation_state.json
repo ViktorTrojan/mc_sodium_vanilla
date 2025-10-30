@@ -151,8 +151,8 @@
       "method": "modrinth"
     },
     {
-      "identifier": "krypton",
-      "category": "optimization",
+      "identifier": "modelfix",
+      "category": "visual",
       "method": "modrinth"
     },
     {
@@ -163,6 +163,11 @@
     {
       "identifier": "clumps",
       "category": "optimization",
+      "method": "modrinth"
+    },
+    {
+      "identifier": "presence-footsteps",
+      "category": "useful",
       "method": "modrinth"
     },
     {
@@ -228,6 +233,11 @@
     {
       "identifier": "rrls",
       "category": "useful",
+      "method": "modrinth"
+    },
+    {
+      "identifier": "better-mount-hud",
+      "category": "visual",
       "method": "modrinth"
     },
     {
@@ -339,20 +349,14 @@
       ]
     },
     {
-      "identifier": "modelfix",
-      "category": "visual",
+      "identifier": "krypton",
+      "category": "optimization",
       "method": "modrinth",
       "alternatives": []
     },
     {
       "identifier": "debugify",
       "category": "optimization",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "presence-footsteps",
-      "category": "useful",
       "method": "modrinth",
       "alternatives": []
     },
@@ -365,12 +369,6 @@
     {
       "identifier": "lazydfu",
       "category": "optimization",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "better-mount-hud",
-      "category": "visual",
       "method": "modrinth",
       "alternatives": []
     },

@@ -44,7 +44,7 @@ That means you can safely update your Minecraft instance without overwriting you
 ### Visual
 
 - [ ] [Iris Shaders](https://modrinth.com/mod/iris)
-- [ ] [Mod Menu](https://modrinth.com/mod/modmenu)
+- [x] [Mod Menu](https://modrinth.com/mod/modmenu)
 - [ ] [AppleSkin](https://modrinth.com/mod/appleskin)
 - [x] [MiniHUD](https://modrinth.com/mod/minihud)
 - [ ] [Zoomify](https://modrinth.com/mod/zoomify)
@@ -58,7 +58,7 @@ That means you can safely update your Minecraft instance without overwriting you
 - [ ] [Enchantment Descriptions](https://modrinth.com/mod/enchantment-descriptions)
 - [x] [BetterF3](https://modrinth.com/mod/betterf3)
 - [ ] [Visuality](https://modrinth.com/mod/visuality)
-- [x] [Falling Leaves](https://modrinth.com/mod/fallingleaves)
+- [ ] [Falling Leaves](https://modrinth.com/mod/fallingleaves)
 - [ ] [Capes](https://modrinth.com/mod/capes)
 - [ ] [Visual Workbench](https://modrinth.com/mod/visual-workbench)
 - [ ] [Dynamic Crosshair](https://modrinth.com/mod/dynamiccrosshair)
@@ -85,11 +85,11 @@ That means you can safely update your Minecraft instance without overwriting you
 - [ ] [Carpet-Fixes](https://modrinth.com/mod/carpet-fixes)
 - [ ] [Sound Physics Remastered](https://modrinth.com/mod/sound-physics-remastered)
 - [ ] [Mouse Tweaks](https://modrinth.com/mod/mouse-tweaks)
-- [ ] [Presence Footsteps](https://modrinth.com/mod/presence-footsteps)
+- [x] [Presence Footsteps](https://modrinth.com/mod/presence-footsteps)
 - [ ] [AmbientSounds](https://modrinth.com/mod/ambientsounds)
 - [x] [Your Options Shall Be Respected (YOSBR)](https://modrinth.com/mod/yosbr)
 - [ ] [Remove Reloading Screen](https://modrinth.com/mod/rrls)
-- [ ] [ReplayMod](https://modrinth.com/mod/replaymod)
+- [x] [ReplayMod](https://modrinth.com/mod/replaymod)
 - [ ] [Sounds](https://modrinth.com/mod/sound)
 - [ ] [Not Enough Crashes](https://modrinth.com/mod/notenoughcrashes)
 

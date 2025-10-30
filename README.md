@@ -69,9 +69,9 @@ That means you can safely update your Minecraft instance without overwriting you
 - [ ] [ToolTipFix](https://modrinth.com/mod/tooltipfix)
 - [x] [Blur+](https://modrinth.com/mod/blur-plus)
 - [x] [Particle Rain](https://modrinth.com/mod/particle-rain)
-- [ ] [Show Me Your Skin!](https://modrinth.com/mod/show-me-your-skin)
+- [x] [Show Me Your Skin!](https://modrinth.com/mod/show-me-your-skin)
 - [x] [Highlight](https://modrinth.com/mod/highlight)
-- [x] [Cave Dust](https://modrinth.com/mod/cave-dust)
+- [ ] [Cave Dust](https://modrinth.com/mod/cave-dust)
 - [ ] [Particular ✨](https://modrinth.com/mod/particular)
   - **Alternatives:**
     - [x] [Particular ✨ Reforged](https://modrinth.com/mod/particular-reforged)

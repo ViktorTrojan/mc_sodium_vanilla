@@ -35,14 +35,6 @@ export function read_pack_toml(): PackToml {
 }
 
 /**
- * Get the modpack version from pack.toml
- */
-export function get_pack_version(): string {
-  const pack_data = read_pack_toml()
-  return pack_data.version
-}
-
-/**
  * Get the Minecraft version from pack.toml
  */
 export function get_minecraft_version(): string {

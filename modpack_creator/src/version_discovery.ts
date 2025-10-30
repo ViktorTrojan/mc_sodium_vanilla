@@ -113,7 +113,7 @@ function filter_valid_versions(versions: GameVersion[]): GameVersion[] {
  * @param b - Second version string
  * @returns Comparison result for Array.sort()
  */
-function compare_versions(a: string, b: string): number {
+export function compare_versions(a: string, b: string): number {
   const parsed_a = parse_version(a)
   const parsed_b = parse_version(b)
 

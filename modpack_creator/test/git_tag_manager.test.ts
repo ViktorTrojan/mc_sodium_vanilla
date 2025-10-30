@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test"
-import { increment_version, list_tags_for_version, parse_tag } from "../src/git_tag_manager"
+import { find_highest_global_version, increment_version, list_tags_for_version, parse_tag } from "../src/git_tag_manager"
 
 describe("parse_tag", () => {
   it("should parse valid tag with major.minor MC version", () => {
@@ -62,5 +62,16 @@ describe("list_tags_for_version", () => {
   it("should return empty array for non-existent version", async () => {
     const tags = await list_tags_for_version("99.99.99")
     expect(tags).toEqual([])
+  })
+})
+
+describe("find_highest_global_version", () => {
+  it("should find the highest modpack version across all tags", async () => {
+    const highest = await find_highest_global_version()
+    expect(typeof highest).toBe("string")
+    // Should match semantic version format
+    expect(highest).toMatch(/^\d+\.\d+\.\d+$/)
+    // Should be at least 0.1.0 since we have tags in the repo
+    expect(highest.split(".").map(Number)[1]).toBeGreaterThanOrEqual(1)
   })
 })

@@ -1,4 +1,5 @@
 import { $ } from "bun"
+import { compare_versions } from "./version_discovery"
 
 /**
  * Represents a parsed git tag
@@ -60,6 +61,45 @@ export async function list_tags_for_version(mc_version: string): Promise<string[
   } catch (error) {
     console.error(`Error listing tags for ${mc_version}:`, error)
     return []
+  }
+}
+
+/**
+ * Finds the highest global modpack version across all git tags.
+ * This is used to ensure version continuity when a new Minecraft version is added.
+ *
+ * @returns Promise resolving to the highest modpack version string (e.g., "0.1.5")
+ *
+ * @example
+ * ```typescript
+ * const highest = await find_highest_global_version()
+ * // "0.1.5" if tags like 1.21.10_0.1.5, 1.21.11_0.1.5 exist
+ * ```
+ */
+export async function find_highest_global_version(): Promise<string> {
+  try {
+    // Get all tags
+    const output = await $`git tag -l`.text()
+    if (!output.trim()) {
+      return "0.0.0" // No tags exist, start from 0.0.0 so increment gives 0.1.0
+    }
+
+    const all_tags = output.trim().split("\n")
+    let highest_version = "0.0.0"
+
+    for (const tag of all_tags) {
+      const parsed = parse_tag(tag)
+      if (parsed) {
+        if (compare_versions(parsed.modpack_version, highest_version) > 0) {
+          highest_version = parsed.modpack_version
+        }
+      }
+    }
+
+    return highest_version
+  } catch (error) {
+    console.error("Error finding highest global version:", error)
+    return "0.0.0"
   }
 }
 
@@ -249,8 +289,8 @@ export async function create_tag_at_commit(tag_name: string, message: string, co
 }
 
 /**
- * Reads a file from a specific git tag.
- * Checks out the tag, reads the file, then returns to the original branch.
+ * Reads a file from a specific git tag using git show.
+ * Does not require checking out the tag, so works even with uncommitted changes.
  *
  * @param tag_name - Tag name like "1.21.10_0.1.0"
  * @param file_path - Relative path to file from repository root
@@ -263,32 +303,11 @@ export async function create_tag_at_commit(tag_name: string, message: string, co
  * ```
  */
 export async function read_file_from_tag(tag_name: string, file_path: string): Promise<string> {
-  // Get current branch to return to later
-  const current_branch = await $`git rev-parse --abbrev-ref HEAD`.text()
-  const original_branch = current_branch.trim()
-
   try {
-    // Checkout the tag
-    await checkout_tag(tag_name)
-
-    // Read the file
-    const file = Bun.file(file_path)
-    if (!(await file.exists())) {
-      throw new Error(`File ${file_path} does not exist in tag ${tag_name}`)
-    }
-    const contents = await file.text()
-
-    // Return to original branch
-    await checkout_branch(original_branch)
-
+    // Use git show to read file from tag without checking it out
+    const contents = await $`git show ${tag_name}:${file_path}`.text()
     return contents
   } catch (error) {
-    // Try to return to original branch even if there was an error
-    try {
-      await checkout_branch(original_branch)
-    } catch (checkout_error) {
-      console.error("Failed to return to original branch:", checkout_error)
-    }
-    throw error
+    throw new Error(`File ${file_path} does not exist in tag ${tag_name}: ${error}`)
   }
 }

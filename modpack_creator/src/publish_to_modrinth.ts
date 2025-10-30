@@ -79,6 +79,7 @@ async function publish_version(mc_version: string, index: number, total: number)
       const previous_tag = `${mc_version}_${previous_version}`
 
       // Check if previous tag exists
+      // Use exact tag name (not a pattern) to avoid shell glob expansion
       const tags_list = await $`git tag -l ${previous_tag}`.text()
       if (!tags_list.trim()) {
         console.log(`  ✓ No previous tag found (${previous_tag}) - will publish`)
@@ -122,7 +123,7 @@ async function publish_version(mc_version: string, index: number, total: number)
       console.log("  ✓ All mods installed successfully for safe version")
     }
 
-    const safe_export = export_modpack("safe")
+    const safe_export = await export_modpack("safe")
     if (!safe_export) {
       throw new Error("Failed to export safe version")
     }
@@ -138,7 +139,7 @@ async function publish_version(mc_version: string, index: number, total: number)
       console.log("  ✓ All mods installed successfully for full version")
     }
 
-    const full_export = export_modpack("full")
+    const full_export = await export_modpack("full")
     if (!full_export) {
       throw new Error("Failed to export full version")
     }

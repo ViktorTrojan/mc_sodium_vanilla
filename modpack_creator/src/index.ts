@@ -32,7 +32,7 @@ async function main() {
     }
 
     // Export safe version
-    const safe_export = export_modpack("safe")
+    const safe_export = await export_modpack("safe")
     if (!safe_export) {
       console.error("❌ Failed to export safe version")
       process.exit(1)
@@ -74,7 +74,7 @@ async function main() {
     }
 
     // Export full version
-    const full_export = export_modpack("full")
+    const full_export = await export_modpack("full")
     if (!full_export) {
       console.error("❌ Failed to export full version")
       process.exit(1)

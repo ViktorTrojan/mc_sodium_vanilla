@@ -1,18 +1,19 @@
 import { spawnSync } from "node:child_process"
 import { existsSync, renameSync } from "node:fs"
 import { resolve } from "node:path"
-import { get_minecraft_version, get_pack_version } from "./pack_toml"
+import { find_latest_tag, parse_tag } from "./git_tag_manager"
+import { get_minecraft_version } from "./pack_toml"
 
 /**
  * Export the modpack using packwiz and rename it with the appropriate variant suffix.
  *
  * The exported file will be named: "Sodium Vanilla-{mc_version}_{modpack_version}_{variant}.mrpack"
- * Example: "Sodium Vanilla-1.21.10_0.1.0_full.mrpack"
+ * Example: "Sodium Vanilla-1.21.10_0.1.5_full.mrpack"
  *
  * @param variant - The modpack variant: "full" or "safe"
  * @returns The path to the exported .mrpack file, or null if export failed
  */
-export function export_modpack(variant: "full" | "safe"): string | null {
+export async function export_modpack(variant: "full" | "safe"): Promise<string | null> {
   const root_dir = resolve(__dirname, "../..")
 
   console.log(`Exporting modpack with packwiz (${variant} variant)...`)
@@ -50,9 +51,23 @@ export function export_modpack(variant: "full" | "safe"): string | null {
     return null
   }
 
-  // Get versions from pack.toml
+  // Get Minecraft version from pack.toml
   const mc_version = get_minecraft_version()
-  const modpack_version = get_pack_version()
+
+  // Get modpack version from latest git tag for this MC version
+  const latest_tag = await find_latest_tag(mc_version)
+  if (!latest_tag) {
+    console.error(`❌ No git tag found for Minecraft version ${mc_version}`)
+    return null
+  }
+
+  const parsed = parse_tag(latest_tag)
+  if (!parsed) {
+    console.error(`❌ Could not parse tag: ${latest_tag}`)
+    return null
+  }
+
+  const modpack_version = parsed.modpack_version
 
   // Create the new filename with format: "Sodium Vanilla-{mc_version}_{modpack_version}_{variant}.mrpack"
   const new_filename = `Sodium Vanilla-${mc_version}_${modpack_version}_${variant}.mrpack`

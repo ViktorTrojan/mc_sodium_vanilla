@@ -181,12 +181,22 @@
       "method": "modrinth"
     },
     {
+      "identifier": "lambdynamiclights",
+      "category": "visual",
+      "method": "modrinth"
+    },
+    {
       "identifier": "mouse-tweaks",
       "category": "useful",
       "method": "modrinth"
     },
     {
       "identifier": "chat-heads",
+      "category": "visual",
+      "method": "modrinth"
+    },
+    {
+      "identifier": "modelfix",
       "category": "visual",
       "method": "modrinth"
     },
@@ -266,13 +276,13 @@
       "method": "modrinth"
     },
     {
-      "identifier": "dynamiccrosshair",
+      "identifier": "visual-workbench",
       "category": "visual",
       "method": "modrinth"
     },
     {
-      "identifier": "lazydfu",
-      "category": "optimization",
+      "identifier": "dynamiccrosshair",
+      "category": "visual",
       "method": "modrinth"
     },
     {
@@ -288,6 +298,11 @@
     {
       "identifier": "lmd",
       "category": "optimization",
+      "method": "modrinth"
+    },
+    {
+      "identifier": "better-third-person",
+      "category": "visual",
       "method": "modrinth"
     },
     {
@@ -308,6 +323,11 @@
     {
       "identifier": "durability-tooltip",
       "category": "visual",
+      "method": "modrinth"
+    },
+    {
+      "identifier": "cut-through",
+      "category": "cheating",
       "method": "modrinth"
     },
     {
@@ -341,6 +361,11 @@
       "method": "modrinth"
     },
     {
+      "identifier": "highlight",
+      "category": "visual",
+      "method": "modrinth"
+    },
+    {
       "identifier": "cave-dust",
       "category": "visual",
       "method": "modrinth"
@@ -353,6 +378,11 @@
     {
       "identifier": "rightclickharvest",
       "category": "cheating",
+      "method": "modrinth"
+    },
+    {
+      "identifier": "particular",
+      "category": "visual",
       "method": "modrinth"
     }
   ],
@@ -370,50 +400,14 @@
       "alternatives": []
     },
     {
-      "identifier": "lambdynamiclights",
-      "category": "visual",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "modelfix",
-      "category": "visual",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
       "identifier": "enchantment-descriptions",
       "category": "visual",
       "method": "modrinth",
       "alternatives": []
     },
     {
-      "identifier": "visual-workbench",
-      "category": "visual",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "better-third-person",
-      "category": "visual",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "cut-through",
-      "category": "cheating",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "highlight",
-      "category": "visual",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "particular",
-      "category": "visual",
+      "identifier": "lazydfu",
+      "category": "optimization",
       "method": "modrinth",
       "alternatives": []
     }

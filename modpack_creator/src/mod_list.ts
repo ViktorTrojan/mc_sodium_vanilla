@@ -410,6 +410,11 @@ const mod_list_raw: ModDefinitionWithAlternatives[] = [
     identifier: "dripsounds",
     category: "visual",
     method: "modrinth"
+  },
+  {
+    identifier: "gamma-utils",
+    category: "cheating",
+    method: "modrinth"
   }
 ]
 

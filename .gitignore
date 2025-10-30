@@ -1,2 +1,7 @@
 *.zip
 *.mrpack
+
+# Nix
+.direnv/
+result
+result-*

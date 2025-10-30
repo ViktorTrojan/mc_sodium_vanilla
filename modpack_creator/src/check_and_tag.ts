@@ -58,10 +58,6 @@ async function check_version(mc_version: string, index: number, total: number): 
     process.env.MC_VERSION = mc_version
     config.app.mc_version = mc_version
 
-    // Force reload config with new MC_VERSION
-    delete require.cache[require.resolve("./config")]
-    await import("./config")
-
     // Find latest tag or determine if this is the first build
     const latest_tag = await find_latest_tag(mc_version)
     const first_time = !latest_tag

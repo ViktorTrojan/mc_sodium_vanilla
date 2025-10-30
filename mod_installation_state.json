@@ -56,6 +56,11 @@
       "method": "modrinth"
     },
     {
+      "identifier": "modernfix",
+      "category": "optimization",
+      "method": "modrinth"
+    },
+    {
       "identifier": "simple-voice-chat",
       "category": "useful",
       "method": "modrinth"
@@ -301,6 +306,11 @@
       "method": "modrinth"
     },
     {
+      "identifier": "rrls",
+      "category": "useful",
+      "method": "modrinth"
+    },
+    {
       "identifier": "better-mount-hud",
       "category": "visual",
       "method": "modrinth"
@@ -308,6 +318,11 @@
     {
       "identifier": "lmd",
       "category": "optimization",
+      "method": "modrinth"
+    },
+    {
+      "identifier": "better-third-person",
+      "category": "visual",
       "method": "modrinth"
     },
     {
@@ -331,6 +346,11 @@
       "method": "modrinth"
     },
     {
+      "identifier": "what-are-they-up-to",
+      "category": "cheating",
+      "method": "modrinth"
+    },
+    {
       "identifier": "tooltipfix",
       "category": "visual",
       "method": "modrinth"
@@ -342,6 +362,16 @@
     },
     {
       "identifier": "show-me-your-skin",
+      "category": "visual",
+      "method": "modrinth"
+    },
+    {
+      "identifier": "highlight",
+      "category": "visual",
+      "method": "modrinth"
+    },
+    {
+      "identifier": "cave-dust",
       "category": "visual",
       "method": "modrinth"
     },
@@ -358,31 +388,7 @@
   ],
   "failed": [
     {
-      "identifier": "modernfix",
-      "category": "optimization",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "rrls",
-      "category": "useful",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "better-third-person",
-      "category": "visual",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
       "identifier": "cut-through",
-      "category": "cheating",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "what-are-they-up-to",
       "category": "cheating",
       "method": "modrinth",
       "alternatives": []
@@ -396,18 +402,6 @@
     {
       "identifier": "sound",
       "category": "useful",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "highlight",
-      "category": "visual",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "cave-dust",
-      "category": "visual",
       "method": "modrinth",
       "alternatives": []
     },

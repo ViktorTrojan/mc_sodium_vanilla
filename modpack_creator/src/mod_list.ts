@@ -117,6 +117,10 @@ const mod_list_raw: ModDefinitionWithAlternatives[] = [
     method: "modrinth",
     alternatives: [
       {
+        identifier: "chest-tracker-port",
+        method: "modrinth"
+      },
+      {
         identifier: "chest-search-bar",
         method: "modrinth"
       }
@@ -404,7 +408,13 @@ const mod_list_raw: ModDefinitionWithAlternatives[] = [
   {
     identifier: "particular",
     category: "visual",
-    method: "modrinth"
+    method: "modrinth",
+    alternatives: [
+      {
+        identifier: "particular-reforged",
+        method: "modrinth"
+      }
+    ]
   },
   {
     identifier: "dripsounds",
@@ -414,6 +424,16 @@ const mod_list_raw: ModDefinitionWithAlternatives[] = [
   {
     identifier: "gamma-utils",
     category: "cheating",
+    method: "modrinth"
+  },
+  {
+    identifier: "female-gender",
+    category: "visual",
+    method: "modrinth"
+  },
+  {
+    identifier: "pistorder",
+    category: "useful",
     method: "modrinth"
   }
 ]

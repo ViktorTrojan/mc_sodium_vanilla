@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test"
-import { increment_version, parse_tag } from "../src/git_tag_manager"
+import { increment_version, list_tags_for_version, parse_tag } from "../src/git_tag_manager"
 
 describe("parse_tag", () => {
   it("should parse valid tag with major.minor MC version", () => {
@@ -47,5 +47,20 @@ describe("increment_version", () => {
   it("should handle different major/minor versions", () => {
     expect(increment_version("1.0.0")).toBe("1.0.1")
     expect(increment_version("2.5.3")).toBe("2.5.4")
+  })
+})
+
+describe("list_tags_for_version", () => {
+  it("should list tags for version 1.14", async () => {
+    const tags = await list_tags_for_version("1.14")
+    expect(tags).toBeInstanceOf(Array)
+    // Should find at least the 1.14_0.1.0 tag that exists
+    expect(tags.length).toBeGreaterThan(0)
+    expect(tags).toContain("1.14_0.1.0")
+  })
+
+  it("should return empty array for non-existent version", async () => {
+    const tags = await list_tags_for_version("99.99.99")
+    expect(tags).toEqual([])
   })
 })

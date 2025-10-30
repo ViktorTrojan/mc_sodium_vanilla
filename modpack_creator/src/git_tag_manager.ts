@@ -50,7 +50,9 @@ export function parse_tag(tag: string): ParsedTag | null {
  */
 export async function list_tags_for_version(mc_version: string): Promise<string[]> {
   try {
-    const output = await $`git tag -l ${mc_version}_*`.text()
+    // Quote the pattern to prevent shell glob expansion by Bun
+    const pattern = `${mc_version}_*`
+    const output = await $`git tag -l ${pattern}`.text()
     if (!output.trim()) {
       return []
     }

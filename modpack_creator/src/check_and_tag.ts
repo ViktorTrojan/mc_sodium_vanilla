@@ -136,19 +136,32 @@ async function check_version(mc_version: string, index: number, total: number): 
 
     console.log("  ✓ Changes detected - creating git tag and pushing...")
 
-    // Commit changes immediately
-    await $`git add -A`.quiet()
-    const commit_message = `Update modpack for Minecraft ${mc_version}`
-    await $`git commit -m ${commit_message}`.quiet()
-    console.log("  ✓ Committed changes")
+    // Check if there are actually uncommitted changes
+    const status_output = await $`git status --porcelain`.text()
+    const has_uncommitted_changes = status_output.trim().length > 0
 
-    // Get the commit hash we just created
-    const new_commit_hash = await $`git rev-parse HEAD`.text()
-    const commit_hash = new_commit_hash.trim()
+    let commit_hash: string
 
-    // Push the commit to the remote branch
-    await $`git push`.quiet()
-    console.log("  ✓ Pushed commit to remote")
+    if (has_uncommitted_changes) {
+      // Commit changes
+      await $`git add -A`.quiet()
+      const commit_message = `Update modpack for Minecraft ${mc_version}`
+      await $`git commit -m ${commit_message}`.quiet()
+      console.log("  ✓ Committed changes")
+
+      // Get the commit hash we just created
+      const new_commit_hash = await $`git rev-parse HEAD`.text()
+      commit_hash = new_commit_hash.trim()
+
+      // Push the commit to the remote branch
+      await $`git push`.quiet()
+      console.log("  ✓ Pushed commit to remote")
+    } else {
+      // No uncommitted changes, use current HEAD
+      console.log("  ℹ  No uncommitted changes - using current HEAD")
+      const current_head = await $`git rev-parse HEAD`.text()
+      commit_hash = current_head.trim()
+    }
 
     // Create the tag
     const new_tag = `${mc_version}_${new_modpack_version}`

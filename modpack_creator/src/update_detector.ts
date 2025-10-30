@@ -1,4 +1,3 @@
-import { resolve } from "node:path"
 import { find_latest_tag, read_file_from_tag } from "./git_tag_manager"
 import type { ModInstallationState } from "./types"
 
@@ -15,7 +14,8 @@ import type { ModInstallationState } from "./types"
  */
 export async function load_state_from_tag(tag_name: string): Promise<ModInstallationState | null> {
   try {
-    const state_file_path = resolve("mod_installation_state.json")
+    // File is in project root, not in modpack_creator/
+    const state_file_path = "mod_installation_state.json"
     const contents = await read_file_from_tag(tag_name, state_file_path)
     const state = JSON.parse(contents) as ModInstallationState
     return state

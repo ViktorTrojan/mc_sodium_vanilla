@@ -11,6 +11,16 @@
       "method": "modrinth"
     },
     {
+      "identifier": "modmenu",
+      "category": "visual",
+      "method": "modrinth"
+    },
+    {
+      "identifier": "appleskin",
+      "category": "visual",
+      "method": "modrinth"
+    },
+    {
       "identifier": "tweakeroo",
       "category": "cheating",
       "method": "modrinth"
@@ -36,6 +46,16 @@
       "method": "modrinth"
     },
     {
+      "identifier": "memoryleakfix",
+      "category": "optimization",
+      "method": "modrinth"
+    },
+    {
+      "identifier": "carpet",
+      "category": "useful",
+      "method": "modrinth"
+    },
+    {
       "identifier": "inventory-profiles-next",
       "category": "cheating",
       "method": "modrinth"
@@ -51,7 +71,17 @@
       "method": "modrinth"
     },
     {
+      "identifier": "replaymod",
+      "category": "useful",
+      "method": "modrinth"
+    },
+    {
       "identifier": "rightclickharvest",
+      "category": "cheating",
+      "method": "modrinth"
+    },
+    {
+      "identifier": "gamma-utils",
       "category": "cheating",
       "method": "modrinth"
     }
@@ -82,12 +112,6 @@
       "alternatives": []
     },
     {
-      "identifier": "modmenu",
-      "category": "visual",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
       "identifier": "lithium",
       "category": "optimization",
       "method": "modrinth",
@@ -102,12 +126,6 @@
     {
       "identifier": "sodium-extra",
       "category": "optimization",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "appleskin",
-      "category": "visual",
       "method": "modrinth",
       "alternatives": []
     },
@@ -191,18 +209,6 @@
     {
       "identifier": "moreculling",
       "category": "optimization",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "memoryleakfix",
-      "category": "optimization",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "carpet",
-      "category": "useful",
       "method": "modrinth",
       "alternatives": []
     },
@@ -378,12 +384,6 @@
       "alternatives": []
     },
     {
-      "identifier": "replaymod",
-      "category": "useful",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
       "identifier": "invmove",
       "category": "cheating",
       "method": "modrinth",
@@ -470,12 +470,6 @@
     {
       "identifier": "dripsounds",
       "category": "visual",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "gamma-utils",
-      "category": "cheating",
       "method": "modrinth",
       "alternatives": []
     }

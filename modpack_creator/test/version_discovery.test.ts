@@ -48,6 +48,31 @@ describe("is_valid_version", () => {
 })
 
 describe("get_current_minecraft_versions", () => {
+  it("should sort versions semantically not lexicographically", async () => {
+    // This makes a real API call to Modrinth
+    const versions = await get_current_minecraft_versions()
+
+    // Find indices of specific versions to verify semantic sorting
+    const idx_1_21_1 = versions.indexOf("1.21.1")
+    const idx_1_21_9 = versions.indexOf("1.21.9")
+    const idx_1_21_10 = versions.indexOf("1.21.10")
+
+    // If all these versions exist, verify 1.21.10 comes after 1.21.9, not after 1.21.1
+    if (idx_1_21_1 !== -1 && idx_1_21_9 !== -1 && idx_1_21_10 !== -1) {
+      // 1.21.10 should come after 1.21.9
+      expect(idx_1_21_10).toBeGreaterThan(idx_1_21_9)
+      // 1.21.9 should come after 1.21.1
+      expect(idx_1_21_9).toBeGreaterThan(idx_1_21_1)
+    }
+
+    // Also verify 1.20.6 comes before 1.21
+    const idx_1_20_6 = versions.indexOf("1.20.6")
+    const idx_1_21 = versions.indexOf("1.21")
+    if (idx_1_20_6 !== -1 && idx_1_21 !== -1) {
+      expect(idx_1_20_6).toBeLessThan(idx_1_21)
+    }
+  })
+
   it("should fetch and return valid release versions from real API", async () => {
     // This makes a real API call to Modrinth
     const versions = await get_current_minecraft_versions()
@@ -59,10 +84,6 @@ describe("get_current_minecraft_versions", () => {
     for (const version of versions) {
       expect(is_valid_version(version)).toBe(true)
     }
-
-    // Verify versions are sorted
-    const sorted_versions = [...versions].sort()
-    expect(versions).toEqual(sorted_versions)
 
     // Verify specific known versions are present
     expect(versions).toContain("1.14")

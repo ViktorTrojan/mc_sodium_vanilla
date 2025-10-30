@@ -1,4 +1,5 @@
 .github/
+.vscode/
 docs/
 modpack_creator/
 scripts/

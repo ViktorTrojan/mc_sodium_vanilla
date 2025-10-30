@@ -106,6 +106,37 @@ function filter_valid_versions(versions: GameVersion[]): GameVersion[] {
 }
 
 /**
+ * Compares two version strings semantically (not lexicographically).
+ * Returns negative if a < b, positive if a > b, zero if equal.
+ *
+ * @param a - First version string
+ * @param b - Second version string
+ * @returns Comparison result for Array.sort()
+ */
+function compare_versions(a: string, b: string): number {
+  const parsed_a = parse_version(a)
+  const parsed_b = parse_version(b)
+
+  // If either version is invalid, fall back to lexicographic comparison
+  if (!parsed_a || !parsed_b) {
+    return a.localeCompare(b)
+  }
+
+  // Compare major version
+  if (parsed_a.major !== parsed_b.major) {
+    return parsed_a.major - parsed_b.major
+  }
+
+  // Compare minor version
+  if (parsed_a.minor !== parsed_b.minor) {
+    return parsed_a.minor - parsed_b.minor
+  }
+
+  // Compare patch version
+  return parsed_a.patch - parsed_b.patch
+}
+
+/**
  * Fetches and filters current Minecraft versions suitable for this modpack.
  * Returns only release versions >= 1.14, sorted by version string.
  *
@@ -115,11 +146,11 @@ function filter_valid_versions(versions: GameVersion[]): GameVersion[] {
  * @example
  * ```typescript
  * const versions = await get_current_minecraft_versions()
- * // ["1.14", "1.14.1", "1.14.2", ..., "1.21.10"]
+ * // ["1.14", "1.14.1", "1.14.2", ..., "1.21.9", "1.21.10"]
  * ```
  */
 export async function get_current_minecraft_versions(): Promise<string[]> {
   const all_versions = await fetch_minecraft_versions()
   const valid_versions = filter_valid_versions(all_versions)
-  return valid_versions.map((v) => v.version).sort()
+  return valid_versions.map((v) => v.version).sort(compare_versions)
 }

@@ -28,14 +28,14 @@ That means you can safely update your Minecraft instance without overwriting you
 - [x] [Lithium](https://modrinth.com/mod/lithium)
 - [x] [ImmediatelyFast](https://modrinth.com/mod/immediatelyfast)
 - [x] [Sodium Extra](https://modrinth.com/mod/sodium-extra)
-- [x] [ModernFix](https://modrinth.com/mod/modernfix)
+- [ ] [ModernFix](https://modrinth.com/mod/modernfix)
 - [x] [Dynamic FPS](https://modrinth.com/mod/dynamic-fps)
 - [x] [More Culling](https://modrinth.com/mod/moreculling)
 - [ ] [Memory Leak Fix](https://modrinth.com/mod/memoryleakfix)
 - [x] [Krypton](https://modrinth.com/mod/krypton)
 - [x] [Debugify](https://modrinth.com/mod/debugify)
 - [x] [Clumps](https://modrinth.com/mod/clumps)
-- [x] [Enhanced Block Entities](https://modrinth.com/mod/ebe)
+- [ ] [Enhanced Block Entities](https://modrinth.com/mod/ebe)
 - [x] [Concurrent Chunk Management Engine (Fabric)](https://modrinth.com/mod/c2me-fabric)
 - [x] [BadOptimizations](https://modrinth.com/mod/badoptimizations)
 - [ ] [LazyDFU](https://modrinth.com/mod/lazydfu)
@@ -72,7 +72,7 @@ That means you can safely update your Minecraft instance without overwriting you
 - [ ] [Show Me Your Skin!](https://modrinth.com/mod/show-me-your-skin)
 - [x] [Highlight](https://modrinth.com/mod/highlight)
 - [x] [Cave Dust](https://modrinth.com/mod/cave-dust)
-- [x] [Particular ✨](https://modrinth.com/mod/particular)
+- [ ] [Particular ✨](https://modrinth.com/mod/particular)
 
 ### Useful
 
@@ -98,7 +98,9 @@ That means you can safely update your Minecraft instance without overwriting you
 - [x] [Xaero's World Map](https://modrinth.com/mod/xaeros-world-map)
 - [x] [Xaero's Minimap](https://modrinth.com/mod/xaeros-minimap)
 - [x] [Freecam](https://modrinth.com/mod/freecam)
-- [x] [Chest Tracker](https://modrinth.com/mod/chest-tracker)
+- [ ] [Chest Tracker](https://modrinth.com/mod/chest-tracker)
+  - **Alternatives:**
+    - [x] [Chest Search Bar](https://modrinth.com/mod/chest-search-bar)
 - [ ] [Just Enough Items](https://modrinth.com/mod/jei)
   - **Alternatives:**
     - [x] [Roughly Enough Items (REI)](https://modrinth.com/mod/rei)
@@ -108,6 +110,6 @@ That means you can safely update your Minecraft instance without overwriting you
 - [x] [Shulker Box Tooltip](https://modrinth.com/mod/shulkerboxtooltip)
 - [x] [InvMove](https://modrinth.com/mod/invmove)
 - [x] [Cut Through](https://modrinth.com/mod/cut-through)
-- [x] [What Are They Up To (Watut)](https://modrinth.com/mod/what-are-they-up-to)
+- [ ] [What Are They Up To (Watut)](https://modrinth.com/mod/what-are-they-up-to)
 - [x] [RightClickHarvest](https://modrinth.com/mod/rightclickharvest)
 

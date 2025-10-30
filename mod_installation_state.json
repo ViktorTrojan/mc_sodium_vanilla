@@ -56,11 +56,6 @@
       "method": "modrinth"
     },
     {
-      "identifier": "modernfix",
-      "category": "optimization",
-      "method": "modrinth"
-    },
-    {
       "identifier": "simple-voice-chat",
       "category": "useful",
       "method": "modrinth"
@@ -109,17 +104,6 @@
       "identifier": "calcmod",
       "category": "useful",
       "method": "modrinth"
-    },
-    {
-      "identifier": "chest-tracker",
-      "category": "cheating",
-      "method": "modrinth",
-      "alternatives": [
-        {
-          "identifier": "chest-search-bar",
-          "method": "modrinth"
-        }
-      ]
     },
     {
       "identifier": "not-enough-animations",
@@ -209,11 +193,6 @@
     {
       "identifier": "betterf3",
       "category": "visual",
-      "method": "modrinth"
-    },
-    {
-      "identifier": "ebe",
-      "category": "optimization",
       "method": "modrinth"
     },
     {
@@ -317,11 +296,6 @@
       "method": "modrinth"
     },
     {
-      "identifier": "what-are-they-up-to",
-      "category": "cheating",
-      "method": "modrinth"
-    },
-    {
       "identifier": "blur-plus",
       "category": "visual",
       "method": "modrinth"
@@ -355,14 +329,21 @@
       "identifier": "rightclickharvest",
       "category": "cheating",
       "method": "modrinth"
-    },
-    {
-      "identifier": "particular",
-      "category": "visual",
-      "method": "modrinth"
     }
   ],
   "failed": [
+    {
+      "identifier": "modernfix",
+      "category": "optimization",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
+      "identifier": "chest-tracker",
+      "category": "cheating",
+      "method": "modrinth",
+      "alternatives": []
+    },
     {
       "identifier": "memoryleakfix",
       "category": "optimization",
@@ -391,8 +372,20 @@
       ]
     },
     {
+      "identifier": "ebe",
+      "category": "optimization",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
       "identifier": "lazydfu",
       "category": "optimization",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
+      "identifier": "what-are-they-up-to",
+      "category": "cheating",
       "method": "modrinth",
       "alternatives": []
     },
@@ -407,9 +400,26 @@
       "category": "visual",
       "method": "modrinth",
       "alternatives": []
+    },
+    {
+      "identifier": "particular",
+      "category": "visual",
+      "method": "modrinth",
+      "alternatives": []
     }
   ],
   "alternative_installed": [
+    {
+      "identifier": "chest-tracker",
+      "category": "cheating",
+      "method": "modrinth",
+      "alternatives": [
+        {
+          "identifier": "chest-search-bar",
+          "method": "modrinth"
+        }
+      ]
+    },
     {
       "identifier": "jei",
       "category": "cheating",

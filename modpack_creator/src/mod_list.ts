@@ -68,7 +68,7 @@ const mod_list_raw: ModDefinitionWithAlternatives[] = [
   },
   {
     identifier: "tweakeroo",
-    category: "useful",
+    category: "cheating",
     method: "modrinth"
   },
   {
@@ -403,6 +403,11 @@ const mod_list_raw: ModDefinitionWithAlternatives[] = [
   },
   {
     identifier: "particular",
+    category: "visual",
+    method: "modrinth"
+  },
+  {
+    identifier: "dripsounds",
     category: "visual",
     method: "modrinth"
   }

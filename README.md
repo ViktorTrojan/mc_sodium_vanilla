@@ -71,7 +71,7 @@ That means you can safely update your Minecraft instance without overwriting you
 - [x] [Particle Rain](https://modrinth.com/mod/particle-rain)
 - [x] [Show Me Your Skin!](https://modrinth.com/mod/show-me-your-skin)
 - [x] [Highlight](https://modrinth.com/mod/highlight)
-- [ ] [Cave Dust](https://modrinth.com/mod/cave-dust)
+- [x] [Cave Dust](https://modrinth.com/mod/cave-dust)
 - [ ] [Particular ✨](https://modrinth.com/mod/particular)
 - [x] [Drip Sounds](https://modrinth.com/mod/dripsounds)
 
@@ -81,7 +81,7 @@ That means you can safely update your Minecraft instance without overwriting you
 - [x] [Litematica](https://modrinth.com/mod/litematica)
 - [x] [CalcMod](https://modrinth.com/mod/calcmod)
 - [x] [No Chat Reports](https://modrinth.com/mod/no-chat-reports)
-- [x] [Carpet](https://modrinth.com/mod/carpet)
+- [ ] [Carpet](https://modrinth.com/mod/carpet)
 - [ ] [Carpet-Fixes](https://modrinth.com/mod/carpet-fixes)
 - [x] [Sound Physics Remastered](https://modrinth.com/mod/sound-physics-remastered)
 - [x] [Mouse Tweaks](https://modrinth.com/mod/mouse-tweaks)

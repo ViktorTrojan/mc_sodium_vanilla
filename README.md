@@ -29,7 +29,7 @@ That means you can safely update your Minecraft instance without overwriting you
 - [ ] [ImmediatelyFast](https://modrinth.com/mod/immediatelyfast)
 - [ ] [Sodium Extra](https://modrinth.com/mod/sodium-extra)
 - [ ] [ModernFix](https://modrinth.com/mod/modernfix)
-- [ ] [Dynamic FPS](https://modrinth.com/mod/dynamic-fps)
+- [x] [Dynamic FPS](https://modrinth.com/mod/dynamic-fps)
 - [ ] [More Culling](https://modrinth.com/mod/moreculling)
 - [ ] [Memory Leak Fix](https://modrinth.com/mod/memoryleakfix)
 - [ ] [Krypton](https://modrinth.com/mod/krypton)

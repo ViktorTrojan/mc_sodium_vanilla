@@ -1,154 +1,6 @@
 hash-format = "sha256"
 
 [[files]]
-file = ".ai/generic/rules/bun_runtime_rules.md"
-hash = "77dff636579c7cc618f8ad8763f9d60eb5832fc07f7c7e86e66cd8e10947e803"
-
-[[files]]
-file = ".ai/generic/rules/bun_trusted_dependencies.md"
-hash = "dbed5c0741d40ec3def393fdfa2144fc29c6b47b638e33300097cb1c46ff2af2"
-
-[[files]]
-file = ".ai/generic/rules/changeset_rules.md"
-hash = "ed8f55345f86c31d454d975ed261e3e97ca704b487d319e04d1abc2d061c1ef5"
-
-[[files]]
-file = ".ai/generic/rules/git_bug_report_rules.md"
-hash = "c9f1d6d39c7c592f615bf0243d122d596b8fb877822d1554099b98c5321cebca"
-
-[[files]]
-file = ".ai/generic/rules/git_feature_request_rules.md"
-hash = "449397314f3ca0dcea4650a739137a8dee0a934411d40ede69dbfcfd912793c2"
-
-[[files]]
-file = ".ai/generic/rules/ignore_rules.md"
-hash = "66faab1e3c188e5b48e5a2a3949d68af3111b4bd03f8c738a121f1e7ad4a862c"
-
-[[files]]
-file = ".ai/generic/rules/monorepo_commands.md"
-hash = "9df6f3d7e2d0171a2b0a3d40a63db882e3d103e062508d0c8c35f9daa030bc07"
-
-[[files]]
-file = ".ai/generic/rules/naming_conventions_rules.md"
-hash = "e1ed662097787d62da3a987e9d76145e2d1bc917bbef93068481248d800cded3"
-
-[[files]]
-file = ".ai/generic/rules/project_structure.md"
-hash = "ed306d3f65830025d6bc0010e8d1738e9b15fbf4fa0e02d4000494a31ba134d4"
-
-[[files]]
-file = ".ai/generic/rules/read_only_rules.md"
-hash = "86b6bece70a9a800dd5683a6d0d32ac8cf16c15985dc9cf0016e8875b353bbeb"
-
-[[files]]
-file = ".ai/generic/rules/typescript_coding_style.md"
-hash = "7e14949750714285d6a11f0ccc641858f4741caeeff0d96c51ec3ba17590a398"
-
-[[files]]
-file = ".ai/generic/rules/typescript_testing_style.md"
-hash = "3e93925b727762cf53f67c0fec75a3e49c176fac86345db2087936799bbf778d"
-
-[[files]]
-file = ".ai/global/rules/claude_md_update_rules.md"
-hash = "b1447d2e24203b5192b5b55258b7955b2282c0a924f9e128f0f16e7c85290615"
-
-[[files]]
-file = ".ai/global/rules/claudeignore_update_rules.md"
-hash = "c99e68c499bf6ef4f21c5ca93be0fb4ac7ebab6ea65ddaf0d0b52ba68a5cf41e"
-
-[[files]]
-file = ".ai/global/rules/project_state_management.md"
-hash = "1b3eaca3521fc5c51902707fe9856672e9018ec73f8fa8d4ffe8e2fc4ea3efff"
-
-[[files]]
-file = ".ai/global/rules/rule_writing_guide.md"
-hash = "2717135de409d9f323ad41f8e56536b9e1b68fcffc33fbb289e4c0b80904d184"
-
-[[files]]
-file = ".ai/global/rules/workflow_writing_guide.md"
-hash = "38103d2acef9b5f4a3646a113d729d1a59461a7c4a0837be19d704e21437a29a"
-
-[[files]]
-file = ".ai/global/workflows/adapt_generic_rule.md"
-hash = "fbf29b32fcb0e53523c5726ea44a5162df6477d52933c0782fd8640cbe23bfea"
-
-[[files]]
-file = ".ai/global/workflows/claude_md_update_workflow.md"
-hash = "082077f98be327d0be1580ad04d8b26313e099b76942a45f7cd3512f1eb993c8"
-
-[[files]]
-file = ".ai/global/workflows/copy_workflows_to_claude_commands.md"
-hash = "9df02ace6142fb6299caece499ef6dc44c432d588dc0aaee0095e0fbfac49779"
-
-[[files]]
-file = ".ai/project/rules/bun_runtime_rules.md"
-hash = "833b4cbdf49ecccf75aa11967c64d8c655f5e5d60a975a0253c9938402918352"
-
-[[files]]
-file = ".ai/project/rules/bun_trusted_dependencies.md"
-hash = "12cd485d6364806f12b9d0264eb50da72569835d4bf7361b130126ee1574c858"
-
-[[files]]
-file = ".ai/project/rules/changeset_rules.md"
-hash = "7ee96317374633e180f626bc2ff30efed00a37190613cdcb4b80d33589358abb"
-
-[[files]]
-file = ".ai/project/rules/git_bug_report_rules.md"
-hash = "cc847917a3d294c0887e2b6897af09858f527aeccfc16914a90125626879a788"
-
-[[files]]
-file = ".ai/project/rules/git_feature_request_rules.md"
-hash = "7707144b04ab661bd0b5e4f5e35057875efbf5839ede81064240bc9435c2215b"
-
-[[files]]
-file = ".ai/project/rules/ignore_rules.md"
-hash = "5b5153a61785df343ab5a6439670b560612dd9a961c205fe91ff3c9aeaa86734"
-
-[[files]]
-file = ".ai/project/rules/naming_conventions_rules.md"
-hash = "77ca6f772185e9130d3e004d2a84d0c3a33a9fa882191b2995ebd50674c9d66d"
-
-[[files]]
-file = ".ai/project/rules/project_commands.md"
-hash = "b2219926f13eb1a960036ee56a515756a5b98a16938feccc31542ac3dd9eedae"
-
-[[files]]
-file = ".ai/project/rules/project_structure.md"
-hash = "011a066e1d67c4368f4710e9cabedc463edd4628723e1cbaa794d4b315fc13ae"
-
-[[files]]
-file = ".ai/project/rules/read_only_rules.md"
-hash = "1dc17307f9ce97a3317f19dbbb491820af2acf1a2d4992d158220a08845fe281"
-
-[[files]]
-file = ".ai/project/rules/typescript_coding_style.md"
-hash = "58efea0da42a4c83adebd9ac400e1ede7c4ca7d3c6afe25edd5391cec4c302b7"
-
-[[files]]
-file = ".ai/project/rules/typescript_testing_style.md"
-hash = "d5d8f067a8bba651621234e2d2db6758f3e4aca6003b8b6608f40afa684611a3"
-
-[[files]]
-file = ".claude/commands/adapt_generic_rule.md"
-hash = "fbf29b32fcb0e53523c5726ea44a5162df6477d52933c0782fd8640cbe23bfea"
-
-[[files]]
-file = ".claude/commands/claude_md_update_workflow.md"
-hash = "082077f98be327d0be1580ad04d8b26313e099b76942a45f7cd3512f1eb993c8"
-
-[[files]]
-file = ".claude/commands/copy_workflows_to_claude_commands.md"
-hash = "9df02ace6142fb6299caece499ef6dc44c432d588dc0aaee0095e0fbfac49779"
-
-[[files]]
-file = ".claudeignore"
-hash = "b63affb2b080fe7fad51aec4f89c4b7ff00c662ff292eda1f9877fd6cf739032"
-
-[[files]]
-file = "CLAUDE.md"
-hash = "6a2c3cce4b43ac17b6ccd6a4c7a6eba78a83b760b9b73687d78bcb6f56b71bb5"
-
-[[files]]
 file = "mods/calcmod.pw.toml"
 hash = "23d5f6d399f07babeb4bed1f31756a0a0b70a78433362a30e2fbad67114952d9"
 metafile = true
@@ -160,17 +12,7 @@ metafile = true
 
 [[files]]
 file = "mods/fabric-api.pw.toml"
-hash = "2be150a4dcdf580fa0defbd7ad950661e8e93daf308cb661aca9171912fc88ae"
-metafile = true
-
-[[files]]
-file = "mods/fabric-language-kotlin.pw.toml"
-hash = "d7c055f277c1751122d9abc5f09015e629699e04a9383cd0c666b33436293079"
-metafile = true
-
-[[files]]
-file = "mods/inventory-profiles-next.pw.toml"
-hash = "b03ed3030f06ae6b544e5abc92df3be91d1f617d2302e578b2b55fcba01ef4b1"
+hash = "829ca896439416c218b13b7044c7697126f2b2ddad0e6216b9d9d7f65be66a52"
 metafile = true
 
 [[files]]
@@ -179,8 +21,18 @@ hash = "da1b3ee71d9ed1f17da4c85ca3da39af3e49fcc5bb032689613c4e00fc587a40"
 metafile = true
 
 [[files]]
-file = "mods/libipn.pw.toml"
-hash = "2201f39c79e876eec8c42484542bd654891b65bfff7b04f85252a4594d824633"
+file = "mods/litematica.pw.toml"
+hash = "768d436000ebf9f0de1bfa42571dc26fe786ae66509b1949c2d7d7bdc233fbaa"
+metafile = true
+
+[[files]]
+file = "mods/malilib.pw.toml"
+hash = "2e9e3ad8c27bcccf8beb6cb96c19ff409549d1b603d5edbe9a6fb51ef82b8763"
+metafile = true
+
+[[files]]
+file = "mods/minihud.pw.toml"
+hash = "c26e234b5fc5e1400a09b24a72590e681f18bfe12cf553cfa7a92a0b92f80666"
 metafile = true
 
 [[files]]
@@ -191,6 +43,11 @@ metafile = true
 [[files]]
 file = "mods/rightclickharvest.pw.toml"
 hash = "04d04ca1f3d714fbb84a9255f974c9eee8ebdc991900977fa63a6cd528c0946f"
+metafile = true
+
+[[files]]
+file = "mods/tweakeroo.pw.toml"
+hash = "bce0331452b65b12b87d5e906309458f6a53260d7323d55eace4f3922657c8d7"
 metafile = true
 
 [[files]]

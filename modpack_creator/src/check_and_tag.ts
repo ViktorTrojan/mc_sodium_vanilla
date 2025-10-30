@@ -138,7 +138,7 @@ async function check_version(mc_version: string, index: number, total: number): 
 
     // Commit changes immediately
     await $`git add -A`.quiet()
-    const commit_message = `Update modpack for Minecraft ${mc_version}\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>`
+    const commit_message = `Update modpack for Minecraft ${mc_version}`
     await $`git commit -m ${commit_message}`.quiet()
     console.log("  ✓ Committed changes")
 

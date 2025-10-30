@@ -1,8 +1,11 @@
+.ai/
+.claude/
 .github/
 .vscode/
 docs/
 modpack_creator/
-scripts/
+.claudeignore
+CLAUDE.md
 docker-compose.yml
 Dockerfile
 flake.lock

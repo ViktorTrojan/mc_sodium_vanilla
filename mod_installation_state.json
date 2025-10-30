@@ -11,16 +11,6 @@
       "method": "modrinth"
     },
     {
-      "identifier": "modmenu",
-      "category": "visual",
-      "method": "modrinth"
-    },
-    {
-      "identifier": "appleskin",
-      "category": "visual",
-      "method": "modrinth"
-    },
-    {
       "identifier": "tweakeroo",
       "category": "cheating",
       "method": "modrinth"
@@ -71,18 +61,8 @@
       "method": "modrinth"
     },
     {
-      "identifier": "replaymod",
-      "category": "useful",
-      "method": "modrinth"
-    },
-    {
-      "identifier": "rightclickharvest",
-      "category": "cheating",
-      "method": "modrinth"
-    },
-    {
-      "identifier": "gamma-utils",
-      "category": "cheating",
+      "identifier": "blur-plus",
+      "category": "visual",
       "method": "modrinth"
     }
   ],
@@ -112,6 +92,12 @@
       "alternatives": []
     },
     {
+      "identifier": "modmenu",
+      "category": "visual",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
       "identifier": "lithium",
       "category": "optimization",
       "method": "modrinth",
@@ -126,6 +112,12 @@
     {
       "identifier": "sodium-extra",
       "category": "optimization",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
+      "identifier": "appleskin",
+      "category": "visual",
       "method": "modrinth",
       "alternatives": []
     },
@@ -384,6 +376,12 @@
       "alternatives": []
     },
     {
+      "identifier": "replaymod",
+      "category": "useful",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
       "identifier": "invmove",
       "category": "cheating",
       "method": "modrinth",
@@ -415,12 +413,6 @@
     },
     {
       "identifier": "tooltipfix",
-      "category": "visual",
-      "method": "modrinth",
-      "alternatives": []
-    },
-    {
-      "identifier": "blur-plus",
       "category": "visual",
       "method": "modrinth",
       "alternatives": []
@@ -462,6 +454,12 @@
       "alternatives": []
     },
     {
+      "identifier": "rightclickharvest",
+      "category": "cheating",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
       "identifier": "particular",
       "category": "visual",
       "method": "modrinth",
@@ -470,6 +468,12 @@
     {
       "identifier": "dripsounds",
       "category": "visual",
+      "method": "modrinth",
+      "alternatives": []
+    },
+    {
+      "identifier": "gamma-utils",
+      "category": "cheating",
       "method": "modrinth",
       "alternatives": []
     }

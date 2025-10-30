@@ -146,6 +146,10 @@ async function check_version(mc_version: string, index: number, total: number): 
     const new_commit_hash = await $`git rev-parse HEAD`.text()
     const commit_hash = new_commit_hash.trim()
 
+    // Push the commit to the remote branch
+    await $`git push`.quiet()
+    console.log("  ✓ Pushed commit to remote")
+
     // Create the tag
     const new_tag = `${mc_version}_${new_modpack_version}`
     await create_tag_at_commit(new_tag, `Release modpack v${new_modpack_version} for Minecraft ${mc_version}`, commit_hash)

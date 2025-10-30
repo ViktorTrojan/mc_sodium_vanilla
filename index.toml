@@ -110,11 +110,11 @@ hash = "77ca6f772185e9130d3e004d2a84d0c3a33a9fa882191b2995ebd50674c9d66d"
 
 [[files]]
 file = ".ai/project/rules/project_commands.md"
-hash = "e92e44a0a36f5f44fd6ba8bb8641250a6f55df6cc44e0455715c91bd614f668d"
+hash = "b2219926f13eb1a960036ee56a515756a5b98a16938feccc31542ac3dd9eedae"
 
 [[files]]
 file = ".ai/project/rules/project_structure.md"
-hash = "c2fcfe0d51aa1b39da3de79f1277f905c574d2d032ea3e04dd89c91cd83c188d"
+hash = "011a066e1d67c4368f4710e9cabedc463edd4628723e1cbaa794d4b315fc13ae"
 
 [[files]]
 file = ".ai/project/rules/read_only_rules.md"
@@ -146,7 +146,7 @@ hash = "b63affb2b080fe7fad51aec4f89c4b7ff00c662ff292eda1f9877fd6cf739032"
 
 [[files]]
 file = "CLAUDE.md"
-hash = "ab67717991797f56c09e353457566d2578e2fc2f253dac6e963be3232949d239"
+hash = "6a2c3cce4b43ac17b6ccd6a4c7a6eba78a83b760b9b73687d78bcb6f56b71bb5"
 
 [[files]]
 file = "mods/calcmod.pw.toml"

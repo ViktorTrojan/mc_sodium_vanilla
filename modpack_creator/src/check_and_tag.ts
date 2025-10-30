@@ -134,13 +134,33 @@ async function check_version(mc_version: string, index: number, total: number): 
       }
     }
 
-    console.log("  ✓ Changes detected - will need to commit and upload")
+    console.log("  ✓ Changes detected - creating git tag and pushing...")
+
+    // Commit changes immediately
+    await $`git add -A`.quiet()
+    const commit_message = `Update modpack for Minecraft ${mc_version}\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>`
+    await $`git commit -m ${commit_message}`.quiet()
+    console.log("  ✓ Committed changes")
+
+    // Get the commit hash we just created
+    const new_commit_hash = await $`git rev-parse HEAD`.text()
+    const commit_hash = new_commit_hash.trim()
+
+    // Create the tag
+    const new_tag = `${mc_version}_${new_modpack_version}`
+    await create_tag_at_commit(new_tag, `Release modpack v${new_modpack_version} for Minecraft ${mc_version}`, commit_hash)
+    console.log(`  ✓ Created tag ${new_tag}`)
+
+    // Push the tag immediately
+    await $`git push origin ${new_tag}`.quiet()
+    console.log(`  ✓ Pushed tag ${new_tag}`)
 
     return {
       mc_version,
       status: first_time ? "new" : "changed",
       old_tag: latest_tag ?? undefined,
-      new_tag: `${mc_version}_${new_modpack_version}`
+      new_tag,
+      commit_hash
     }
   } catch (error) {
     console.error(`  ❌ Error checking ${mc_version}:`, error)
@@ -200,48 +220,21 @@ async function main() {
     process.exit(0)
   }
 
-  // We have changes - need to create tags
-  console.log(`\n${"=".repeat(80)}`)
-  console.log("CREATING GIT TAGS")
-  console.log("=".repeat(80))
+  // Changed versions already have their tags created and pushed
+  // Now create tags for unchanged versions (pointing to old commits)
+  const unchanged_results = results.filter((r) => r.status === "unchanged")
 
-  // First, commit all changes (for versions that changed)
-  const changed_results = results.filter((r) => r.status === "changed" || r.status === "new")
+  if (unchanged_results.length > 0) {
+    console.log(`\n${"=".repeat(80)}`)
+    console.log("CREATING TAGS FOR UNCHANGED VERSIONS")
+    console.log("=".repeat(80))
+    console.log("\nCreating tags for unchanged versions...")
 
-  if (changed_results.length > 0) {
-    console.log("\nCommitting changes for versions with updates...")
+    for (const result of unchanged_results) {
+      if (result.status === "error" || !result.new_tag) {
+        continue
+      }
 
-    // Commit all changes at once
-    await $`git add -A`.quiet()
-    const commit_message = `Update modpack for Minecraft ${changed_results.map((r) => r.mc_version).join(", ")}\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>`
-    await $`git commit -m ${commit_message}`.quiet()
-    console.log("✓ Committed changes")
-
-    // Get the commit hash we just created
-    const new_commit_hash = await $`git rev-parse HEAD`.text()
-    const commit_hash = new_commit_hash.trim()
-
-    // Update changed results with the new commit hash
-    for (const result of changed_results) {
-      result.commit_hash = commit_hash
-    }
-  }
-
-  // Now create tags for ALL versions (both changed and unchanged)
-  console.log("\nCreating git tags...")
-
-  for (const result of results) {
-    if (result.status === "error") {
-      console.log(`  ⏭  Skipping ${result.mc_version} (error during check)`)
-      continue
-    }
-
-    if (!result.new_tag) {
-      console.log(`  ⏭  Skipping ${result.mc_version} (no tag name)`)
-      continue
-    }
-
-    if (result.status === "unchanged") {
       // Create tag pointing to old commit
       if (result.commit_hash) {
         await create_tag_at_commit(result.new_tag, `Release modpack v${parse_tag(result.new_tag)?.modpack_version} for Minecraft ${result.mc_version} (no changes from previous version)`, result.commit_hash)
@@ -249,17 +242,13 @@ async function main() {
       } else {
         console.log(`  ⚠  Cannot create tag for ${result.mc_version} - no commit hash available`)
       }
-    } else {
-      // Create tag pointing to new commit
-      await create_tag_at_commit(result.new_tag, `Release modpack v${parse_tag(result.new_tag)?.modpack_version} for Minecraft ${result.mc_version}`, result.commit_hash)
-      console.log(`  ✓ Created tag ${result.new_tag} (with changes)`)
     }
-  }
 
-  // Push all tags
-  console.log("\nPushing tags to remote...")
-  await $`git push --tags`.quiet()
-  console.log("✓ Pushed all tags")
+    // Push all unchanged tags at once
+    console.log("\nPushing unchanged tags to remote...")
+    await $`git push --tags`.quiet()
+    console.log("✓ Pushed all unchanged tags")
+  }
 
   // Summary report
   console.log(`\n${"=".repeat(80)}`)

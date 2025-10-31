@@ -54,6 +54,13 @@ export async function upload_to_modrinth(options: ModrinthUploadOptions): Promis
 
     if (!response.ok) {
       const error_text = await response.text()
+
+      // Check if this is a duplicate files error (which is acceptable)
+      if (response.status === 400 && error_text.includes("Duplicate files are not allowed")) {
+        console.log("  ⚠  File already exists on Modrinth (duplicate) - skipping upload")
+        return true
+      }
+
       console.error(`❌ Failed to upload to Modrinth: ${response.status} ${response.statusText}`)
       console.error(error_text)
       return false

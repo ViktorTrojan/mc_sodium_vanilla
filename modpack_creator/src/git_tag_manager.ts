@@ -235,7 +235,8 @@ export async function checkout_tag(tag_name: string): Promise<void> {
  */
 export async function checkout_branch(branch: string): Promise<void> {
   try {
-    await $`git checkout ${branch}`.quiet()
+    // Use -f to force checkout, discarding any local changes
+    await $`git checkout -f ${branch}`.quiet()
   } catch (error) {
     throw new Error(`Failed to checkout branch ${branch}: ${error}`)
   }

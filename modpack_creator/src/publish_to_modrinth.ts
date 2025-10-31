@@ -16,8 +16,8 @@ async function cleanup_working_directory(): Promise<void> {
   try {
     // Reset all tracked files to HEAD
     await $`git reset --hard HEAD`.quiet()
-    // // Clean untracked files and directories
-    // await $`git clean -fd`.quiet()
+    // Clean untracked files and directories (including generated .mrpack files)
+    await $`git clean -fd`.quiet()
   } catch (error) {
     console.error("Warning: Failed to clean working directory:", error)
   }

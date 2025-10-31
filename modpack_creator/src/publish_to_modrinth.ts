@@ -7,6 +7,21 @@ import { resource_pack_list } from "./resource_pack_list"
 import { upload_to_modrinth } from "./upload_to_modrinth"
 import { get_current_minecraft_versions } from "./version_discovery"
 
+/**
+ * Cleans the working directory by resetting git-tracked changes.
+ * This is necessary before checking out tags to avoid conflicts.
+ */
+async function cleanup_working_directory(): Promise<void> {
+  try {
+    // Reset all tracked files to HEAD
+    await $`git reset --hard HEAD`.quiet()
+    // // Clean untracked files and directories
+    // await $`git clean -fd`.quiet()
+  } catch (error) {
+    console.error("Warning: Failed to clean working directory:", error)
+  }
+}
+
 interface PublishResult {
   mc_version: string
   status: "published" | "skipped" | "error"
@@ -51,8 +66,12 @@ async function publish_version(mc_version: string, index: number, total: number)
 
     const modpack_version = parsed.modpack_version
 
+    // Clean working directory before checkout
+    console.log("\n  Cleaning working directory...")
+    await cleanup_working_directory()
+
     // Checkout the tag
-    console.log(`\n  Checking out tag ${latest_tag}...`)
+    console.log(`  Checking out tag ${latest_tag}...`)
     await checkout_tag(latest_tag)
 
     // Set MC_VERSION environment variable for config
@@ -124,8 +143,8 @@ async function publish_version(mc_version: string, index: number, total: number)
     }
     console.log("  ✓ Uploaded full version")
 
-    // Return to main branch
-    console.log("\n  Returning to main branch...")
+    // Clean up and return to main branch
+    console.log("\n  Cleaning up and returning to main branch...")
     await checkout_branch("main")
 
     return {
@@ -135,11 +154,13 @@ async function publish_version(mc_version: string, index: number, total: number)
   } catch (error) {
     console.error(`  ❌ Error publishing ${mc_version}:`, error)
 
-    // Try to return to main branch
+    // Try to clean up and return to main branch
     try {
+      console.log("  Cleaning up and returning to main branch...")
+      await cleanup_working_directory()
       await checkout_branch("main")
-    } catch (checkout_error) {
-      console.error("  ⚠  Failed to return to main branch:", checkout_error)
+    } catch (cleanup_error) {
+      console.error("  ⚠  Failed to return to main branch:", cleanup_error)
     }
 
     return {

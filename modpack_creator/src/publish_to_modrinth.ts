@@ -1,3 +1,4 @@
+import { $ } from "bun"
 import { config } from "./config"
 import { export_modpack } from "./export_modpack"
 import { checkout_branch, checkout_tag, find_latest_tag, parse_tag } from "./git_tag_manager"
